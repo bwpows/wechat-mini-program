@@ -1,0 +1,23 @@
+<!--pages/addTask/addTask.wxml-->
+
+<view class=" mx-4">
+
+    <view class="grey--text mt-6 mb-2">请描述您的任务</view>
+    <view class="card pa-5 rounded mb-6">
+        <input placeholder="请输入任务标题（15字以内）" bindinput="taskNameFun" />
+    </view>
+    
+    <view class="grey--text mt-6">请选择截止时间</view>
+    <view class="d-flex flex-wrap justify-space-between">
+        <view 
+            class="card rounded pa-6 my-2 text-center {{selectDate == item.value?'primary-border primary--text':'opacity_border'}}" 
+            style="min-width: 33%;"
+            wx:for="{{endTimeList}}" wx:key="value" data-value="{{item.value}}"
+            bindtap="selectDateFun"
+        >{{ item.text }}</view>
+    </view>
+
+    <view class="mt-12">
+      <button aria-disabled="false" class="primary--text white rounded py-3 text-center full-width" id="showTooltips" wah-hotarea="click" bindtap="submit">添加任务</button>
+    </view>
+</view>

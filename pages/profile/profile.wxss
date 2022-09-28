@@ -1,0 +1,9 @@
+/* pages/myProfile/myProfile.wxss */
+
+.headImg{
+    height: 100rpx; width: 100rpx; border-radius: 10px;
+}
+
+.arrowIcon{
+    height: 40rpx; width: 40rpx;
+}

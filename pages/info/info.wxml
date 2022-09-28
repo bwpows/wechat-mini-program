@@ -1,0 +1,16 @@
+<!--pages/blogInfo/blogInfo.wxml-->
+<view class="container">
+  <view>
+    <text class="blogTitle">{{ blogInfo.blogTitle }}</text>
+  </view>
+  <view class="userInfo">
+    <image src = "{{ blogerInfo.headerImg }}" class="blogerHeaderImg"></image>
+    <text class="blogerNickName">{{blogerInfo.nickName || blogerInfo.us}}</text>
+  </view>
+  <view class="blogTime">
+    <text >{{ blogInfo.updateTime }}</text>
+  </view>
+  <view>
+    <text class="blogContent">{{ blogInfo.blogContent }}</text>
+  </view>
+</view>

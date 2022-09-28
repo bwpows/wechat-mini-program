@@ -1,0 +1,9 @@
+<!--pages/setting/setting.wxml-->
+<view class="mx-4 mt-4">
+    <view class="d-flex justify-space-between white rounded pa-4 align-center">
+        <view>显示隐藏作品</view>
+        <view>
+            <switch checked="{{switch1Checked}}" bindchange="switch1Change"/>
+        </view>
+    </view>
+</view>

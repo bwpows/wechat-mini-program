@@ -1,0 +1,51 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/user/user",
+        "pages/info/info",
+        "pages/work/work",
+        "pages/login/login",
+        "pages/addTask/addTask",
+        "pages/profile/profile",
+        "pages/phone/phone",
+        "pages/setting/setting",
+        "pages/mywork/mywork",
+        "pages/like/like",
+        "pages/publish/publish",
+        "pages/notLogin/notLogin",
+        "pages/editUsername/editUsername"
+    ],
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#fff",
+        "backgroundColor": "#fff",
+        "navigationBarTitleText": "bwpow",
+        "navigationBarTextStyle": "black",
+        "enablePullDownRefresh": false
+    },
+    "tabBar": {
+        "color": "#ddd",
+        "selectedColor": "#ec752e",
+        "borderStyle": "black",
+        "list": [
+            {
+                "selectedIconPath": "images/bottomBar/homeSelected.png",
+                "iconPath": "images/bottomBar/home.png",
+                "pagePath": "pages/index/index"
+            },
+            {
+                "selectedIconPath": "images/bottomBar/workSelected.png",
+                "iconPath": "images/bottomBar/work.png",
+                "pagePath": "pages/work/work"
+            },
+            {
+                "selectedIconPath": "images/bottomBar/userSelected.png",
+                "iconPath": "images/bottomBar/user.png",
+                "pagePath": "pages/user/user"
+            }
+        ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json",
+    "lazyCodeLoading": "requiredComponents"
+}

@@ -1,0 +1,9 @@
+<!--pages/like/like.wxml-->
+
+<view class=" mx-4">
+
+    <view wx:for="{{ workList }}" wx:key="_id" wx:for-item="work" class="my-6 card overflow-hidden rounded-lg">
+        <Work work="{{ work }}" />
+    </view>
+
+</view>

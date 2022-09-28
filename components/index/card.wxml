@@ -1,0 +1,30 @@
+<!--components/index/card.wxml-->
+<view wx:if="{{taskList.length !== 0}}" class="mb-5">
+    <view class="grey--text mb-2">{{title}}</view>
+    <view
+        wx:for="{{ taskList }}"
+        wx:for-item="task"
+        wx:key="_id"
+        bindtouchmove="touchMove"
+        bindtouchstart="touchStart"
+        data-taskId="{{ task._id }}"
+        style="position: relative; height: 100%;"
+        class="card mb-3 pa-4 rounded d-flex justify-space-between {{ task.is_completed?'success_left_border':'primary_left_border' }} {{ task.is_cancel?'cancel_left_border':'' }}" 
+    >
+        <view class=" {{ task.is_completed?'text_line_through grey--text':'' }} {{ task.is_cancel?'text_line_through grey--text':'' }}"> {{ task.content }} </view>
+        <view class="d-flex rounded-bottom-right rounded-top-left overflow-hidden {{showBtnId == task._id?'selected':'no-selected'}} task-position">
+            <view class="success d-flex align-center px-3" wx:if="{{ !task.is_completed && !task.is_cancel }}" bindtap="completeTask" data-taskId="{{ task._id }}">
+                <image src="/images/icon/complete.svg" class="icon_width"></image>
+            </view>
+            <view class="success d-flex align-center px-3" wx:else bindtap="recoveryTask" data-taskId="{{ task._id }}">
+                <image src="/images/icon/recovery.svg" class="icon_width"></image>
+            </view>
+            <view class="error d-flex align-center px-3" wx:if="{{ task.is_completed || task.is_cancel }}" bindtap="deleteTask" data-taskId="{{ task._id }}">
+                <image src="/images/icon/delete.svg" class="icon_width"></image>
+            </view>
+            <view class="error d-flex align-center px-3" wx:else bindtap="cancelTask" data-taskId="{{ task._id }}">
+                <image src="/images/icon/cancel.svg" class="icon_width"></image>
+            </view>
+        </view>
+    </view>
+</view>

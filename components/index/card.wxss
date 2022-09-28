@@ -1,0 +1,19 @@
+/* components/index/card.wxss */
+.icon_width {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.no-selected {
+    max-width: 0%;
+    transition: all .5s;
+}
+
+.selected {
+    max-width: 200rpx;
+    transition: all .5s;
+}
+
+.task-position {
+    position: absolute; right: 0px; height: 100%; top:0
+}

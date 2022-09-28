@@ -1,0 +1,13 @@
+<!--pages/notLogin/notLogin.wxml-->
+<view class="mx-4 mt-6">
+    <view class="white pa-4 rounded">
+        <view class="mb-3">欢迎您使用小程序</view>
+        <view class="mb-2">我们尽可能更多的为您提供服务</view>
+    </view>
+    <view class="white pa-4 rounded mt-6">
+        <view class="mb-2 subtitle" style="line-height: 40rpx;">为了您的数据，请尽可能的选择账号登录，以便让我们存储您的相关数据，为您更好的服务。</view>
+    </view>
+    <view class="mt-12 text-center">
+        <text role="button" class="py-2 px-6 white--text rounded" bindtap="goBack" style="background-color: #131725;">返回登录</text>
+    </view>
+</view>

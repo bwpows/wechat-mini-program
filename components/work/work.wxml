@@ -1,0 +1,21 @@
+<!--components/work/work.wxml-->
+<view wx:if="{{ work.url.length != 0 }}" class="rounded-lg-top-right rounded-lg-top-left overflow-hidden">
+    <swiper indicator-dots="true" class="rounded-lg-top-right rounded-lg-top-left overflow-hidden" bindtap="previewImage" data-url="{{work.url}}">
+        <block wx:for="{{ work.url }}" wx:key="*this">
+            <swiper-item class="slide-image">
+                <image src="{{baseUrl+'/'+item}}" class="swiper-rounded rounded-lg-top-right rounded-lg-top-left overflow-hidden" show-menu-by-longpress="true" mode="aspectFill" style="width: 100%;"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+<view class="pa-4">
+    <view class="subtitle">{{ work.title }}</view>
+    <view class="font-desc my-2"> {{ work.description }} </view>
+    <view class="font-desc mt-4 d-flex align-center">
+        <image src="../../images/icon/love.svg" mode="aspectFit" style="height: 30rpx; width: 30rpx;" class="mr-1"></image>
+        <text class="mr-4">{{ work.likes.length }}</text>
+        <image src="../../images/icon/view.svg" mode="aspectFit" style="height: 30rpx; width: 30rpx;" class="mr-1"></image>
+        <text class=""> {{ work.views.length }} </text>
+        <text class="ml-4" wx:if="work.users.username">{{ work.users.username }}</text>
+    </view>
+</view>

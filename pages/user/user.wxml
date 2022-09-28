@@ -1,0 +1,71 @@
+<wxs module="phone" src="../../util/phone.wxs"></wxs>
+
+
+<view class="container mt-6">
+    <view class="card rounded-lg pa-4 d-flex justify-space-between align-center" role="button" bindtap="goProfile">
+        <view class="d-flex">
+            <image src="{{ baseUrl+'/'+userInfo.pictrue }}" class="headImg" wx:if="{{ !loading }}" mode="aspectFill"></image>
+            <view class="ml-4">
+                <view>Hello, {{userInfo.username}}</view>
+                <view class="font-desc mt-3">昵称、头像与隐私</view>
+            </view>
+        </view>
+        <view>
+            <image src="../../images/icon/leftArrow.svg"  class="arrowIcon"></image>
+        </view>
+    </view>
+
+    <view class="card rounded-lg my-6">
+        <view class=" d-flex align-center pa-4 justify-space-between" bindtap="goPhone">
+            <view class="d-flex align-center">
+                <image src="../../images/icon/phone.svg" class="iconImg"></image>
+                <view class="ml-4">手机号</view>
+            </view>
+            <view class="d-flex align-center">
+                <text class="mr-2 font-desc" wx:if="{{userInfo.phone}}">{{ phone.formatPhoneNumber(userInfo.phone) }}</text>
+                <image src="../../images/icon/leftArrow.svg" class="arrowIcon"></image>
+            </view>
+        </view>
+        <view class="driver dirver_margin"></view>
+        <view class=" d-flex align-center pa-4 justify-space-between" bindtap="goSetting">
+            <view class="d-flex align-center">
+                <image src="../../images/icon/setting.svg" class="iconImg"></image>
+                <view class="ml-4">通用设置</view>
+            </view>
+            <image src="../../images/icon/leftArrow.svg" class="arrowIcon"></image>
+        </view>
+    </view>
+
+    <view class="card rounded-lg my-6">
+        <view class=" d-flex align-center pa-4 justify-space-between" bindtap="goMywork">
+            <view class="d-flex align-center">
+                <image src="../../images/icon/works.svg" class="iconImg"></image>
+                <view class="ml-4">我的作品</view>
+            </view>
+            <image src="../../images/icon/leftArrow.svg" class="arrowIcon"></image>
+        </view>
+        <view class="driver dirver_margin"></view>
+        <view class=" d-flex align-center pa-4 justify-space-between" bindtap="goMyLike">
+            <view class="d-flex align-center">
+                <image src="../../images/icon/like.svg" class="iconImg"></image>
+                <view class="ml-4">我的点赞</view>
+            </view>
+            <image src="../../images/icon/leftArrow.svg" class="arrowIcon"></image>
+        </view>
+        <!-- <view class="driver dirver_margin"></view> -->
+        <!-- <view class=" d-flex align-center pa-4 justify-space-between">
+            <view class="d-flex align-center">
+                <image src="../../images/icon/cardDetails.svg" class="iconImg"></image>
+                <view class="ml-4">收支明细</view>
+            </view>
+            <image src="../../images/icon/leftArrow.svg" class="arrowIcon"></image>
+        </view> -->
+    </view>
+
+    <view class="card rounded mt-12 ">
+        <button class="weui-btn rounded-lg py-3" style="color: rgb(248, 62, 62); background: #fff; width: 100%;" bindtap="exit">退出登录</button>
+    </view>
+        
+
+
+</view>

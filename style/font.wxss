@@ -1,0 +1,26 @@
+
+.text-center {
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 28rpx;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 36rpx;
+}
+
+.font-desc{
+    color: #666;
+    font-size: 26rpx;
+}
+
+.font-nikeName{
+    font-size: 26rpx;
+}
+
+.gery-text{
+    color: #666;
+}

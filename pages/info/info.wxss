@@ -1,0 +1,38 @@
+/* pages/blogInfo/blogInfo.wxss */
+.container{
+  margin: 0 30rpx;
+}
+
+.blogTitle{
+  font-size: 50rpx;
+  display: block;
+  margin-top: 10rpx;
+}
+
+.userInfo{
+  margin: 30rpx 0;
+}
+
+.blogerNickName{
+  font-size: 20rpx;
+  margin: 0 10rpx;
+}
+
+.blogerHeaderImg{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.blogTime{
+  /* margin: 10rpx 0; */
+  font-size: small;
+}
+
+.blogContent{
+  /* color: #999; */
+  font-size: 30rpx;
+  line-height: 40rpx;
+  margin-top: 18rpx;
+}

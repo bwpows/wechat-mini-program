@@ -1,0 +1,32 @@
+<!-- <page-meta root-font-size="system" /> -->
+<view class="page" class="px-12 d-flex white" style="min-height: 100vh;">
+	<view style="width: 100%;">
+<view style="margin-top: 15vh;"></view>
+        <view class="title mb-8" style="font-size: 52rpx;">欢迎使用</view>
+        <view class="grey--text mb-10">祝您心情愉悦</view>
+        <input bindinput="bindPhoneInput" type="tel" class="pb-1" placeholder="请输入手机号" style="border-bottom: 1px solid #888; min-width: 100%;" />
+        <view class="justify-center d-flex my-12" style="position: relative;">
+            <input bindinput="bindVcodeInput" class="pb-1" type="tel" placeholder="输入验证码" style="border-bottom: 1px solid #888; min-width: 100%;" />
+            <view style="position: absolute; right: 0; z-index: 99;">
+                <view aria-role="button" bindtap="getVcode" class="subtitle text-no-warp" wx:if="{{ verificationCodeTime <= 0 }}">获取验证码</view>
+                <view aria-role="button" class="subtitle text-no-warp grey--text" wx:else="">{{ verificationCodeTime }}秒后获取</view>
+            </view>
+        </view>
+        <checkbox-group bindchange="checkboxChange" class="mb-12">
+            <label class="d-flex align-center grey--text">
+                <checkbox value="{{checkValue}}" />
+                <view class="weui-agree__checkbox" aria-labelledby="js_agree_txt js_agree_link" aria-role="checkbox"></view>
+                <view class="weui-agree__text d-flex">
+                    <text aria-hidden="true" id="js_agree_txt">阅读并同意《相关条款》</text>
+                </view>
+            </label>
+        </checkbox-group>
+        <!-- <button type="primary" disabled="{{vcodeValue ? false : true}}" bindtap="checkStatus" class="mb-12" style="width: 100%;">确定</button> -->
+        <!-- <button bindtap="checkStatus" class="mb-12 primary white--text py-3" style="width: 100%; background-color: #131725;">确定</button> -->
+        <button bindtap="checkStatus" class="primary white--text py-3" style="width: 100%; background-color: #131725;">确定</button>
+        <view class="mt-6 grey--text subtitle text-center">
+            <text bindtap="goNotSignIn">暂不登录</text>
+        </view>
+        <view class="py-6"></view>
+	</view>
+</view>

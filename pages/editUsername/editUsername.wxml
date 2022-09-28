@@ -1,0 +1,4 @@
+<!--pages/editUsername/editUsername.wxml-->
+<view class="white pa-4 my-2">
+    <input type="text" placeholder="请输入昵称" auto-focus value="{{ userInfo.username }}" bindinput="changeUsername" />
+</view>

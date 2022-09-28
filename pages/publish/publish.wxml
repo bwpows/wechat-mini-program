@@ -1,0 +1,17 @@
+<!--pages/publish/publish.wxml-->
+<view class="mx-4">
+    <input type="text" class="white pa-4 my-4 rounded" placeholder="请输入标题（15字以内）" bindinput="inputChangeTitle" />
+    <view class="white rounded">
+        <textarea rows="6" class="px-3 py-4 mt-4" style="width: 100%;" placeholder="这一刻的想法......" bindinput="inputChangeContent"></textarea>
+        <view class="d-flex flex-wrap">
+            <view wx:for="{{ selectedImages }}" wx:key="tempFilePath" style="position: relative; width: 140rpx; height: 140rpx;" class="ma-2">
+                <image mode="aspectFill" src="{{ item.tempFilePath }}" class="rounded" style="width: 140rpx; height: 140rpx;"></image>
+                <view wx:if="{{ uploadProgress[index] != 100 }}" style="position: absolute; top: 0rpx; left: 0rpx; background-color: #00000085; width: 140rpx; height: 140rpx;" class="d-flex rounded justify-center align-center text--white">
+                    {{ uploadProgress[index] }}%
+                </view>
+            </view>
+            <image src="/images/icon/plus.svg" class="mx-4 mt-2 mb-4" style="width: 120rpx; height: 120rpx;" bindtap="chooseImage"></image>
+        </view>
+    </view>
+    <button class="mb-4 mt-8 rounded primary--text white text-center py-3 full-width" bindtap="publish">发布作品</button>
+</view>

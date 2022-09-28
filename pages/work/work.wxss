@@ -1,0 +1,24 @@
+
+  .blogDirver{
+    display: block; 
+    width: 100%; 
+    border-bottom: 2rpx solid rgb(245, 245, 245);
+    margin: 30rpx 0;
+  }
+  
+  .slide-image {
+      width: 100%;
+      height: 100%;
+    }
+  
+  .swiper-rounded{
+      border-radius: 20rpx;
+      overflow: hidden;
+  }
+  
+  .headImg {
+      width: 40rpx;
+      height: 40rpx;
+      border-radius: 10rpx;
+  }
+  

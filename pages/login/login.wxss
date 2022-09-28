@@ -1,0 +1,6 @@
+/* pages/login/login.wxss */
+
+.bwpow_input {
+    border: 1px solid #ec752e;
+    padding: 12px;
+}

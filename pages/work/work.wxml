@@ -1,0 +1,8 @@
+<view class="container py-4">
+    <view wx:for="{{ workList }}" wx:key="_id" wx:for-item="work" class="my-6 card rounded-lg overflow-hidden">
+        <Work work="{{ work }}" />
+    </view>
+    <view class="mt-4 card rounded pa-4 mb-4 font-desc">
+        没有更多数据了
+    </view>
+</view>

@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "taskCard": "/components/index/card"
+    },
+    "enablePullDownRefresh": true
+}

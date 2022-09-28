@@ -1,0 +1,16 @@
+.arrowIcon{
+    height: 40rpx; width: 40rpx;
+}
+
+.iconImg{
+    height: 60rpx; width: 60rpx; border-radius: 10px;
+}
+
+.headImg{
+    height: 100rpx; width: 100rpx; border-radius: 10px;
+}
+
+.dirver_margin {
+    margin-left: 120rpx;
+    margin-right: 40rpx;
+}
