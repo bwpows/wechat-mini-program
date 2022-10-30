@@ -1,4 +1,6 @@
 import { baseUrl } from "../../api/http";
+import { delWorkById } from "../../api/work";
+import { del } from "../../api/http"
 
 // components/work/work.js
 Component({
@@ -19,7 +21,8 @@ Component({
      * 组件的初始数据
      */
     data: {
-        baseUrl: baseUrl
+        baseUrl: baseUrl,
+        userId: wx.getStorageSync('userId')
     },
 
     /**
@@ -27,7 +30,6 @@ Component({
      */
     methods: {
         previewImage(e){
-            console.log(e.currentTarget.dataset)
             let imgUrls = e.currentTarget.dataset.url
             for (let i = 0; i < imgUrls.length; i++) {
                 imgUrls[i] = baseUrl + "/" + imgUrls[i]
@@ -36,6 +38,32 @@ Component({
                 current: imgUrls[0],
                 urls: imgUrls,
             })
+        },
+
+        async deleteWork(e){
+            let item = e.currentTarget.dataset.item
+            console.log(item)
+            let that = this
+            wx.showModal({
+                title: `确定要删除 (${item.title})?`,
+                confirmColor: "red",
+                confirmText: "删除",
+                success: async function(res){
+                    if(res.cancel){}else{
+                        wx.showLoading({
+                          title: `正在删除......`,
+                        })
+                        that.deleteWorkApi(item._id)
+                    }
+                },
+            })
+        },
+
+        async deleteWorkApi(id){
+            let res = await del(delWorkById(id))
+            if(res.code == 200){
+                wx.hideLoading()
+            }
         }
     }
 })

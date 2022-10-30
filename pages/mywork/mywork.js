@@ -24,12 +24,11 @@ Page({
 
     async getWork(){
         let res = await get(getWorkByUser(this.data.user._id))
-        console.log(res)
         if(res.code == 200){
             this.setData({
                 workList: res.data
             })
         }
-    }
+    },
 
 })

@@ -63,9 +63,7 @@ Page({
                     })
                 }
             },
-
         })
-        return;
     },
 
     goProfile(){

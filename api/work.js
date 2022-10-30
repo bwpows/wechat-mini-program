@@ -11,3 +11,7 @@ export function getLikeByUser(userid){
 
 export const publishWechatWorkUrl = '/publish/wechat/work'
 
+export function delWorkById(id){
+    return `/publish/${id}`
+}
+

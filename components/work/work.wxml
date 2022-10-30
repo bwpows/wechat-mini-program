@@ -9,7 +9,10 @@
     </swiper>
 </view>
 <view class="pa-4">
-    <view class="subtitle">{{ work.title }}</view>
+    <view class="d-flex justify-space-between">
+        <view class="subtitle">{{ work.title }}</view>
+        <view bindtap="deleteWork" data-item="{{work}}" class="subtitle error--text error-border px-3 rounded-xs" wx:if="{{userId == work.user_id}}">删除</view>
+    </view>
     <view class="font-desc my-2"> {{ work.description }} </view>
     <view class="font-desc mt-4 d-flex align-center">
         <image src="../../images/icon/love.svg" mode="aspectFit" style="height: 30rpx; width: 30rpx;" class="mr-1"></image>
