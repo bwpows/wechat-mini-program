@@ -32,7 +32,6 @@ Page({
                     views: res.data[i].views
                 }
             }
-            console.log(res.data)
             this.setData({
                 workList: res.data || []
             })

@@ -15,6 +15,7 @@ Page({
      */
     data: {
         userId: wx.getStorageSync('userId'),
+        isShow: false,
         baseUrl: baseUrl,
         userInfo: {},
         loading: true
@@ -30,9 +31,10 @@ Page({
         this.getUserInfo()
     },
 
-    onShow(){
+    async onShow(){
         this.setData({
-            userInfo: wx.getStorageSync('user')
+            userInfo: await wx.getStorageSync('user'),
+            isShow: await wx.getStorageSync('isShow')  || false,
         })
     },
 
@@ -93,6 +95,12 @@ Page({
     goMyLike(){
         wx.navigateTo({
           url: '/pages/like/like',
+        })
+    },
+
+    goHideWork(){
+        wx.navigateTo({
+          url: '/pages/hideWork/hideWork',
         })
     }
 

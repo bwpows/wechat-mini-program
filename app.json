@@ -13,7 +13,8 @@
         "pages/like/like",
         "pages/publish/publish",
         "pages/notLogin/notLogin",
-        "pages/editUsername/editUsername"
+        "pages/editUsername/editUsername",
+        "pages/hideWork/hideWork"
     ],
     "window": {
         "backgroundTextStyle": "dark",

@@ -52,6 +52,14 @@
             </view>
             <image src="../../images/icon/leftArrow.svg" class="arrowIcon"></image>
         </view>
+        <view class="driver dirver_margin" wx:if="{{isShow}}"></view>
+        <view class=" d-flex align-center pa-4 justify-space-between" bindtap="goHideWork" wx:if="{{isShow}}">
+            <view class="d-flex align-center">
+                <image src="../../images/icon/privacy.svg" class="iconImg"></image>
+                <view class="ml-4">隐私作品</view>
+            </view>
+            <image src="../../images/icon/leftArrow.svg" class="arrowIcon"></image>
+        </view>
         <!-- <view class="driver dirver_margin"></view> -->
         <!-- <view class=" d-flex align-center pa-4 justify-space-between">
             <view class="d-flex align-center">

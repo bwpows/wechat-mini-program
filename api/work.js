@@ -15,3 +15,6 @@ export function delWorkById(id){
     return `/publish/${id}`
 }
 
+export function getPrivacyWorkByUserId(userid){
+    return `/publish/privacyWork/${userid}`
+}

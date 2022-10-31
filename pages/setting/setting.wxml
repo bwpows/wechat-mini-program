@@ -3,7 +3,7 @@
     <view class="d-flex justify-space-between white rounded pa-4 align-center">
         <view>显示隐藏作品</view>
         <view>
-            <switch checked="{{switch1Checked}}" bindchange="switch1Change"/>
+            <switch checked="{{isShow}}" bindchange="switch1Change"/>
         </view>
     </view>
 </view>
