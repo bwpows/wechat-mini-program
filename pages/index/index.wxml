@@ -7,7 +7,7 @@
 
     <view class="py-2"></view>
 
-    <view wx:for="{{taskTimeType}}" wx:key="index">
+    <view wx:for="{{taskTimeType}}" wx:key="index" wx:if="{{taskList.length != 0}}">
         <taskCard taskList="{{ taskList[index] }}" title="{{item}}" bindrefresh="getTask"></taskCard>
     </view>
 

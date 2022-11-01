@@ -3,7 +3,7 @@
 <view class=" mx-4">
 
     <view wx:for="{{ workList }}" wx:key="_id" wx:for-item="work" class="my-6 card rounded-lg overflow-hidden">
-        <Work work="{{ work }}" />
+        <Work work="{{ work }}" isEdit="{{ true }}" bindrefresh="getWork" />
     </view>
 
 </view>

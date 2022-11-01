@@ -8,7 +8,8 @@ Component({
      */
     properties: {
         taskList: {
-            type: Array
+            type: Array,
+            value: []
         },
         
         title: {
@@ -85,10 +86,10 @@ Component({
             console.log(e.currentTarget.dataset.taskid)
             wx.showLoading({
                 title: '正在处理',
-              })
-              await put(cancelTaskUrl, { user_id: this.data.userId, _id: e.currentTarget.dataset.taskid })
-              wx.hideLoading()
-              this.triggerEvent('refresh')
+            })
+            await put(cancelTaskUrl, { user_id: this.data.userId, _id: e.currentTarget.dataset.taskid })
+            wx.hideLoading()
+            this.triggerEvent('refresh')
         },
 
         openDeleteTaskDialog(e){

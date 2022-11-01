@@ -14,6 +14,10 @@ Component({
     properties: {
         work: {
             type: Object
+        },
+        isEdit: {
+            type: Boolean,
+            value: false
         }
     },
 
@@ -42,7 +46,6 @@ Component({
 
         async deleteWork(e){
             let item = e.currentTarget.dataset.item
-            console.log(item)
             let that = this
             wx.showModal({
                 title: `确定要删除 (${item.title})?`,
@@ -62,6 +65,7 @@ Component({
         async deleteWorkApi(id){
             let res = await del(delWorkById(id))
             if(res.code == 200){
+                this.triggerEvent('refresh')
                 wx.hideLoading()
             }
         }

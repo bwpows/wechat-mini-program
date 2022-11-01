@@ -11,7 +11,6 @@ Page({
         taskTimeType: ['今日任务', '明日任务', '本周任务', '本月任务', '今年任务']
     },
 
-
     onShareAppMessage() {
         const promise = new Promise(resolve => {
             setTimeout(() => {
@@ -43,7 +42,7 @@ Page({
     },
 
     async getTask(){
-        let userId = wx.getStorageSync('userId')
+        let userId = await wx.getStorageSync('userId')
         if(!userId) { return };
         let res = await get(getTaskListUrl(userId))
         if(res.code == 200){

@@ -3,15 +3,15 @@
 App({
   onLaunch() {
     this.checkToken()
-    wx.login({
-        success: async res => {
-            console.log(res.code)
-            // 发送 res.code 到后台换取 openId, sessionKey, unionId 
-        },
-        fail: (error) => {
-            console.log(error)
-        }
-    })
+    // wx.login({
+    //     success: async res => {
+    //         console.log(res.code)
+    //         // 发送 res.code 到后台换取 openId, sessionKey, unionId 
+    //     },
+    //     fail: (error) => {
+    //         console.log(error)
+    //     }
+    // })
   },
 
   checkToken(){

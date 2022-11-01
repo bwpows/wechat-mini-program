@@ -1,5 +1,5 @@
 const { uploadSingleFileUrl } = require("../../api/file")
-const { baseUrl, post } = require("../../api/http")
+const { baseUrl, post, get } = require("../../api/http")
 const { reviewUrl } = require("../../api/review")
 const { publishWechatWorkUrl } = require("../../api/work")
 
