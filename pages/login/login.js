@@ -38,7 +38,6 @@ Page({
         this.endCalcVerCodeTime()
     },
 
-
     // 输入手机号事件
     bindPhoneInput(e) {
         this.setData({
@@ -131,10 +130,8 @@ Page({
 
     async getUserInfo(){
         let res = await get(getProfileUrl)
-        // wx.setStorageSync('userId', res.data.userId)
-        console.log(res)
         if(res.code == 200){
-            wx.setStorageSync('userId', res.data.userId)
+            await wx.setStorageSync('userId', res.data.userId)
         }
     },
 
