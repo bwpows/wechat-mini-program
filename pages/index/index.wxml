@@ -1,8 +1,8 @@
 <view class="container subtitle">
     
     <view class="pa-4 rounded" wx:if="{{taskList.length == 0}}">
-        <view class="gery-text">工作很忙吧，但是别把重要的事情给遗忘了哦！</view>
-        <view role="button" aria-disabled="false" class="primary--text white rounded py-3 mt-10 text-center" bindtap="goAddTask">添加任务</view>
+        <view class="gery-text mt-3">工作很忙吧，但是别把重要的事情给遗忘了</view>
+        <view role="button" aria-disabled="false" class="primary--text white rounded py-3 mt-8 text-center" bindtap="goAddTask">添加任务</view>
     </view>
 
     <view class="py-2"></view>

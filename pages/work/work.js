@@ -21,9 +21,6 @@ Page({
         wx.setNavigationBarTitle({
             title: '作品',
         })
-    },
-
-    onShow(){
         this.getWork(true)
     },
 
@@ -43,11 +40,16 @@ Page({
     },
 
   async onPullDownRefresh(){
+    this.setData({
+        current_page: 1,
+        noMoreData: false
+    })
+    this.getWork(true)
     let res = await this.getReviewStatus()
     wx.stopPullDownRefresh()
     if(res) return;
     wx.navigateTo({
-      url: '/pages/publish/publish',
+    url: '/pages/publish/publish',
     })
   },
 
@@ -61,7 +63,6 @@ Page({
 
   async getReviewStatus(){
       let res = await get(reviewUrl)
-      console.log(res)
       return res.data.status
   },
 

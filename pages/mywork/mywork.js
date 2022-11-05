@@ -9,7 +9,8 @@ Page({
      */
     data: {
         user: wx.getStorageSync('user'),
-        workList: []
+        workList: [],
+        loading: true
     },
 
     /**
@@ -23,10 +24,14 @@ Page({
     },
 
     async getWork(){
+        this.setData({
+            loading: true
+        })
         let res = await get(getWorkByUser(this.data.user._id))
         if(res.code == 200){
             this.setData({
-                workList: res.data
+                workList: res.data || [],
+                loading: false
             })
         }
     },

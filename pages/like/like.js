@@ -9,7 +9,8 @@ Page({
      */
     data: {
         user: wx.getStorageSync('user'),
-        workList: []
+        workList: [],
+        loading: true
     },
 
     /**
@@ -23,6 +24,9 @@ Page({
     },
 
     async getWork(){
+        this.setData({
+            loading: true
+        })
         let res = await get(getLikeByUser(this.data.user._id))
         if(res.code == 200){
             for (let i = 0; i < res.data.length; i++) {
@@ -33,7 +37,8 @@ Page({
                 }
             }
             this.setData({
-                workList: res.data || []
+                workList: res.data || [],
+                loading: false
             })
         }
     }
