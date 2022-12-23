@@ -1,0 +1,20 @@
+<!--pages/about/about.wxml-->
+
+<view class="text-center mt-6 py-6 white text-center mx-4 rounded-lg">
+    <image src='../../images/bottomBar/workSelected.png' mode="aspectFit" style="width: 140rpx; height: 140rpx;"></image>
+
+    <view class="title mt-4">诺三</view>
+    <view class="subtitle mt-2">Version 1.0.0</view>
+</view>
+
+<view class="mt-6 mx-4 px-4 rounded-lg white">
+    <block wx:for="{{list}}">
+        <view class="driver my-4"></view>
+        <view class="d-flex justify-space-between">
+            <view>{{ item.title }}</view>
+            <image src="../../images/icon/leftArrow.svg" class="arrowIcon"></image>
+        </view>
+    </block>
+    <view class="driver my-4"></view>
+</view>
+

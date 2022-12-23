@@ -8,6 +8,8 @@ const { getUserInfo } = require("../../api/user")
 // import http from '../../util/http'
 // import { formatPhoneNumber } from '../../util/phone.wxs'
 
+
+
 Page({
 
     /**
@@ -18,7 +20,55 @@ Page({
         isShow: false,
         baseUrl: baseUrl,
         userInfo: {},
-        loading: true
+        loading: true,
+
+        listData: [
+            [
+                {
+                    title: '手机号',
+                    desc: 'xxx',
+                    icon: '../../images/icon/phone.svg',
+                    path: '/pages/phone/phone'
+                },
+                {
+                    title: '通用设置',
+                    icon: '../../images/icon/setting.svg',
+                    path: '/pages/setting/setting'
+                }
+            ],
+            [
+                {
+                    title: '我的作品',
+                    icon: '../../images/icon/works.svg',
+                    path: '/pages/mywork/mywork'
+                },
+                {
+                    title: '我的点赞',
+                    icon: '../../images/icon/like.svg',
+                    path: '/pages/like/like'
+                },
+                {
+                    title: '隐私作品',
+                    icon: '../../images/icon/privacy.svg',
+                    path: '/pages/hideWork/hideWork',
+                    isShow: false
+                },
+                {
+                    title: '收支明细',
+                    icon: '../../images/icon/cardDetails.svg',
+                    path: '/pages/cardManage/cardManage'
+                }
+            ],
+            [
+                {
+                    title: '关于我们',
+                    icon: '../../images/icon/about.svg',
+                    path: '/pages/about/about'
+                }
+            ]
+        ]
+
+
     },
 
     /**
@@ -44,10 +94,15 @@ Page({
             loading: true
         })
         let res = await get(getUserInfo(this.data.userId))
+        let listData = this.data.listData
+        
         if(res.code == 200){
+            listData[0][0]['desc'] = res.data.phone;
+            listData[1][2]['isShow'] = await wx.getStorageSync('isShow')  || false,
             this.setData({
                 userInfo: res.data,
-                loading: false
+                loading: false,
+                listData,
             })
             wx.setStorageSync('user', res.data)
         }
@@ -69,46 +124,11 @@ Page({
         })
     },
 
-    goProfile(){
+    goRouter(e) {
+        const {path} = e.currentTarget.dataset
         wx.navigateTo({
-          url: '/pages/profile/profile',
+          url: path,
         })
     },
-
-    goPhone(){
-        wx.navigateTo({
-          url: '/pages/phone/phone',
-        })
-    },
-
-    goSetting(){
-        wx.navigateTo({
-          url: '/pages/setting/setting',
-        })
-    },
-
-    goMywork(){
-        wx.navigateTo({
-          url: '/pages/mywork/mywork',
-        })
-    },
-
-    goMyLike(){
-        wx.navigateTo({
-          url: '/pages/like/like',
-        })
-    },
-
-    goHideWork(){
-        wx.navigateTo({
-          url: '/pages/hideWork/hideWork',
-        })
-    },
-
-    goCardManage(){
-        wx.navigateTo({
-          url: '/pages/cardManage/cardManage',
-        })
-    }
 
 })

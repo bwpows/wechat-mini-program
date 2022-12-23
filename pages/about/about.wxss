@@ -1,0 +1,5 @@
+/* pages/about/about.wxss */
+
+.arrowIcon {
+    height: 40rpx; width: 40rpx;
+}

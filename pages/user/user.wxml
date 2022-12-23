@@ -2,7 +2,7 @@
 
 
 <view class="container mt-6">
-    <view class="card rounded-lg pa-4 d-flex justify-space-between align-center" role="button" bindtap="goProfile">
+    <view class="card rounded-lg pa-4 d-flex justify-space-between align-center" role="button" bindtap="goRouter" data-path="/pages/profile/profile">
         <view class="d-flex">
             <image src="{{ baseUrl+'/'+userInfo.pictrue }}" class="headImg" wx:if="{{ !loading }}" mode="aspectFill"></image>
             <view class="ml-4">
@@ -15,65 +15,24 @@
         </view>
     </view>
 
-    <view class="card rounded-lg my-6">
-        <view class=" d-flex align-center pa-4 justify-space-between" bindtap="goPhone">
-            <view class="d-flex align-center">
-                <image src="../../images/icon/phone.svg" class="iconImg"></image>
-                <view class="ml-4">手机号</view>
+    <view class="card rounded-lg my-6" wx:for="{{listData}}" wx:for-item="list" wx:key="index">
+        <block  wx:for="{{list}}" wx:key="icon">
+            <view class=" d-flex align-center pa-4 justify-space-between" bindtap="goRouter" data-path="{{ item.path }}" wx:if="{{item.isShow !== false}}">
+                <view class="d-flex align-center">
+                    <image src="{{item.icon}}" class="iconImg"></image>
+                    <view class="ml-4">{{item.title}}</view>
+                </view>
+                <view class="d-flex align-center">
+                    <text class="mr-2 font-desc" wx:if="{{item.desc}}">{{ item.desc }}</text>
+                    <image src="../../images/icon/leftArrow.svg" class="arrowIcon"></image>
+                </view>
             </view>
-            <view class="d-flex align-center">
-                <text class="mr-2 font-desc" wx:if="{{userInfo.phone}}">{{ phone.formatPhoneNumber(userInfo.phone) }}</text>
-                <image src="../../images/icon/leftArrow.svg" class="arrowIcon"></image>
-            </view>
-        </view>
-        <view class="driver dirver_margin"></view>
-        <view class=" d-flex align-center pa-4 justify-space-between" bindtap="goSetting">
-            <view class="d-flex align-center">
-                <image src="../../images/icon/setting.svg" class="iconImg"></image>
-                <view class="ml-4">通用设置</view>
-            </view>
-            <image src="../../images/icon/leftArrow.svg" class="arrowIcon"></image>
-        </view>
+            <view class="driver dirver_margin"  wx:if="{{list.length !== index+1 && item.isShow !== false}}"></view>
+        </block>
     </view>
 
-    <view class="card rounded-lg my-6">
-        <view class=" d-flex align-center pa-4 justify-space-between" bindtap="goMywork">
-            <view class="d-flex align-center">
-                <image src="../../images/icon/works.svg" class="iconImg"></image>
-                <view class="ml-4">我的作品</view>
-            </view>
-            <image src="../../images/icon/leftArrow.svg" class="arrowIcon"></image>
-        </view>
-        <view class="driver dirver_margin"></view>
-        <view class=" d-flex align-center pa-4 justify-space-between" bindtap="goMyLike">
-            <view class="d-flex align-center">
-                <image src="../../images/icon/like.svg" class="iconImg"></image>
-                <view class="ml-4">我的点赞</view>
-            </view>
-            <image src="../../images/icon/leftArrow.svg" class="arrowIcon"></image>
-        </view>
-        <view class="driver dirver_margin" wx:if="{{isShow}}"></view>
-        <view class=" d-flex align-center pa-4 justify-space-between" bindtap="goHideWork" wx:if="{{isShow}}">
-            <view class="d-flex align-center">
-                <image src="../../images/icon/privacy.svg" class="iconImg"></image>
-                <view class="ml-4">隐私作品</view>
-            </view>
-            <image src="../../images/icon/leftArrow.svg" class="arrowIcon"></image>
-        </view>
-        <view class="driver dirver_margin"></view>
-        <view class=" d-flex align-center pa-4 justify-space-between" bindtap="goCardManage">
-            <view class="d-flex align-center">
-                <image src="../../images/icon/cardDetails.svg" class="iconImg"></image>
-                <view class="ml-4">收支明细</view>
-            </view>
-            <image src="../../images/icon/leftArrow.svg" class="arrowIcon"></image>
-        </view>
-    </view>
-
-    <view class="card rounded mt-12 ">
+    <view class="card rounded-lg mt-8 ">
         <button class="weui-btn rounded-lg py-3" style="color: rgb(248, 62, 62); background: #fff; width: 100%;" bindtap="exit">退出登录</button>
     </view>
-        
-
 
 </view>
