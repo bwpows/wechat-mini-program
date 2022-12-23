@@ -14,7 +14,8 @@
         "pages/publish/publish",
         "pages/notLogin/notLogin",
         "pages/editUsername/editUsername",
-        "pages/hideWork/hideWork"
+        "pages/hideWork/hideWork",
+        "pages/cardManage/cardManage"
     ],
     "window": {
         "backgroundTextStyle": "dark",

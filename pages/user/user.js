@@ -32,6 +32,7 @@ Page({
     },
 
     async onShow(){
+        await this.getUserInfo()
         this.setData({
             userInfo: await wx.getStorageSync('user'),
             isShow: await wx.getStorageSync('isShow')  || false,
@@ -101,6 +102,12 @@ Page({
     goHideWork(){
         wx.navigateTo({
           url: '/pages/hideWork/hideWork',
+        })
+    },
+
+    goCardManage(){
+        wx.navigateTo({
+          url: '/pages/cardManage/cardManage',
         })
     }
 

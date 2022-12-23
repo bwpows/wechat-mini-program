@@ -60,14 +60,14 @@
             </view>
             <image src="../../images/icon/leftArrow.svg" class="arrowIcon"></image>
         </view>
-        <!-- <view class="driver dirver_margin"></view> -->
-        <!-- <view class=" d-flex align-center pa-4 justify-space-between">
+        <view class="driver dirver_margin"></view>
+        <view class=" d-flex align-center pa-4 justify-space-between" bindtap="goCardManage">
             <view class="d-flex align-center">
                 <image src="../../images/icon/cardDetails.svg" class="iconImg"></image>
                 <view class="ml-4">收支明细</view>
             </view>
             <image src="../../images/icon/leftArrow.svg" class="arrowIcon"></image>
-        </view> -->
+        </view>
     </view>
 
     <view class="card rounded mt-12 ">
