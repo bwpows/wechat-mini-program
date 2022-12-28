@@ -3,15 +3,15 @@
     <swiper indicator-dots="true" class="rounded-lg-top-right rounded-lg-top-left overflow-hidden" bindtap="previewImage" data-url="{{work.url}}">
         <block wx:for="{{ work.url }}" wx:key="*this">
             <swiper-item class="slide-image">
-                <image src="{{baseUrl+'/'+item}}" class="swiper-rounded rounded-lg-top-right rounded-lg-top-left overflow-hidden" show-menu-by-longpress="true" mode="aspectFill" style="width: 100%;"></image>
+                <image src="{{baseUrl+'/'+item}}" class="rounded-lg-top-right rounded-lg-top-left overflow-hidden" show-menu-by-longpress="true" mode="aspectFill" style="width: 100%;"></image>
             </swiper-item>
         </block>
     </swiper>
 </view>
 <view class="pa-4">
-    <view class="d-flex justify-space-between">
+    <view class="d-flex justify-space-between align-center">
         <view class="subtitle">{{ work.title }}</view>
-        <view bindtap="deleteWork" data-item="{{work}}" class="subtitle error--text error-border px-3 rounded-xs" wx:if="{{isEdit && userId == work.user_id}}">删除</view>
+        <view bindtap="deleteWork" data-item="{{work}}" class="font-xs error--text error-border px-2 rounded-xs" wx:if="{{isEdit && userId == work.user_id}}">删除</view>
     </view>
     <view class="font-desc my-2"> {{ work.description }} </view>
     <view class="font-desc mt-4 d-flex align-center">

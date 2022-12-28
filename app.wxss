@@ -9,7 +9,7 @@
 
 page {
     --basicPixelValue: 8rpx;
-    --primaryColor: #dd7c40;
+    --primaryColor: #f86e38;
     --successColor: #7bb927;
     --greyColor: #9E9E9E;
     --errorColor: #ff5252;

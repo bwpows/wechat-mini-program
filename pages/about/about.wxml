@@ -8,13 +8,13 @@
 </view>
 
 <view class="mt-6 mx-4 px-4 rounded-lg white">
-    <block wx:for="{{list}}">
+    <block wx:for="{{list}}" wx:key="title">
         <view class="driver my-4"></view>
         <view class="d-flex justify-space-between">
             <view>{{ item.title }}</view>
             <image src="../../images/icon/leftArrow.svg" class="arrowIcon"></image>
         </view>
     </block>
-    <view class="driver my-4"></view>
+    <view class="pt-4"></view>
 </view>
 

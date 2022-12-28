@@ -24,3 +24,7 @@
 .gery-text{
     color: #666;
 }
+
+.font-xs {
+    font-size: 20rpx;
+}

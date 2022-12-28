@@ -13,10 +13,6 @@ Page({
             {
                 title: '提交工单',
                 path: ''
-            },
-            {
-                title: '投诉',
-                path: ''
             }
         ]
     },
