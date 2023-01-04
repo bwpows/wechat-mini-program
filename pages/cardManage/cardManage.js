@@ -1,3 +1,6 @@
+import { cardListUrl } from "../../api/card"
+import { get } from "../../api/http"
+
 // pages/cardManage/cardManage.js
 Page({
 
@@ -5,23 +8,41 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        userId: '',
+        cardList: []
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad(options) {
+    async onLoad(options) {
         wx.setNavigationBarTitle({
             title: '收支明细'
         })
+        this.setData({
+            userId: await wx.getStorageSync('userId')
+        })
+        this.getCardList()
+    },
+
+    async getCardList(){
+        let res = await get(cardListUrl(this.data.userId))
+        if(res.code == 200){
+            this.setData({
+                cardList: res.data
+            })
+        }else{
+            wx.showToast({
+              title: '获取银行卡异常',
+              icon: 'error'
+            })
+        }
     },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady() {
-
     },
 
     /**

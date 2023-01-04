@@ -1,0 +1,1 @@
+export const cardListUrl = (id) => `/card/${id}`

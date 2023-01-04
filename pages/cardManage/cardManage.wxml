@@ -1,2 +1,12 @@
 <!--pages/cardManage/cardManage.wxml-->
-<view>收支明细</view>
+<view class="ma-3">
+    <view class="mb-3 subtitle">可查询卡片数：{{cardList.length}}</view>
+    <view wx:for="{{cardList}}" wx:key="_id" class="card pa-4 rounded-lg">
+        <view class="d-flex justify-space-between align-start">
+            <view>{{item.name}}</view>
+            <view class="grey--text subtitle">交易明细</view>
+        </view>
+        <view class="primary--text mt-7 subtitle">¥ <text class="font-bold" style="font-size: 48rpx;">{{item.balance}}</text></view>
+        <view class="mt-7" style="font-family: menlo,tahoma; text-shadow: 2rpx 2rpx 4rpx #666;font-size: 34rpx; letter-spacing: 6rpx;">{{item.number}}</view>
+    </view>
+</view>

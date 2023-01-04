@@ -28,3 +28,7 @@
 .font-xs {
     font-size: 20rpx;
 }
+
+.font-bold {
+    font-weight: bold;
+}
