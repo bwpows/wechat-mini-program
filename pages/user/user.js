@@ -54,7 +54,7 @@ Page({
                     isShow: false
                 },
                 {
-                    title: '收支明细',
+                    title: '卡片管理',
                     icon: '../../images/icon/cardDetails.svg',
                     path: '/pages/cardManage/cardManage'
                 }

@@ -16,7 +16,8 @@
         "pages/editUsername/editUsername",
         "pages/hideWork/hideWork",
         "pages/cardManage/cardManage",
-        "pages/about/about"
+        "pages/about/about",
+        "pages/addCard/addCard"
     ],
     "window": {
         "backgroundTextStyle": "dark",

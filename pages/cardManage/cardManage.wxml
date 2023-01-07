@@ -1,7 +1,10 @@
 <!--pages/cardManage/cardManage.wxml-->
 <view class="ma-3">
-    <view class="mb-3 subtitle">可查询卡片数：{{cardList.length}}</view>
-    <view wx:for="{{cardList}}" wx:key="_id" class="card pa-4 rounded-lg">
+    <view class="mb-3 subtitle d-flex justify-space-between mx-2">
+        <view>可查询卡片数：{{cardList.length}}</view>
+        <image src="../../images/icon/plus.svg" style="height: 38rpx; width: 38rpx;" bindtap="goAddCard"></image>
+    </view>
+    <view wx:for="{{cardList}}" wx:key="_id" class="card pa-4 rounded-lg mb-4">
         <view class="d-flex justify-space-between align-start">
             <view>{{item.name}}</view>
             <view class="grey--text subtitle">交易明细</view>

@@ -16,6 +16,13 @@ Page({
      * 生命周期函数--监听页面加载
      */
     async onLoad(options) {
+    },
+
+
+    /**
+     * 生命周期函数--监听页面显示
+     */
+    async onShow() {
         wx.setNavigationBarTitle({
             title: '收支明细'
         })
@@ -39,18 +46,18 @@ Page({
         }
     },
 
+    goAddCard(){
+        wx.navigateTo({
+          url: '/pages/addCard/addCard',
+        })
+    },
+
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady() {
     },
 
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow() {
-
-    },
 
     /**
      * 生命周期函数--监听页面隐藏
