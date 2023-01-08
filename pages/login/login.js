@@ -2,6 +2,7 @@
 
 import { post, get } from '../../api/http'
 import { getProfileUrl, postCodeLoginUrl, postSmsLoginUrl } from '../../api/user'
+import { loginWX } from '../../util/wechat'
 Page({
 
     /**
@@ -82,8 +83,8 @@ Page({
               icon: 'error'
             })
         };
-        
-        let res = await post(postCodeLoginUrl, { phone: this.data.phone, code: this.data.verificationCode })
+        let code = await loginWX()
+        let res = await post(postCodeLoginUrl, { phone: this.data.phone, code: this.data.verificationCode, wechat_code: code })
         if(res.code == 200){
             await wx.setStorageSync('token', res.data.data.token)
             await this.getUserInfo()
@@ -91,8 +92,8 @@ Page({
                 url: '/pages/index/index'
             })
         }
-
     },
+
 
     // 获取验证码
     getVcode(){
