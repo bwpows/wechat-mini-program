@@ -1,0 +1,13 @@
+<!--pages/billDetails/billDetails.wxml-->
+
+<view class="ma-3 mt-5">
+    <block wx:if="{{detailList.length > 0 }}">
+        <view wx:for="{{detailList}}" wx:key="_id" class="d-flex card pa-4 mb-4 rounded justify-space-between">
+            <view>{{item.type_name}}</view>
+            <view class="{{item.type == 1?'primary--text':'red--text'}}">
+                <text>{{ item.type == 1?'+':'-' }}</text>{{item.amount}}
+            </view>
+        </view>
+    </block>
+    <view wx:else="" class="pa-4 rounded card grey--text subtitle">暂时没有数据</view>
+</view>

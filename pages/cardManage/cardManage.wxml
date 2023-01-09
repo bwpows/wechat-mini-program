@@ -7,7 +7,7 @@
     <view wx:for="{{cardList}}" wx:key="_id" class="card pa-4 rounded-lg mb-4">
         <view class="d-flex justify-space-between align-start">
             <view>{{item.name}}</view>
-            <view class="grey--text subtitle">交易明细</view>
+            <view class="grey--text subtitle" bindtap="goBillDetails" data-id="{{item._id}}">交易明细</view>
         </view>
         <view class="primary--text mt-7 subtitle">¥ <text class="font-bold" style="font-size: 48rpx;">{{item.balance}}</text></view>
         <view class="mt-7" style="font-family: menlo,tahoma; text-shadow: 2rpx 2rpx 4rpx #666;font-size: 34rpx; letter-spacing: 6rpx;">{{item.number}}</view>

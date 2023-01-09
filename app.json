@@ -17,7 +17,8 @@
         "pages/hideWork/hideWork",
         "pages/cardManage/cardManage",
         "pages/about/about",
-        "pages/addCard/addCard"
+        "pages/addCard/addCard",
+        "pages/billDetails/billDetails"
     ],
     "window": {
         "backgroundTextStyle": "dark",
