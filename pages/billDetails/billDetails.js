@@ -1,69 +1,58 @@
-import { cardListUrl } from "../../api/card"
-import { get } from "../../api/http"
+const { consumptionByCardUrl } = require("../../api/consumption")
+const { post, get } = require("../../api/http")
 
-// pages/cardManage/cardManage.js
+// pages/billDetails/billDetails.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
+        cardId: '',
         userId: '',
-        cardList: []
+        detailList: []
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
-    async onLoad(options) {
-    },
-
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    async onShow() {
+    onLoad(options) {
         wx.setNavigationBarTitle({
-            title: '卡片管理'
+            title: '收支明细',
         })
-        this.setData({
-            userId: await wx.getStorageSync('userId')
-        })
-        this.getCardList()
-    },
-
-    async getCardList(){
-        let res = await get(cardListUrl(this.data.userId))
-        if(res.code == 200){
+        if(options.card_id){
             this.setData({
-                cardList: res.data
-            })
-        }else{
-            wx.showToast({
-              title: '获取银行卡异常',
-              icon: 'error'
+                cardId: options.card_id
             })
         }
-    },
-
-    goAddCard(){
-        wx.navigateTo({
-          url: '/pages/addCard/addCard',
-        })
-    },
-
-    goBillDetails(e){
-        wx.navigateTo({
-          url: `/pages/billDetails/billDetails?card_id=${e.currentTarget.dataset.id}`,
-        })
     },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady() {
+
     },
 
+    /**
+     * 生命周期函数--监听页面显示
+     */
+    async onShow() {
+        this.setData({
+            userId: await wx.getStorageSync('userId')
+        })
+        this.getCardDetails()
+    },
+
+    async getCardDetails(){
+        let res = await get(consumptionByCardUrl(this.data.cardId))
+        console.log(res);
+        if(res.code == 200){
+            this.setData({
+                detailList: res.data
+            })
+        }
+    },
 
     /**
      * 生命周期函数--监听页面隐藏

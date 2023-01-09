@@ -55,7 +55,7 @@ Page({
                 },
                 {
                     title: '卡片管理',
-                    icon: '../../images/icon/cardDetails.svg',
+                    icon: '../../images/icon/card.svg',
                     path: '/pages/cardManage/cardManage'
                 }
             ],

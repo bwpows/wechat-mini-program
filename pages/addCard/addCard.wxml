@@ -1,9 +1,11 @@
 <!--pages/addCard/addCard.wxml-->
 <view class="ma-3">
-    <input type="text" maxlength="8"  class="white pa-4 my-4 rounded" placeholder="请输入银行卡名称（8字以内）" bindinput="inputChangeCardName" />
+
+    <view class="grey--text mb-2  mt-5 subtitle">银行卡名称（8字以内）</view>
+    <input type="text" maxlength="8"  class="white pa-4 mb-6 rounded" placeholder="例如：工资卡" bindinput="inputChangeCardName" />
 
     <view class=" rounded-lg">
-        <view class="grey--text mb-3 subtitle">自定义银行卡尾号</view>
+        <view class="grey--text mb-3 subtitle">银行卡尾号</view>
         <view class="d-flex justify-space-between text-center">
             <input type="number" class="white pa-4 rounded title" focus="{{step === 0}}" style="width: 80rpx;" maxlength="1" bindinput="inputChangeCardNum" data-index="0" />
             <input type="number" class="white pa-4 rounded title" focus="{{step === 1}}"  style="width: 80rpx;" maxlength="1" bindinput="inputChangeCardNum" data-index="1" />
