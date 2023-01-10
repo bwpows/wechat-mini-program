@@ -3,13 +3,6 @@
 const { baseUrl, get } = require("../../api/http")
 const { getUserInfo } = require("../../api/user")
 
-// import { baseUrl } from
-
-// import http from '../../util/http'
-// import { formatPhoneNumber } from '../../util/phone.wxs'
-
-
-
 Page({
 
     /**

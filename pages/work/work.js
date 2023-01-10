@@ -49,7 +49,7 @@ Page({
     wx.stopPullDownRefresh()
     if(res) return;
     wx.navigateTo({
-    url: '/pages/publish/publish',
+        url: '/pages/publish/publish',
     })
   },
 
@@ -63,7 +63,7 @@ Page({
 
   async getReviewStatus(){
       let res = await get(reviewUrl)
-      return res.data.status
+      return res.data
   },
 
   async getWork(param){
