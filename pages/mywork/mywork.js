@@ -36,4 +36,9 @@ Page({
         }
     },
 
+    async onPullDownRefresh(){
+        await this.getWork()
+        wx.stopPullDownRefresh()
+    }
+
 })

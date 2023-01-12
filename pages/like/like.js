@@ -41,6 +41,11 @@ Page({
                 loading: false
             })
         }
+    },
+
+    async onPullDownRefresh(){
+        await this.getWork()
+        wx.stopPullDownRefresh()
     }
 
 })

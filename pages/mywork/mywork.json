@@ -1,5 +1,6 @@
 {
     "usingComponents": {
         "Work": "/components/work/work"
-    }
+    },
+    "enablePullDownRefresh": true
 }
