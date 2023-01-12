@@ -18,7 +18,8 @@
         "pages/cardManage/cardManage",
         "pages/about/about",
         "pages/addCard/addCard",
-        "pages/billDetails/billDetails"
+        "pages/billDetails/billDetails",
+        "pages/score/score"
     ],
     "window": {
         "backgroundTextStyle": "dark",

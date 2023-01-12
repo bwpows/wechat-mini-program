@@ -8,7 +8,7 @@ Page({
         list: [
             {
                 title: '去评价',
-                path: ''
+                path: '/pages/score/score'
             },
             {
                 title: '提交工单',
@@ -23,6 +23,14 @@ Page({
     onLoad(options) {
         wx.setNavigationBarTitle({
           title: '关于我们',
+        })
+    },
+
+    goRouter(e){
+        const {path} = e.currentTarget.dataset
+        if(!path) return;
+        wx.navigateTo({
+          url: path,
         })
     },
 

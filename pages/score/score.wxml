@@ -1,0 +1,31 @@
+<!--pages/score/score.wxml-->
+<view class="mx-3">
+
+    <view class="card pa-4 mt-3 rounded">
+        <view class="mb-4">轻点评分</view>
+        <view class="d-flex align-center">
+            <image src="/images/icon/{{scoreDetail.score >= item + 1?'scoreSelect':'score'}}.svg" wx:for="{{5}}" wx:key="index" class="mr-6 icon-width-36" bindtap="changeScore" data-item="{{item}}"></image>
+        </view>
+    </view>
+
+    <view class="pa-4 white mt-4 rounded">
+        <textarea value="{{scoreDetail.content}}" class="full-width" placeholder="请写出您的评价......" rows="2" confirm-type="done" bindblur="confirmContent"></textarea>
+    </view>
+
+    <!-- <view class="white mt-4 pa-3 rounded text-center primary--text" style="letter-spacing: 10rpx;" bindtap="modifyScore">提交</view> -->
+
+    <view class="card my-4 pa-4 rounded d-flex justify-space-between">
+        <view>评分及评价</view>
+        <view class="primary--text font-lg">{{avgScore}}</view>
+    </view>
+
+    <view wx:for="{{allScore}}" wx:key="_id"  class="mb-4 white pa-4 rounded">
+        <view class="d-flex justify-space-between full-width mb-2">
+            <view class="">{{item.username}}</view>
+            <view class="subtitle grey--text">{{item.created_time}}</view>
+        </view>
+        <image src="/images/icon/{{item.score >= scoreItem + 1?'scoreSelect':'score'}}.svg" wx:for="{{5}}" wx:key="index" wx:for-item="scoreItem" class="mr-2 icon-width-18"></image>
+        <view class="mt-1 subtitle grey--text">{{item.content || '用户没有评论内容'}}</view>
+    </view>
+
+</view>

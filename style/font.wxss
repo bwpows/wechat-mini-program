@@ -29,6 +29,14 @@
     font-size: 20rpx;
 }
 
+.font-md {
+    font-size: 30rpx;
+}
+
+.font-lg {
+    font-size: 40rpx;
+}
+
 .font-bold {
     font-weight: bold;
 }
