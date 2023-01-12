@@ -79,10 +79,18 @@ const del = (url, options) => {
     })
 }
 
+const pat = (url, data) => {
+    return request(url, {
+        method: 'PATCH',
+        data: data
+    })
+}
+
 module.exports = {
     get,
     post,
     put,
     del,
+    pat,
     baseUrl
 }

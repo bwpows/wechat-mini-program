@@ -1,0 +1,12 @@
+/* pages/score/score.wxss */
+
+.icon-width-36 {
+    max-width: 60rpx;
+    max-height: 60rpx;
+}
+
+
+.icon-width-18 {
+    max-width: 36rpx;
+    max-height: 36rpx;
+}
