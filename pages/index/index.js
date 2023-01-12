@@ -8,7 +8,8 @@ import { getTaskListUrl } from '../../api/task'
 Page({
     data: {
         taskList:[],
-        taskTimeType: ['今日任务', '明日任务', '本周任务', '本月任务', '今年任务']
+        taskTimeType: ['今日任务', '明日任务', '本周任务', '本月任务', '今年任务'],
+        loading: true
     },
 
     onShareAppMessage() {
@@ -26,8 +27,15 @@ Page({
         }
     },
 
-    onShow(){
-        this.getTask()
+    async onShow(){
+        console.log(234234);
+        this.setData({
+            loading: true
+        })
+        await this.getTask()
+        this.setData({
+            loading: false
+        })
     },
 
     onLoad(){

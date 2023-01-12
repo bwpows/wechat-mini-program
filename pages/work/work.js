@@ -14,14 +14,18 @@ Page({
         baseUrl: baseUrl,
         current_page: 1,
         page_count: 10,
-        noMoreData: false
+        noMoreData: false,
+        loading: true
     },
 
-    onLoad(){
+    async onLoad(){
         wx.setNavigationBarTitle({
             title: '作品',
         })
-        this.getWork(true)
+        await this.getWork(true)
+        this.setData({
+            loading: false
+        })
     },
 
     onShareAppMessage() {

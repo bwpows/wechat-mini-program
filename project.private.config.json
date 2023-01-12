@@ -29,6 +29,13 @@
                     "query": "",
                     "launchMode": "default",
                     "scene": null
+                },
+                {
+                    "name": "作品列表",
+                    "pathName": "pages/work/work",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
                 }
             ]
         }

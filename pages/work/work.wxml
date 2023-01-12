@@ -1,5 +1,7 @@
+<import src="work.skeleton.wxml"/>
+<template is="skeleton" wx:if="{{loading}}" />
 <view class="container py-4">
-    <view wx:for="{{ workList }}" wx:key="_id" wx:for-item="work" class="my-6 card rounded-lg overflow-hidden">
+    <view wx:for="{{ workList }}" data-skeleton-list wx:key="_id" wx:for-item="work"  class="my-6 card rounded-lg overflow-hidden">
         <Work work="{{ work }}" />
     </view>
     <view class="mt-4 card rounded pa-4 mb-4 font-desc">
