@@ -1,0 +1,1 @@
+export const baseOrderUrl = '/work-order'

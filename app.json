@@ -19,7 +19,8 @@
         "pages/about/about",
         "pages/addCard/addCard",
         "pages/billDetails/billDetails",
-        "pages/score/score"
+        "pages/score/score",
+        "pages/workOrder/workOrder"
     ],
     "window": {
         "backgroundTextStyle": "dark",

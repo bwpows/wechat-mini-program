@@ -12,7 +12,7 @@ Page({
             },
             {
                 title: '提交工单',
-                path: ''
+                path: '/pages/workOrder/workOrder'
             }
         ]
     },
