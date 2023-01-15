@@ -1,7 +1,7 @@
-const { uploadSingleFileUrl } = require("../../api/file")
-const { baseUrl, post, get } = require("../../api/http")
-const { publishWechatWorkUrl } = require("../../api/work")
-const { baseOrderUrl } = require("../../api/workOrder")
+const { uploadSingleFileUrl } = require("../../../api/file")
+const { baseUrl, post, get } = require("../../../api/http")
+const { publishWechatWorkUrl } = require("../../../api/work")
+const { baseOrderUrl } = require("../../../api/workOrder")
 
 // pages/publish/publish.js
 Page({

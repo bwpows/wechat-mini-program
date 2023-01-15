@@ -11,8 +11,12 @@ Page({
                 path: '/pages/score/score'
             },
             {
-                title: '提交工单',
-                path: '/pages/workOrder/workOrder'
+                title: '我的工单',
+                path: ''
+            },
+            {
+                title: '新增工单',
+                path: '/pages/workOrder/addOrder/addOrder'
             }
         ]
     },
