@@ -36,6 +36,27 @@
                     "query": "",
                     "launchMode": "default",
                     "scene": null
+                },
+                {
+                    "name": "关于我们",
+                    "pathName": "pages/about/about",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "工单提交",
+                    "pathName": "pages/workOrder/workOrder",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "我的工单",
+                    "pathName": "pages/workOrder/myOrder/myOrder",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
                 }
             ]
         }

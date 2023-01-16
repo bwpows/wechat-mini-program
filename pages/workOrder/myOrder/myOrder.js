@@ -1,41 +1,54 @@
-// pages/about/about.js
+import { get } from "../../../api/http"
+import { baseOrderUrl } from "../../../api/workOrder"
+
+// pages/workOrder/myOrder/myOrder.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        list: [
-            {
-                title: '去评价',
-                path: '/pages/score/score'
-            },
-            {
-                title: '我的工单',
-                path: '/pages/workOrder/myOrder/myOrder'
-            },
-            {
-                title: '新增工单',
-                path: '/pages/workOrder/addOrder/addOrder'
-            }
-        ]
+
     },
+
+    workOrderType: [
+        {
+            type: 1,
+            name: '待受理',
+            color: 'blue'
+        },
+        {
+            type: 2,
+            name: '受理中',
+            color: 'primary'
+        },
+        {
+            type: 3,
+            name: '已解决',
+            color: 'success'
+        },
+        {
+            type: 4,
+            name: '已关闭',
+            color: 'grey'
+        }
+    ],
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
         wx.setNavigationBarTitle({
-          title: '关于我们',
+          title: '我的工单',
         })
     },
 
-    goRouter(e){
-        const {path} = e.currentTarget.dataset
-        if(!path) return;
-        wx.navigateTo({
-          url: path,
-        })
+    /**
+     * 获取当前用户工单
+     */
+    async getAllWorkOrder(){
+        let res = await get(baseOrderUrl)
+        console.log(res);
     },
 
     /**

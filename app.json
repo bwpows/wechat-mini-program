@@ -20,7 +20,8 @@
         "pages/addCard/addCard",
         "pages/billDetails/billDetails",
         "pages/score/score",
-        "pages/workOrder/addOrder/addOrder"
+        "pages/workOrder/addOrder/addOrder",
+        "pages/workOrder/myOrder/myOrder"
     ],
     "window": {
         "backgroundTextStyle": "dark",
