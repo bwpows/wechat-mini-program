@@ -45,11 +45,6 @@ Page({
                     icon: '../../images/icon/privacy.svg',
                     path: '/pages/hideWork/hideWork',
                     isShow: false
-                },
-                {
-                    title: '卡片管理',
-                    icon: '../../images/icon/card.svg',
-                    path: '/pages/cardManage/cardManage'
                 }
             ],
             [
