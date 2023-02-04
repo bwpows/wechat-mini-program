@@ -10,14 +10,14 @@ Page({
                 title: '去评价',
                 path: '/pages/score/score'
             },
-            {
-                title: '我的工单',
-                path: ''
-            },
-            {
-                title: '新增工单',
-                path: '/pages/workOrder/addOrder/addOrder'
-            }
+            // {
+            //     title: '我的工单',
+            //     path: ''
+            // },
+            // {
+            //     title: '新增工单',
+            //     path: '/pages/workOrder/addOrder/addOrder'
+            // }
         ]
     },
 
