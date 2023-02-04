@@ -5,11 +5,11 @@ import { getTokenByCodeUrl } from "./api/wechat"
 import { loginWX } from "./util/wechat"
 
 App({
-    async onLaunch() {
+    async onLaunch(sence) {
+        if(sence.path !== 'pages/autoLogin/autoLogin') this.globalData.preRouteUrl = sence.path
         await this.getTokenByCode()
         this.checkToken()
     },
-
 
     async getTokenByCode(){
         try{
@@ -33,16 +33,18 @@ App({
         try {
             var value = wx.getStorageSync('token')
             if (!value) {
+                this.globalData.isLogin = false
                 wx.reLaunch({
                     url: '/pages/login/login'
                 })
             }else{
+                this.globalData.isLogin = true
                 wx.reLaunch({
-                  url: '/pages/index/index',
+                  url:  this.globalData.preRouteUrl || '/pages/index/index',
                 })
+                this.globalData.preRouteUrl = ''
             }
         } catch (e) {
-            console.log('获取不到token')
         }
     },
 
@@ -55,6 +57,8 @@ App({
     },
 
     globalData: {
-        userInfo: null
+        userInfo: null,
+        preRouteUrl: '',
+        isLogin: null
     }
 })

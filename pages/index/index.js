@@ -2,9 +2,6 @@
 import { get } from '../../api/http'
 import { getTaskListUrl } from '../../api/task'
 
-//获取应用实例
-// const app = getApp()
-
 Page({
     data: {
         taskList:[],
@@ -12,23 +9,22 @@ Page({
         loading: true
     },
 
-    onShareAppMessage() {
-        const promise = new Promise(resolve => {
-            setTimeout(() => {
-                resolve({
-                    title: '精致的TODO LIST'
-                })
-            }, 2000)
-        })
-        return {
-            title: '精致的TODO LIST',
-            path: '/pages/index/index',
-            promise
-        }
-    },
+    // onShareAppMessage() {
+    //     const promise = new Promise(resolve => {
+    //         setTimeout(() => {
+    //             resolve({
+    //                 title: '精致的TODO LIST'
+    //             })
+    //         }, 2000)
+    //     })
+    //     return {
+    //         title: '精致的TODO LIST',
+    //         path: '/pages/index/index',
+    //         promise
+    //     }
+    // },
 
     async onShow(){
-        console.log(234234);
         this.setData({
             loading: true
         })
