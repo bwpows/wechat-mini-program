@@ -9,9 +9,9 @@ Page({
      * 页面的初始数据
      */
     data: {
-        user: wx.getStorageSync('user'),
+        user: {},
         baseUrl: baseUrl,
-        userId: wx.getStorageSync('userId')
+        userId: null
     },
 
     /**
@@ -24,10 +24,11 @@ Page({
     },
 
     async onShow(){
-        await this.getUserInfo()
         this.setData({
-            user: wx.getStorageSync('user')
+            user: await wx.getStorageSync('user'),
+            userId: await wx.getStorageSync('userId')
         })
+        await this.getUserInfo()
     },
 
     openImageDialog(){

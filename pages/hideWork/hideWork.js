@@ -8,7 +8,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        user: wx.getStorageSync('user'),
+        userId: null,
         workList: []
     },
 
@@ -20,7 +20,7 @@ Page({
           title: '私密作品'
         })
         this.setData({
-            user: await wx.getStorageSync('user')
+            userId: await wx.getStorageSync('userId')
         })
         this.getWork()
     },
@@ -29,7 +29,7 @@ Page({
         wx.showLoading({
             title: '数据加载中',
         })
-        let res = await get(getPrivacyWorkByUserId(this.data.user._id))
+        let res = await get(getPrivacyWorkByUserId(this.data.userId))
         wx.hideLoading()
         if(res.code == 200){
             this.setData({

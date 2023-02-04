@@ -54,7 +54,6 @@ Page({
     async getUserScore(){
         let res = await get(getScoreByUserUrl)
         if(res.code === 200){
-            console.log(res.data);
             this.setData({
                 scoreDetail: res.data,
                 isScore: !!res.data

@@ -8,7 +8,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        user: wx.getStorageSync('user'),
+        userId: null,
         workList: [],
         loading: true
     },
@@ -16,7 +16,10 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad() {
+    async onLoad() {
+        this.setData({
+            userId: await wx.getStorageSync('userId'),
+        })
         this.getWork()
         wx.setNavigationBarTitle({
           title: '我的作品',
@@ -27,7 +30,7 @@ Page({
         wx.showLoading({
           title: '数据加载中',
         })
-        let res = await get(getWorkByUser(this.data.user._id))
+        let res = await get(getWorkByUser(this.data.userId))
         wx.hideLoading()
         if(res.code == 200){
             this.setData({

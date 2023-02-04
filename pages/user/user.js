@@ -9,7 +9,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        userId: wx.getStorageSync('userId'),
+        userId: '',
         isShow: false,
         baseUrl: baseUrl,
         userInfo: {},
@@ -66,15 +66,16 @@ Page({
         wx.setNavigationBarTitle({
           title: '个人中心',
         })
-        this.getUserInfo()
+        // this.getUserInfo()
     },
 
     async onShow(){
-        await this.getUserInfo()
         this.setData({
-            userInfo: await wx.getStorageSync('user'),
+            // userInfo: await wx.getStorageSync('user'),
             isShow: await wx.getStorageSync('isShow')  || false,
+            userId: await wx.getStorageSync('userId'),
         })
+        await this.getUserInfo()
     },
 
     async getUserInfo(){

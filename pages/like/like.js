@@ -8,18 +8,21 @@ Page({
      * 页面的初始数据
      */
     data: {
-        user: wx.getStorageSync('user'),
+        userId: null,
         workList: []
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad(options) {
-        this.getWork()
+    async onLoad() {
         wx.setNavigationBarTitle({
           title: '我的点赞',
         })
+        this.setData({
+            userId: await wx.getStorageSync('userId'),
+        })
+        this.getWork()
     },
 
     async getWork(){
@@ -27,7 +30,7 @@ Page({
         wx.showLoading({
           title: '数据加载中',
         })
-        let res = await get(getLikeByUser(this.data.user._id))
+        let res = await get(getLikeByUser(this.data.userId))
         wx.hideLoading()
         if(res.code == 200){
             for (let i = 0; i < res.data.length; i++) {
