@@ -1,0 +1,4 @@
+/* pages/autoLogin/autoLogin.wxss */
+page{
+    background-color: #fff;
+}

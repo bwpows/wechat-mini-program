@@ -1,5 +1,4 @@
 //app.js
-
 import { get } from "./api/http"
 import { getProfileUrl } from "./api/user"
 import { getTokenByCodeUrl } from "./api/wechat"
@@ -21,7 +20,6 @@ App({
                 await this.getUserInfo()
             }
         } catch (err) {
-            console.log(err);
             wx.showToast({
               title: '获取code失败',
               icon: 'error'
@@ -36,7 +34,11 @@ App({
             var value = wx.getStorageSync('token')
             if (!value) {
                 wx.reLaunch({
-                    url: 'pages/login/login'
+                    url: '/pages/login/login'
+                })
+            }else{
+                wx.reLaunch({
+                  url: '/pages/index/index',
                 })
             }
         } catch (e) {

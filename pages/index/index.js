@@ -38,7 +38,7 @@ Page({
         })
     },
 
-    onLoad(){
+    async onLoad(){
         wx.setNavigationBarTitle({
           title: '首页',
         })

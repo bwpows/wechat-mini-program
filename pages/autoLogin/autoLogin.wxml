@@ -1,0 +1,5 @@
+<!--pages/autoLogin/autoLogin.wxml-->
+<view class="d-flex justify-center mt-12">
+    <image src="/images/bottomBar/workSelected.png" style="width: 220rpx; height: 220rpx" mode=""/>
+</view>
+<view class="text-center mt-10 title font-bold">自动登录授权中</view>
