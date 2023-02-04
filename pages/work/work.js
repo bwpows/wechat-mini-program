@@ -22,6 +22,11 @@ Page({
         wx.setNavigationBarTitle({
             title: '作品',
         })
+        if(!app.globalData.isLogin){
+            return wx.reLaunch({
+              url: '/pages/login/login',
+            })
+        }
         await this.getWork(true)
         this.setData({
             loading: false
@@ -34,7 +39,7 @@ Page({
                 resolve({
                     title: '查看圈内事情'
                 })
-            }, 2000)
+            }, 500)
         })
         return {
             title: '查看圈内事情',
