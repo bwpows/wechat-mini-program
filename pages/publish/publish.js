@@ -97,7 +97,7 @@ Page({
             is_public: true
         }
         wx.showLoading({
-            title: '文章发表中...',
+            title: '正在发表',
             mask: true
         })
         let res = await post(publishWechatWorkUrl, obj)

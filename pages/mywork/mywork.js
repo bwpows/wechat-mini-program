@@ -24,10 +24,11 @@ Page({
     },
 
     async getWork(){
-        this.setData({
-            loading: true
+        wx.showLoading({
+          title: '数据加载中',
         })
         let res = await get(getWorkByUser(this.data.user._id))
+        wx.hideLoading()
         if(res.code == 200){
             this.setData({
                 workList: res.data || [],

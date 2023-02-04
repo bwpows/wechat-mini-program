@@ -49,8 +49,11 @@ Page({
             end_date: this.dealWithDate(this.data.selectDate),
             user_id: wx.getStorageSync('userId')
         }
-
+        wx.showLoading({
+          title: '正在添加',
+        })
         let res = await post(postTaskUrl, obj)
+        wx.hideLoading()
         if(res.code == 200){
             wx.showToast({
                 title: '添加成功',

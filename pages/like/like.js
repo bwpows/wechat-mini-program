@@ -9,8 +9,7 @@ Page({
      */
     data: {
         user: wx.getStorageSync('user'),
-        workList: [],
-        loading: true
+        workList: []
     },
 
     /**
@@ -24,10 +23,12 @@ Page({
     },
 
     async getWork(){
-        this.setData({
-            loading: true
+        
+        wx.showLoading({
+          title: '数据加载中',
         })
         let res = await get(getLikeByUser(this.data.user._id))
+        wx.hideLoading()
         if(res.code == 200){
             for (let i = 0; i < res.data.length; i++) {
                 res.data[i] = {

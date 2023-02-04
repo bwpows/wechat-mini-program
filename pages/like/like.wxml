@@ -2,11 +2,7 @@
 
 <view class=" mx-4">
 
-    <view wx:if="{{loading}}" class="grey--text white rounded-lg mt-4 pa-4">
-        正在加载....
-    </view>
-
-    <view wx:elif="{{!loading && workList.length == 0}}" class="grey--text white rounded-lg mt-4 pa-4">暂时没有任何作品</view>
+    <view wx:if="{{ workList.length == 0 }}" class="grey--text white rounded-lg mt-4 pa-4">暂时没有任何作品</view>
 
     <view wx:for="{{ workList }}" wx:key="_id" wx:for-item="work" class="my-6 card overflow-hidden rounded-lg">
         <Work work="{{ work }}" />
