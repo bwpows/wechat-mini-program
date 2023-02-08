@@ -1,10 +1,12 @@
 <wxs module="phone" src="../../util/phone.wxs"></wxs>
 
+<page-meta page-style="{{!isLogin? 'overflow: hidden': ''}}" ></page-meta>
+<LoginDialog wx:if="{{!isLogin}}" />
 
-<view class="container mt-6">
+<view class="container mt-6 {{ !isLogin?'filter-8':'' }}">
     <view class="card rounded-lg pa-4 d-flex justify-space-between align-center" role="button" bindtap="goRouter" data-path="/pages/profile/profile">
         <view class="d-flex">
-            <image src="{{ baseUrl+'/'+userInfo.pictrue }}" class="headImg" mode="aspectFill"></image>
+            <image wx:if="{{userInfo.pictrue}}" src="{{ baseUrl+'/'+userInfo.pictrue }}" class="headImg" mode="aspectFill"></image>
             <view class="ml-4">
                 <view>Hello, {{userInfo.username}}</view>
                 <view class="font-desc mt-3">昵称、头像与隐私</view>

@@ -1,12 +1,13 @@
 //index.js
 import { get } from '../../api/http'
 import { getTaskListUrl } from '../../api/task'
-
+const app = getApp()
 Page({
     data: {
         taskList:[],
         taskTimeType: ['今日任务', '明日任务', '本周任务', '本月任务', '今年任务'],
-        loading: true
+        loading: true,
+        isLogin: null
     },
 
     // onShareAppMessage() {
@@ -26,9 +27,10 @@ Page({
 
     async onShow(){
         this.setData({
-            loading: true
+            loading: true,
+            isLogin: app.globalData.isLogin
         })
-        await this.getTask()
+        if(this.data.isLogin) await this.getTask()
         this.setData({
             loading: false
         })
@@ -42,6 +44,7 @@ Page({
 
     async onPullDownRefresh(){
         wx.stopPullDownRefresh()
+        if(!this.data.isLogin) return;
         this.goAddTask()
     },
 

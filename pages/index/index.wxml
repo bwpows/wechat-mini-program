@@ -1,8 +1,12 @@
+<page-meta page-style="{{!isLogin? 'overflow: hidden': ''}}" ></page-meta>
 
 <import src="index.skeleton.wxml"/>
+
+<LoginDialog wx:if="{{!isLogin}}" />
+
 <template is="skeleton" wx:if="{{loading}}" />
 
-<view class="container subtitle" wx:else>
+<view class="container subtitle {{ !isLogin?'filter-8':'' }}" wx:else >
     
     <view class="pa-4 rounded" wx:if="{{taskList.length == 0}}">
         <view class="gery-text mt-3">工作很忙吧，但是别把重要的事情给遗忘了</view>

@@ -1,0 +1,8 @@
+<!--components/loginDialog/loginDialog.wxml-->
+<view class="layout d-flex justify-center align-center">
+    <button bindtap="goLogin" class="primary white--text py-2" style="letter-spacing: 4rpx; width: 460rpx; border-radius: 50rpx;">登录解锁更多内容</button>
+</view>
+
+<view class="mask">
+    
+</view>

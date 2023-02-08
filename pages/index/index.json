@@ -1,6 +1,7 @@
 {
     "usingComponents": {
-        "taskCard": "/components/index/card"
+        "taskCard": "/components/index/card",
+        "LoginDialog": "/components/loginDialog/loginDialog"
     },
     "enablePullDownRefresh": true
 }

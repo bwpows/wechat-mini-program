@@ -87,3 +87,7 @@
 .full-width {
     width: 100% !important;
 }
+
+.filter-8{
+    filter: blur(4px);
+}

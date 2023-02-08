@@ -5,10 +5,13 @@ import { getTokenByCodeUrl } from "./api/wechat"
 import { loginWX } from "./util/wechat"
 
 App({
-    async onLaunch(sence) {
+    async onLaunch() {
+    },
+
+    async onShow(sence){
         if(sence.path !== 'pages/autoLogin/autoLogin') this.globalData.preRouteUrl = sence.path
         await this.getTokenByCode()
-        this.checkToken()
+        await this.checkToken()
     },
 
     async getTokenByCode(){
@@ -34,13 +37,13 @@ App({
             var value = wx.getStorageSync('token')
             if (!value) {
                 this.globalData.isLogin = false
-                wx.reLaunch({
-                    url: '/pages/login/login'
-                })
+                // wx.reLaunch({
+                //     url: '/pages/login/login'
+                // })
             }else{
                 this.globalData.isLogin = true
                 wx.reLaunch({
-                  url:  this.globalData.preRouteUrl || '/pages/index/index',
+                  url:  this.globalData.preRouteUrl || '/pages/work/work',
                 })
                 this.globalData.preRouteUrl = ''
             }

@@ -1,10 +1,9 @@
 {
     "pages": [
-        "pages/autoLogin/autoLogin",
+        "pages/work/work",
         "pages/index/index",
         "pages/user/user",
         "pages/info/info",
-        "pages/work/work",
         "pages/login/login",
         "pages/addTask/addTask",
         "pages/profile/profile",
@@ -21,7 +20,9 @@
         "pages/addCard/addCard",
         "pages/billDetails/billDetails",
         "pages/score/score",
-        "pages/workOrder/addOrder/addOrder"
+        "pages/workOrder/addOrder/addOrder",
+        "components/loginDialog/loginDialog",
+        "pages/autoLogin/autoLogin"
     ],
     "window": {
         "backgroundTextStyle": "dark",

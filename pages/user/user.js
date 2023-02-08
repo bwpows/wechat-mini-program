@@ -3,6 +3,7 @@
 const { baseUrl, get } = require("../../api/http")
 const { getUserInfo } = require("../../api/user")
 
+const app = getApp()
 Page({
 
     /**
@@ -14,7 +15,6 @@ Page({
         baseUrl: baseUrl,
         userInfo: {},
         loading: true,
-
         listData: [
             [
                 {
@@ -54,9 +54,8 @@ Page({
                     path: '/pages/about/about'
                 }
             ]
-        ]
-
-
+        ],
+        isLogin: null
     },
 
     /**
@@ -66,16 +65,15 @@ Page({
         wx.setNavigationBarTitle({
           title: '个人中心',
         })
-        // this.getUserInfo()
     },
 
     async onShow(){
         this.setData({
-            // userInfo: await wx.getStorageSync('user'),
             isShow: await wx.getStorageSync('isShow')  || false,
             userId: await wx.getStorageSync('userId'),
+            isLogin: app.globalData.isLogin
         })
-        await this.getUserInfo()
+        if(app.globalData.isLogin) await this.getUserInfo()
     },
 
     async getUserInfo(){
