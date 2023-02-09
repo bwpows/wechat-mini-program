@@ -1,7 +1,7 @@
 /* pages/myProfile/myProfile.wxss */
 
 .headImg{
-    height: 100rpx; width: 100rpx; border-radius: 10px;
+    height: 80rpx; width: 80rpx; border-radius: 10px;
 }
 
 .arrowIcon{

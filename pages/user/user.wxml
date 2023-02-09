@@ -5,10 +5,10 @@
 
 <view class="container mt-6 {{ !isLogin?'filter-8':'' }}">
     <view class="card rounded-lg pa-4 d-flex justify-space-between align-center" role="button" bindtap="goRouter" data-path="/pages/profile/profile">
-        <view class="d-flex">
-            <image wx:if="{{userInfo.pictrue}}" src="{{ baseUrl+'/'+userInfo.pictrue }}" class="headImg" mode="aspectFill"></image>
+        <view class="d-flex align-center">
+            <image src="{{ userInfo.pictrue?(baseUrl+'/'+userInfo.pictrue):'/images/bottomBar/workSelected.png' }}" class="headImg" mode="aspectFill"></image>
             <view class="ml-4">
-                <view>Hello, {{userInfo.username}}</view>
+                <view>Hi, {{userInfo.username || '微信用户'}}</view>
                 <view class="font-desc mt-3">昵称、头像与隐私</view>
             </view>
         </view>

@@ -2,9 +2,9 @@
 <view class="mx-4 mt-4 pb-2 white rounded-lg">
     <view class="d-flex justify-space-between rounded pa-4 align-center" bindtap="openImageDialog">
         <view>我的头像</view>
-        <view wx:if="{{ user.pictrue }}"  class="d-flex align-center">
-            <image src="{{ baseUrl+'/'+user.pictrue }}" class="headImg" mode="aspectFill"></image>
-            <image src="../../images/icon/leftArrow.svg" class="arrowIcon ml-1"></image>
+        <view  class="d-flex align-center">
+            <image src="{{ user.pictrue?(baseUrl+'/'+user.pictrue):'/images/icon/plus.svg' }}" class="headImg" mode="aspectFill"></image>
+            <!-- <image src="../../images/icon/leftArrow.svg" class="arrowIcon ml-1"></image> -->
         </view>
     </view>
     <view class="driver mx-4"></view>
