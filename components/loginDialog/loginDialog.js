@@ -38,10 +38,7 @@ Component({
                       url: '/pages/login/login',
                     })
                 }
-
             }catch(err){
-                console.log(err);
-
                 wx.reLaunch({
                     url: '/pages/login/login',
                   })

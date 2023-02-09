@@ -3,6 +3,7 @@
 import { post, get } from '../../api/http'
 import { getProfileUrl, postCodeLoginUrl, postSmsLoginUrl } from '../../api/user'
 import { loginWX } from '../../util/wechat'
+let app = getApp()
 Page({
 
     /**
@@ -88,6 +89,7 @@ Page({
         if(res.code == 200){
             await wx.setStorageSync('token', res.data.data.token)
             await this.getUserInfo()
+            app.globalData.isLogin = true
             wx.switchTab({
                 url: '/pages/index/index'
             })
@@ -184,8 +186,8 @@ Page({
     },
 
     goNotSignIn(){
-        wx.navigateTo({
-          url: '/pages/notLogin/notLogin',
+        wx.reLaunch({
+          url: '/pages/work/work',
         })
     }
     
