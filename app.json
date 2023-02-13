@@ -22,7 +22,8 @@
         "pages/score/score",
         "pages/workOrder/addOrder/addOrder",
         "components/loginDialog/loginDialog",
-        "pages/autoLogin/autoLogin"
+        "pages/autoLogin/autoLogin",
+        "pages/workOrder/myOrder/myOrder"
     ],
     "window": {
         "backgroundTextStyle": "dark",
