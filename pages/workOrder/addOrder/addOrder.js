@@ -13,7 +13,8 @@ Page({
         selectedImages: [],
         title: '',
         url: [],
-        uploadProgress: []
+        uploadProgress: [],
+        token: wx.getStorageSync('token'),
     },
 
     /**
@@ -21,7 +22,8 @@ Page({
      */
     onLoad(options) {
         wx.setNavigationBarTitle({
-          title: '发布工单',
+            title: '发布工单',
+            token: wx.getStorageSync('token'),
         })
     },
 
@@ -59,7 +61,7 @@ Page({
 
         let obj = {
             content: this.data.title,
-            url: this.data.url
+            images: this.data.url
         }
         wx.showLoading({
             title: '正在处理中...',
@@ -99,8 +101,9 @@ Page({
                   res.data = JSON.parse(res.data)
                   url.push(res.data.data)
                   that.setData({
-                      url: url
+                      url,
                   })
+                  console.log(that.data.url);
               }
             })
             upload_task.onProgressUpdate((res) => {

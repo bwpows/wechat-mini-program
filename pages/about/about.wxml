@@ -9,12 +9,11 @@
 
 <view class="mt-6 mx-4 px-4 rounded-lg white">
     <view wx:for="{{list}}" wx:key="title" bindtap="goRouter" data-path="{{item.path}}">
-        <view class="driver my-4"></view>
-        <view class="d-flex justify-space-between">
+        <view class="driver" wx:if="{{index !== 0}}"></view>
+        <view class="d-flex justify-space-between py-4">
             <view>{{ item.title }}</view>
             <image src="../../images/icon/leftArrow.svg" class="arrowIcon"></image>
         </view>
     </view>
-    <view class="pt-4"></view>
 </view>
-
+<view class="pt-4"></view>

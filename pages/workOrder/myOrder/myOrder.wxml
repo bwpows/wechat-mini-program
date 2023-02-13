@@ -1,0 +1,28 @@
+<!--pages/workOrder/myOrder/myOrder.wxml-->
+<wxs src="/util/formatTime.wxs" module="formatTime"></wxs>
+<view class="primary title text-center white--text" style="position: fixed; top: 40%; right: 10rpx; height: 100rpx; width: 100rpx; font-size: 100rpx; line-height: 84rpx; border-radius: 50%; box-shadow: 0 0 12px 5px #ccc;" bindtap="goAddWorkOrder">
+    +
+</view>
+
+<view class="ma-4">
+    <view wx:for="{{workOrder}}" wx:key="_id" class="white pa-4 rounded mb-4">
+        <view class="title">
+            {{item.content}}
+        </view>
+        <view class="mt-4">
+            <image bindtap="previewImage" data-url="{{image}}" wx:for-item="image" data-urls="{{item.images}}" style="width: 180rpx; height: 180rpx;" class="rounded mr-4" wx:for="{{item.images}}" src="{{baseUrl + '/' + image}}" mode="aspectFill" />
+        </view>
+        <view class="d-flex justify-space-between mt-4">
+            <view class=" subtitle grey--text">
+                {{formatTime.formatTime(item.created_time, 'YYYY-MM-dd HH:mm:ss')}}
+            </view>
+            <view wx:if="{{item.is_deleted}}" class="error--text subtitle">
+                已删除
+            </view>
+            <view wx:else class="{{statusType[item.status || 10].class}} subtitle">
+                {{statusType[item.status || 10].text}} {{statusType[item.status].color}}
+            </view>
+        </view>
+    </view>
+</view>
+
