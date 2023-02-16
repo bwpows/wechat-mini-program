@@ -68,6 +68,9 @@ Page({
     },
 
     async onShow(){
+        this.getTabBar().setData({
+            selected: 2
+        })
         this.setData({
             isShow: await wx.getStorageSync('isShow')  || false,
             userId: await wx.getStorageSync('userId'),

@@ -26,6 +26,10 @@ Page({
     // },
 
     async onShow(){
+        
+        this.getTabBar().setData({
+            selected: 0
+        })
         this.setData({
             loading: true,
             isLogin: app.globalData.isLogin

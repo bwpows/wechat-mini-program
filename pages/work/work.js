@@ -22,11 +22,9 @@ Page({
         wx.setNavigationBarTitle({
             title: '作品',
         })
-        // if(!app.globalData.isLogin){
-        //     return wx.reLaunch({
-        //       url: '/pages/login/login',
-        //     })
-        // }
+        this.getTabBar().setData({
+            selected: 1
+        })
         await this.getWork(true)
         this.setData({
             loading: false
