@@ -1,2 +1,4 @@
 <!--pages/task/cancel/cancel.wxml-->
-<text>pages/task/cancel/cancel.wxml</text>
+<view class="container subtitle">
+    <taskCard taskList="{{ taskList }}" title="{{item}}" bindrefresh="getTask"></taskCard>
+</view>

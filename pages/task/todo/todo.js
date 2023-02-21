@@ -1,33 +1,36 @@
 // pages/task/todo/todo.js
+
+import { get } from '../../../api/http'
+import { todoTaskUrl } from '../../../api/task'
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        taskListL: []
     },
-
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad(options) {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady() {
-
+    onLoad(){
+        wx.setNavigationBarTitle({
+          title: '待办任务',
+        })
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
     onShow() {
-
+        this.getTask()
     },
+
+   async getTask(){
+       let res = await get(todoTaskUrl)
+       if(res.code == 200){
+        this.setData({
+            taskList: res.data
+        })
+    }
+   },
 
     /**
      * 生命周期函数--监听页面隐藏

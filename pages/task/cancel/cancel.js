@@ -1,3 +1,6 @@
+const { cancelTaskUrl } = require("../../../api/task")
+import { get } from "../../../api/http"
+
 // pages/task/cancel/cancel.js
 Page({
 
@@ -5,62 +8,29 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        taskList: []
     },
 
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad(options) {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady() {
-
+    onLoad(){
+        wx.setNavigationBarTitle({
+          title: '已取消任务',
+        })
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
     onShow() {
-
+        this.getTask()
     },
 
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide() {
+   async getTask(){
+       let res = await get(cancelTaskUrl)
+       if(res.code == 200){
+            this.setData({
+                taskList: res.data
+            })
+        }
+   },
 
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload() {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh() {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom() {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage() {
-
-    }
 })

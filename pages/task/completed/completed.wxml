@@ -1,2 +1,4 @@
 <!--pages/task/completed/completed.wxml-->
-<text>pages/task/completed/completed.wxml</text>
+<view class="container subtitle">
+    <taskCard taskList="{{ taskList }}" title="{{item}}" bindrefresh="getTask"></taskCard>
+</view>

@@ -11,3 +11,7 @@ export const cancelTaskUrl = '/task/cancel'
 export const deleteTaskUrl = '/task'
 
 export const recoveryTaskUrl = '/task/recovery'
+
+export const todoTaskUrl = '/task/todo'
+
+export const completedTaskUrl = '/task/complete'
