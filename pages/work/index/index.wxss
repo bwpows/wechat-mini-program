@@ -1,5 +1,5 @@
 
-@import "./work.skeleton.wxss";
+@import "./index.skeleton.wxss";
   .blogDirver{
     display: block; 
     width: 100%; 

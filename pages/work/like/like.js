@@ -1,5 +1,5 @@
-import { get } from "../../api/http"
-import { getLikeByUser } from "../../api/work"
+import { get } from "../../../api/http"
+import { getLikeByUser } from "../../../api/work"
 
 // pages/like/like.js
 Page({

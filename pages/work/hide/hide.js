@@ -1,5 +1,5 @@
-import { get } from "../../api/http"
-import { getPrivacyWorkByUserId } from "../../api/work"
+import { get } from "../../../api/http"
+import { getPrivacyWorkByUserId } from "../../../api/work"
 
 // pages/like/like.js
 Page({

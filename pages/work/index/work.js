@@ -1,8 +1,8 @@
 //index.js
 
-import { post, baseUrl, get } from '../../api/http'
-import { reviewUrl } from '../../api/review'
-import { postWorkListUrl } from '../../api/work'
+import { post, baseUrl, get } from '../../../api/http'
+import { reviewUrl } from '../../../api/review'
+import { postWorkListUrl } from '../../../api/work'
 
 //获取应用实例
 const app = getApp()

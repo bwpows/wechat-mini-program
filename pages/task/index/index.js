@@ -1,6 +1,6 @@
 //index.js
-import { get } from '../../api/http'
-import { getTaskListUrl } from '../../api/task'
+import { get } from '../../../api/http'
+import { getTaskListUrl } from '../../../api/task'
 const app = getApp()
 Page({
     data: {
@@ -70,7 +70,7 @@ Page({
 
     goAddTask(){
         wx.navigateTo({
-          url: '/pages/addTask/addTask',
+          url: '/pages/task/add/add',
         })
     }
 

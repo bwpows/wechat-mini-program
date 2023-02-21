@@ -1,4 +1,4 @@
-<import src="work.skeleton.wxml"/>
+<import src="index.skeleton.wxml"/>
 <template is="skeleton" wx:if="{{loading}}" />
 <view class="container py-4">
     <view wx:for="{{ workList }}" data-skeleton-list wx:key="_id" wx:for-item="work"  class="my-6 card rounded-lg overflow-hidden">

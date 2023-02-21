@@ -1,3 +1,4 @@
+var app = getApp()
 Component({
   data: {
     selected: 0,
@@ -7,12 +8,12 @@ Component({
         {
             "selectedIconPath": "/images/bottomBar/homeSelected.png",
             "iconPath": "/images/bottomBar/home.png",
-            "pagePath": "/pages/index/index"
+            "pagePath": "/pages/task/index/index"
         },
         {
             "selectedIconPath": "/images/bottomBar/workSelected.png",
             "iconPath": "/images/bottomBar/work.png",
-            "pagePath": "/pages/work/work"
+            "pagePath": "/pages/work/index/index"
         },
         {
             "selectedIconPath": "/images/bottomBar/userSelected.png",
@@ -22,6 +23,10 @@ Component({
     ]
   },
   attached() {
+    this.setData({
+        isBangs: app.globalData.isBangs
+    })
+    console.log(this.data.isBangs);
   },
   methods: {
     switchTab(e) {

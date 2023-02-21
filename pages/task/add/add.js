@@ -1,6 +1,6 @@
-const { formatTime } = require("../../util/formatTime")
-import { post } from '../../api/http'
-import { postTaskUrl } from '../../api/task'
+const { formatTime } = require("../../../util/formatTime")
+import { post } from '../../../api/http'
+import { postTaskUrl } from '../../../api/task'
 // pages/addTask/addTask.js
 Page({
 

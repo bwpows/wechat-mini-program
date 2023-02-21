@@ -6,6 +6,7 @@ import { loginWX } from "./util/wechat"
 
 App({
     async onLaunch() {
+        this.getSystemInfo()
     },
 
     async onShow(sence){
@@ -37,9 +38,6 @@ App({
             var value = wx.getStorageSync('token')
             if (!value) {
                 this.globalData.isLogin = false
-                // wx.reLaunch({
-                //     url: '/pages/login/login'
-                // })
             }else{
                 this.globalData.isLogin = true
                 wx.reLaunch({
@@ -59,9 +57,19 @@ App({
         }
     },
 
+    async getSystemInfo(){
+        let that = this
+        wx.getSystemInfo({
+            success(res){
+                that.globalData.isBangs = res.safeArea.top > 20
+            }
+        })
+    },
+
     globalData: {
         userInfo: null,
         preRouteUrl: '',
-        isLogin: null
+        isLogin: null,
+        isBangs: true
     }
 })

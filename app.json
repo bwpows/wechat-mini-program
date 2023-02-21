@@ -1,20 +1,20 @@
 {
     "pages": [
-        "pages/work/work",
-        "pages/index/index",
+        "pages/work/index/index",
+        "pages/work/add/add",
+        "pages/work/my/my",
+        "pages/work/hide/hide",
+        "pages/work/like/like",
         "pages/user/user",
         "pages/info/info",
         "pages/login/login",
-        "pages/addTask/addTask",
+        "pages/task/add/add",
+        "pages/task/index/index",
         "pages/profile/profile",
         "pages/phone/phone",
         "pages/setting/setting",
-        "pages/mywork/mywork",
-        "pages/like/like",
-        "pages/publish/publish",
         "pages/notLogin/notLogin",
         "pages/editUsername/editUsername",
-        "pages/hideWork/hideWork",
         "pages/cardManage/cardManage",
         "pages/about/about",
         "pages/addCard/addCard",
@@ -23,7 +23,10 @@
         "pages/workOrder/addOrder/addOrder",
         "components/loginDialog/loginDialog",
         "pages/autoLogin/autoLogin",
-        "pages/workOrder/myOrder/myOrder"
+        "pages/workOrder/myOrder/myOrder",
+        "pages/task/todo/todo",
+        "pages/task/completed/completed",
+        "pages/task/cancel/cancel"
     ],
     "window": {
         "backgroundTextStyle": "dark",
@@ -42,12 +45,12 @@
             {
                 "selectedIconPath": "images/bottomBar/homeSelected.png",
                 "iconPath": "images/bottomBar/home.png",
-                "pagePath": "pages/index/index"
+                "pagePath": "pages/task/index/index"
             },
             {
                 "selectedIconPath": "images/bottomBar/workSelected.png",
                 "iconPath": "images/bottomBar/work.png",
-                "pagePath": "pages/work/work"
+                "pagePath": "pages/work/index/index"
             },
             {
                 "selectedIconPath": "images/bottomBar/userSelected.png",

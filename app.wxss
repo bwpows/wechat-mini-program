@@ -1,6 +1,5 @@
 /**app.wxss**/
 @import './style/color.wxss';
-/* @import './style/weui.wxss'; */
 @import './style/margin.wxss';
 @import './style/padding.wxss';
 @import './style/common.wxss';
@@ -14,7 +13,7 @@ page {
     --greyColor: #9E9E9E;
     --errorColor: #ff5252;
     background-color: #f1f1f2;
-    padding-bottom: 40rpx;
+    padding-bottom: 180rpx;
 }
 
 view {
@@ -23,9 +22,6 @@ view {
     line-height: 38rpx;
 }
 
-/* .primary{
-    background-color: var(--primaryColor);
-} */
 
 
 

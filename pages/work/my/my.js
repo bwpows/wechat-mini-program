@@ -1,5 +1,5 @@
-import { get } from "../../api/http"
-import { getWorkByUser } from "../../api/work"
+import { get } from "../../../api/http"
+import { getWorkByUser } from "../../../api/work"
 
 // pages/mywork/mywork.js
 Page({

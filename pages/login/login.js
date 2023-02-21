@@ -187,7 +187,7 @@ Page({
 
     goNotSignIn(){
         wx.reLaunch({
-          url: '/pages/work/work',
+          url: '/pages/work/index/index',
         })
     }
     

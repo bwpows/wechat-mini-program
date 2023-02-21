@@ -33,19 +33,36 @@ Page({
                 {
                     title: '我的作品',
                     icon: '../../images/icon/works.svg',
-                    path: '/pages/mywork/mywork'
+                    path: '/pages/work/my/my'
                 },
                 {
                     title: '我的点赞',
                     icon: '../../images/icon/like.svg',
-                    path: '/pages/like/like'
+                    path: '/pages/work/like/like'
                 },
                 {
                     title: '隐私作品',
                     icon: '../../images/icon/privacy.svg',
-                    path: '/pages/hideWork/hideWork',
+                    path: '/pages/work/hide/hide',
                     isShow: false
                 }
+            ],
+            [
+                {
+                    title: '我的待办',
+                    icon: '../../images/icon/task_todo.svg',
+                    path: '/pages/task/todo/todo',
+                },
+                {
+                    title: '已完成任务',
+                    icon: '../../images/icon/task_complete.svg',
+                    path: '/pages/task/completed/completed',
+                },
+                {
+                    title: '已取消任务',
+                    icon: '../../images/icon/task_cancel.svg',
+                    path: '/pages/task/cancel/cancel',
+                },
             ],
             [
                 {
