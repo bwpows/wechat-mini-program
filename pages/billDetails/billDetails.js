@@ -46,7 +46,6 @@ Page({
 
     async getCardDetails(){
         let res = await get(consumptionByCardUrl(this.data.cardId))
-        console.log(res);
         if(res.code == 200){
             this.setData({
                 detailList: res.data

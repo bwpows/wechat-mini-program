@@ -87,7 +87,6 @@ Page({
                 wx.navigateBack()
             }, 1000);
         }
-        console.log(res);
     },
 
     randomNumber(len) {

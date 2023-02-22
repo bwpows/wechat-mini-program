@@ -59,7 +59,6 @@ Page({
             'Authorization': 'Bearer ' + wx.getStorageSync('token')
           },
           success: res => {
-              console.log(res)
               that.getUserInfo()
               wx.showToast({
                 title: '更换成功',

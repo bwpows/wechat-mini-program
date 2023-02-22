@@ -16,7 +16,6 @@ const request = (url, options) => {
                 'Authorization': token
             }, //header中可以添加token值等
             async success(request) { //监听成功后的操作
-                // console.log(request)
                 if (request.statusCode === 200 || request.statusCode === 201) {
                     resolve(request.data)
                 } else {

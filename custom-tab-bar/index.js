@@ -26,7 +26,6 @@ Component({
     this.setData({
         isBangs: app.globalData.isBangs
     })
-    console.log(this.data.isBangs);
   },
   methods: {
     switchTab(e) {

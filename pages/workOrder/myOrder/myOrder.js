@@ -65,7 +65,6 @@ Page({
 
     
     previewImage(e){
-        console.log(e);
         let imgUrls = e.currentTarget.dataset.urls
         let imgUrl = e.currentTarget.dataset.url
         for (let i = 0; i < imgUrls.length; i++) {

@@ -40,7 +40,6 @@ Page({
 
     async getReviewStatus(){
         let res = await get(reviewUrl)
-        console.log(res)
         return res.data.status
     },
 
@@ -64,14 +63,12 @@ Page({
             mediaType: ['image'],
             sourceType: ['album'],
             success: function(res){
-                console.log(res.tempFiles)
                 that.setData({
                     selectedImages: res.tempFiles
                 })
                 that.uploadFile()
             },
             fail: function(err){
-                console.log(err)
             }
         })
     },
@@ -131,9 +128,7 @@ Page({
                  Authorization: 'Bearer ' + that.data.token
               },
               success: function(res){
-                  console.log(res)
                   res.data = JSON.parse(res.data)
-                  console.log(res.data)
                   url.push(res.data.data)
                   that.setData({
                       url: url
@@ -141,9 +136,6 @@ Page({
               }
             })
             upload_task.onProgressUpdate((res) => {
-                console.log('上传进度', res.progress)
-                console.log('已经上传的数据长度', res.totalBytesSent)
-                console.log('预期需要上传的数据总长度', res.totalBytesExpectedToSend)
                 let editData = 'uploadProgress['+ i +']'
                 this.setData({
                     [editData]: res.progress

@@ -46,7 +46,6 @@ Page({
                 that.uploadFile()
             },
             fail: function(err){
-                console.log(err)
             }
         })
     },
@@ -103,7 +102,6 @@ Page({
                   that.setData({
                       url,
                   })
-                  console.log(that.data.url);
               }
             })
             upload_task.onProgressUpdate((res) => {

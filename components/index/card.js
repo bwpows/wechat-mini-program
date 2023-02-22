@@ -40,7 +40,6 @@ Component({
                 this.setData({
                     showBtnId: e.currentTarget.dataset.taskid
                 })
-                console.log("左滑")
             }
         },
 
@@ -53,7 +52,6 @@ Component({
         },
 
         async completeTask(e){
-            console.log(e.currentTarget.dataset.taskid)
             wx.showLoading({
               title: '正在处理',
             })
@@ -63,7 +61,6 @@ Component({
         },
 
         async recoveryTask(e){
-            console.log(e.currentTarget.dataset.taskid)
             wx.showLoading({
                 title: '正在处理',
               })
@@ -73,7 +70,6 @@ Component({
         },
 
         async deleteTask(e){
-            console.log(e.currentTarget.dataset.taskid)
             wx.showLoading({
                 title: '正在处理',
               })
@@ -83,7 +79,6 @@ Component({
         },
 
         async cancelTask(e){
-            console.log(e.currentTarget.dataset.taskid)
             wx.showLoading({
                 title: '正在处理',
             })

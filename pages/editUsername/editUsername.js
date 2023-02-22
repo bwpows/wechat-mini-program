@@ -41,7 +41,6 @@ Page({
      * 生命周期函数--监听页面隐藏
      */
     async onUnload() {
-        console.log("999")
         await this.editUsername()
     },
     
@@ -54,7 +53,6 @@ Page({
     async editUsername(){
         if(this.data.username.length < 1) return;
         let res = await put(editNameUrl(this.data.userInfo._id), {username: this.data.username})
-        console.log(res)
         if(res.code == 200){
             await this.getUserInfo()
         }
