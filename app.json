@@ -26,7 +26,8 @@
         "pages/workOrder/myOrder/myOrder",
         "pages/task/todo/todo",
         "pages/task/completed/completed",
-        "pages/task/cancel/cancel"
+        "pages/task/cancel/cancel",
+        "pages/chatgpt/chatgpt"
     ],
     "window": {
         "backgroundTextStyle": "dark",

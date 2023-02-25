@@ -31,9 +31,9 @@ Page({
             ],
             [
                 {
-                    title: 'chatGPT',
+                    title: 'ChatGPT',
                     icon: '../../images/icon/chat.svg',
-                    path: '/pages/openai/openai'
+                    path: '/pages/chatgpt/chatgpt'
                 }
             ],
             [
