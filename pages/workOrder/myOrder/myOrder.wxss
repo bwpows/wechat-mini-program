@@ -1,1 +1,4 @@
 /* pages/workOrder/myOrder/myOrder.wxss */
+.plus-box {
+    position: fixed; top: 50%; right: 30rpx; height: 80rpx; width: 80rpx; font-size: 70rpx; border-radius: 50%; box-shadow: 0 0 12px 5px rgb(219, 218, 218); opacity: .8;
+}

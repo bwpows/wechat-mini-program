@@ -1,12 +1,12 @@
 <!--pages/workOrder/myOrder/myOrder.wxml-->
 <wxs src="/util/formatTime.wxs" module="formatTime"></wxs>
-<view class="primary title text-center white--text" style="position: fixed; top: 40%; right: 10rpx; height: 100rpx; width: 100rpx; font-size: 100rpx; line-height: 84rpx; border-radius: 50%; box-shadow: 0 0 12px 5px #ccc;" bindtap="goAddWorkOrder">
-    +
+<view class="primary d-flex align-center justify-center white--text plus-box" bindtap="goAddWorkOrder">
+    <view style="height: 50rpx;">+</view>
 </view>
 
 <view class="ma-4">
     <view wx:for="{{workOrder}}" wx:key="_id" class="white pa-4 rounded mb-4">
-        <view class="title">
+        <view>
             {{item.content}}
         </view>
         <view class="mt-4">
