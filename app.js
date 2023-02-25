@@ -62,6 +62,7 @@ App({
         wx.getSystemInfo({
             success(res){
                 that.globalData.isBangs = res.safeArea.top > 20
+                that.globalData.safeArea = res.safeArea
             }
         })
     },
@@ -70,6 +71,7 @@ App({
         userInfo: null,
         preRouteUrl: '',
         isLogin: null,
-        isBangs: true
+        isBangs: true,
+        safeArea: {}
     }
 })

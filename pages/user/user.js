@@ -31,6 +31,13 @@ Page({
             ],
             [
                 {
+                    title: 'chatGPT',
+                    icon: '../../images/icon/chat.svg',
+                    path: '/pages/openai/openai'
+                }
+            ],
+            [
+                {
                     title: '我的作品',
                     icon: '../../images/icon/works.svg',
                     path: '/pages/work/my/my'
@@ -72,7 +79,8 @@ Page({
                 }
             ]
         ],
-        isLogin: null
+        isLogin: null,
+        safeArea: {}
     },
 
     /**
@@ -82,16 +90,18 @@ Page({
         wx.setNavigationBarTitle({
           title: '个人中心',
         })
+        console.log(app.globalData);
     },
 
     async onShow(){
         this.getTabBar().setData({
-            selected: 2
+            selected: 2,
         })
         this.setData({
             isShow: await wx.getStorageSync('isShow')  || false,
             userId: await wx.getStorageSync('userId'),
-            isLogin: app.globalData.isLogin
+            isLogin: app.globalData.isLogin,
+            safeArea: app.globalData.safeArea
         })
         if(app.globalData.isLogin) await this.getUserInfo()
     },
@@ -105,7 +115,7 @@ Page({
         
         if(res.code == 200){
             listData[0][0]['desc'] = res.data.phone;
-            listData[1][2]['isShow'] = await wx.getStorageSync('isShow')  || false,
+            listData[2][2]['isShow'] = await wx.getStorageSync('isShow')  || false,
             this.setData({
                 userInfo: res.data,
                 loading: false,

@@ -1,6 +1,7 @@
 var app = getApp()
 Component({
   data: {
+    isShow: false,
     selected: 0,
     color: "#7A7E83",
     selectedColor: "#3cc51f",
@@ -24,7 +25,8 @@ Component({
   },
   attached() {
     this.setData({
-        isBangs: app.globalData.isBangs
+        isBangs: app.globalData.isBangs,
+        isShow: true
     })
   },
   methods: {

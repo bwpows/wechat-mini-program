@@ -1,4 +1,5 @@
 {
+  "navigationStyle": "custom",
   "usingComponents": {
       "LoginDialog": "/components/loginDialog/loginDialog"
   }

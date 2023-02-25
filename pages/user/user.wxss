@@ -1,16 +1,28 @@
+
 .arrowIcon{
     height: 40rpx; width: 40rpx;
 }
 
 .iconImg{
-    height: 60rpx; width: 60rpx; border-radius: 10px;
+    height: 60rpx; width: 60rpx; border-radius: 20rpx;
 }
 
 .headImg{
-    height: 90rpx; width: 90rpx; border-radius: 10px;
+    height: 100rpx; width: 100rpx; border-radius: 60rpx;
 }
 
 .dirver_margin {
     margin-left: 120rpx;
     margin-right: 40rpx;
+}
+
+.info-box {
+    height: 280rpx;
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+}
+
+.info-desc {
+    font-size: 24rpx;
+    color: #ffffffee;
 }

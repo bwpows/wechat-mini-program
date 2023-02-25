@@ -3,37 +3,36 @@
 <page-meta page-style="{{!isLogin? 'overflow: hidden': ''}}" ></page-meta>
 <LoginDialog wx:if="{{!isLogin}}" />
 
-<view class="container mt-6 {{ !isLogin?'filter-8':'' }}">
-    <view class="card rounded-lg pa-4 d-flex justify-space-between align-center" role="button" bindtap="goRouter" data-path="/pages/profile/profile">
-        <view class="d-flex align-center">
+<view class="{{ !isLogin?'filter-8':'' }}">
+    <view class="primary info-box d-flex justify-space-between px-4"  bindtap="goRouter" data-path="/pages/profile/profile" style="{{ 'padding-top:' + (safeArea.top + 30) * 2 + 'rpx' }}">
+        <view class="d-flex">
             <image src="{{ userInfo.pictrue?(baseUrl+'/'+userInfo.pictrue):'/images/bottomBar/workSelected.png' }}" class="headImg" mode="aspectFill"></image>
             <view class="ml-4">
-                <view>Hi, {{userInfo.username || '微信用户'}}</view>
-                <view class="font-desc mt-3">昵称、头像与隐私</view>
+                <view class="white--text title">Hi, {{userInfo.username || '微信用户'}}</view>
+                <view class="info-desc mt-3">点击修改昵称和头像</view>
             </view>
         </view>
-        <view>
-            <image src="../../images/icon/leftArrow.svg"  class="arrowIcon"></image>
+    </view>
+    <view style="margin-top: -166rpx;">
+        <view class="card rounded-lg my-6 mx-4" wx:for="{{listData}}" wx:for-item="list" wx:key="index">
+            <block  wx:for="{{list}}" wx:key="icon">
+                <view class=" d-flex align-center pa-4 justify-space-between" bindtap="goRouter" data-path="{{ item.path }}" wx:if="{{item.isShow !== false}}">
+                    <view class="d-flex align-center">
+                        <image src="{{item.icon}}" class="iconImg"></image>
+                        <view class="ml-4">{{item.title}}</view>
+                    </view>
+                    <view class="d-flex align-center">
+                        <text class="mr-2 font-desc" wx:if="{{item.desc}}">{{ item.desc }}</text>
+                        <image src="../../images/icon/leftArrow.svg" class="arrowIcon"></image>
+                    </view>
+                </view>
+                <view class="driver dirver_margin"  wx:if="{{list.length !== index+1 && item.isShow !== false}}"></view>
+            </block>
         </view>
     </view>
 
-    <view class="card rounded-lg my-6" wx:for="{{listData}}" wx:for-item="list" wx:key="index">
-        <block  wx:for="{{list}}" wx:key="icon">
-            <view class=" d-flex align-center pa-4 justify-space-between" bindtap="goRouter" data-path="{{ item.path }}" wx:if="{{item.isShow !== false}}">
-                <view class="d-flex align-center">
-                    <image src="{{item.icon}}" class="iconImg"></image>
-                    <view class="ml-4">{{item.title}}</view>
-                </view>
-                <view class="d-flex align-center">
-                    <text class="mr-2 font-desc" wx:if="{{item.desc}}">{{ item.desc }}</text>
-                    <image src="../../images/icon/leftArrow.svg" class="arrowIcon"></image>
-                </view>
-            </view>
-            <view class="driver dirver_margin"  wx:if="{{list.length !== index+1 && item.isShow !== false}}"></view>
-        </block>
-    </view>
 
-    <view class="card rounded-lg mt-8 ">
+    <view class="card rounded-lg mt-8 mx-4">
         <button class="weui-btn rounded-lg py-3" style="color: rgb(248, 62, 62); background: #fff; width: 100%;" bindtap="exit">退出登录</button>
     </view>
 
