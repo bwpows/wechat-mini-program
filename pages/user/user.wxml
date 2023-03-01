@@ -3,8 +3,15 @@
 <page-meta page-style="{{!isLogin? 'overflow: hidden': ''}}" ></page-meta>
 <LoginDialog wx:if="{{!isLogin}}" />
 
+<view
+    style="height: 44px; padding-top: {{safeArea.top}}px; position: fixed; top: 0; left: 0; width: 100%; opacity: {{ scrollTop / 40 }};"
+    class="primary d-flex align-center justify-center white--text"
+>
+    个人中心
+</view>
+
 <view class="{{ !isLogin?'filter-8':'' }}">
-    <view class="primary info-box d-flex justify-space-between px-4"  bindtap="goRouter" data-path="/pages/profile/profile" style="{{ 'padding-top:' + (safeArea.top + 30) * 2 + 'rpx' }}">
+    <view class="info-box d-flex justify-space-between px-4"  bindtap="goRouter" data-path="/pages/profile/profile" style="{{ 'padding-top:' + (safeArea.top + 30) * 2 + 'rpx' }}">
         <view class="d-flex">
             <image src="{{ userInfo.pictrue?(baseUrl+'/'+userInfo.pictrue):'/images/bottomBar/workSelected.png' }}" class="headImg" mode="aspectFill"></image>
             <view class="ml-4">

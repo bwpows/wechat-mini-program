@@ -10,21 +10,6 @@ Page({
         isLogin: null
     },
 
-    // onShareAppMessage() {
-    //     const promise = new Promise(resolve => {
-    //         setTimeout(() => {
-    //             resolve({
-    //                 title: '精致的TODO LIST'
-    //             })
-    //         }, 2000)
-    //     })
-    //     return {
-    //         title: '精致的TODO LIST',
-    //         path: '/pages/index/index',
-    //         promise
-    //     }
-    // },
-
     async onShow(){
         
         this.getTabBar().setData({

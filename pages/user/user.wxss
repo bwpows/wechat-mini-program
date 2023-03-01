@@ -20,6 +20,8 @@
     height: 280rpx;
     padding-top: constant(safe-area-inset-top);
     padding-top: env(safe-area-inset-top);
+    transition: all .5s;
+    background-image: linear-gradient(var(--primaryColor) 60%,  #f1f1f1);
 }
 
 .info-desc {

@@ -26,6 +26,3 @@
   height: 27px;
 }
 
-.tab-bar-item cover-view {
-  font-size: 10px;
-}

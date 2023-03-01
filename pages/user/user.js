@@ -80,7 +80,8 @@ Page({
             ]
         ],
         isLogin: null,
-        safeArea: {}
+        safeArea: {},
+        scrollTop: 0,
     },
 
     /**
@@ -90,7 +91,6 @@ Page({
         wx.setNavigationBarTitle({
           title: '个人中心',
         })
-        console.log(app.globalData);
     },
 
     async onShow(){
@@ -104,6 +104,12 @@ Page({
             safeArea: app.globalData.safeArea
         })
         if(app.globalData.isLogin) await this.getUserInfo()
+    },
+
+    onPageScroll(e){
+        this.setData({
+            scrollTop: e.scrollTop
+        })
     },
 
     async getUserInfo(){
