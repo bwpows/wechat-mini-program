@@ -11,7 +11,7 @@ App({
 
     async onShow(sence){
         if(sence.path !== 'pages/autoLogin/autoLogin') this.globalData.preRouteUrl = sence.path
-        await this.getTokenByCode()
+        // await this.getTokenByCode()
         await this.checkToken()
     },
 

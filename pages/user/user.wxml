@@ -4,7 +4,7 @@
 <LoginDialog wx:if="{{!isLogin}}" />
 
 <view
-    style="height: 44px; padding-top: {{safeArea.top}}px; position: fixed; top: 0; left: 0; width: 100%; opacity: {{ scrollTop / 40 }};"
+    style="height: 44px; padding-top: {{safeArea.top}}px; position: fixed; top: 0; left: 0; width: 100%; opacity: {{ scrollTop / 100 }}; z-index: {{ scrollTop - 50 }}"
     class="primary d-flex align-center justify-center white--text"
 >
     个人中心

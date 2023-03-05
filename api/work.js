@@ -18,3 +18,6 @@ export function delWorkById(id){
 export function getPrivacyWorkByUserId(userid){
     return `/publish/privacyWork/${userid}`
 }
+
+// 查看作品
+export const getViewWork = '/view/work'

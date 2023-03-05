@@ -1,6 +1,9 @@
-import { baseUrl } from "../../api/http";
-import { delWorkById } from "../../api/work";
+import { baseUrl, post } from "../../api/http";
+import { delWorkById, getViewWork } from "../../api/work";
 import { del } from "../../api/http"
+
+//获取应用实例
+const app = getApp()
 
 // components/work/work.js
 Component({
@@ -18,6 +21,10 @@ Component({
         isEdit: {
             type: Boolean,
             value: false
+        },
+        scrollHeight: {
+            type: Number,
+            value: 22
         }
     },
 
@@ -26,7 +33,10 @@ Component({
      */
     data: {
         baseUrl: baseUrl,
-        userId: wx.getStorageSync('userId')
+        userId: wx.getStorageSync('userId'),
+        safeArea: app.globalData.safeArea,
+        selected: 0,
+        translateY: ''
     },
 
     /**
@@ -68,6 +78,27 @@ Component({
                 this.triggerEvent('refresh')
                 wx.hideLoading()
             }
-        }
+        },
+
+        onClickCard(e){
+            this.setData({
+                selected: e.currentTarget.dataset.index == this.data.selected?0:e.currentTarget.dataset.index,
+                translateY:  -(e.currentTarget.offsetTop - this.data.scrollHeight)
+            })
+
+            this.getTabBar().setData({
+                isShow: e.currentTarget.dataset.index !== this.data.selected
+            })
+            this.triggerEvent("selected", e.currentTarget.dataset.index == this.data.selected)
+
+            if(e.currentTarget.dataset.index !== this.data.selected){
+                post(getViewWork, {user_id: this.data.userId, work_id: e.currentTarget.dataset.index})
+            }
+
+
+        },
+
+
+
     }
 })

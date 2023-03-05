@@ -15,7 +15,10 @@ Page({
         current_page: 1,
         page_count: 10,
         noMoreData: false,
-        loading: true
+        loading: true,
+        safeArea: app.globalData.safeArea,
+        scrollHeight: 22,
+        selectedWork: false
     },
 
     async onLoad(){
@@ -28,6 +31,12 @@ Page({
         await this.getWork(true)
         this.setData({
             loading: false
+        })
+    },
+
+    onPageScroll(e){
+        this.setData({
+            scrollHeight: e.scrollTop + 22
         })
     },
 
@@ -47,6 +56,10 @@ Page({
     },
 
   async onPullDownRefresh(){
+    if(this.data.selectedWork){
+        wx.stopPullDownRefresh()
+        return;
+    };
     this.setData({
         current_page: 1,
         noMoreData: false
@@ -98,5 +111,12 @@ Page({
             workList: arr
         })
     }
+  },
+
+  async isSelectedWork(e){
+      this.setData({
+        selectedWork: e.detail
+      })
   }
+
 })

@@ -33,6 +33,15 @@ Component({
                     await wx.setStorageSync('token', data.data.token)
                     await this.getUserInfo()
                     app.globalData.isLogin = true
+                    let pages = getCurrentPages();
+                    let currPage = ''
+                    if (pages.length) {
+                        // 获取当前页面的对象（上边所获得的数组中最后一项就是当前页面的对象）
+                        currPage = pages[pages.length - 1];
+                    }
+                    wx.reLaunch({
+                        url: '/'+currPage.route,
+                    })
                 }else{
                     wx.reLaunch({
                       url: '/pages/login/login',
