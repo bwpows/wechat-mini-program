@@ -1,0 +1,11 @@
+<!--components/nav-bar/index.wxml-->
+<view
+    style="padding-top: {{safeArea.top}}px; opacity: {{opacity}}; color: {{color}}; z-index: {{ zIndex }}"
+    class="white d-flex align-center justify-center nav-bar {{ bgColor }}"
+>
+    <view style="position: absolute; left: 0;" class="ml-4" bindtap="back" wx:if="{{isBack}}">
+        <image src="/images/icon/back.svg" mode="aspectFit" style="height: 34rpx; width: 34rpx" />
+    </view>
+    {{title}}
+</view>
+<view wx:if="{{isFillView}}" style="height: {{safeArea.top + 44}}px"></view>
