@@ -57,6 +57,20 @@
                     "query": "",
                     "launchMode": "default",
                     "scene": null
+                },
+                {
+                    "name": "我的作品",
+                    "pathName": "pages/work/my/my",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "我的点赞",
+                    "pathName": "pages/work/like/like",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
                 }
             ]
         }

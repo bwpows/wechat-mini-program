@@ -91,7 +91,7 @@ Page({
             title: this.data.title,
             description: this.data.description,
             url: this.data.url,
-            is_public: true
+            is_public: this.data.is_public
         }
         wx.showLoading({
             title: '正在发表',
@@ -142,6 +142,12 @@ Page({
                 })
             })
         }
+    },
+
+    switchChange(e) {
+        this.setData({
+            is_public: !e.detail.value
+        })
     }
 
 })

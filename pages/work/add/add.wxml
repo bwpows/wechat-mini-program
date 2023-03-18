@@ -13,5 +13,12 @@
             <image src="/images/icon/plus.svg" class="mx-4 mt-2 mb-4" style="width: 120rpx; height: 120rpx;" bindtap="chooseImage"></image>
         </view>
     </view>
+    <view class="card rounded pa-4 mt-4 font-md d-flex justify-space-between align-center">
+        <view>隐私作品</view>
+        <view>
+            <text class="mr-3 grey--text">{{!is_public? "是" : "否"}}</text>
+            <switch checked="{{!is_public}}" bindchange="switchChange"></switch>
+        </view>
+    </view>
     <button class="mb-4 mt-8 rounded primary--text white text-center py-3 full-width" bindtap="publish">发布作品</button>
 </view>
