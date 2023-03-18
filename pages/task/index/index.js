@@ -2,6 +2,8 @@
 import { get } from '../../../api/http'
 import { getTaskListUrl } from '../../../api/task'
 const app = getApp()
+
+let dealTaskList = []
 Page({
     data: {
         taskList:[],
@@ -16,7 +18,6 @@ Page({
             selected: 0
         })
         this.setData({
-            loading: true,
             isLogin: app.globalData.isLogin
         })
         if(this.data.isLogin) await this.getTask()
@@ -43,14 +44,31 @@ Page({
         let res = await get(getTaskListUrl(userId))
         if(res.code == 200){
             let arr = []
-            for (let i = 0; i < res.data.length; i++) {
-                if(!arr[res.data[i].taskDateType - 1]) arr[res.data[i].taskDateType - 1] = []
-                arr[res.data[i].taskDateType - 1].push(res.data[i])
+            /*
+            * test arrary
+            */
+           this.dealArr(res.data)
+            for (let i = 0; i < dealTaskList.length; i++) {
+                if(!arr[dealTaskList[i].taskDateType - 1]) arr[dealTaskList[i].taskDateType - 1] = []
+                arr[dealTaskList[i].taskDateType - 1].push(dealTaskList[i])
             }
+
             this.setData({
                 taskList: arr
             })
         }
+    },
+
+    dealArr(arr) {
+        dealTaskList = []
+        let testArrOne = JSON.parse(JSON.stringify(arr))
+        for (let i = 0; i < testArrOne.length; i++) {
+            if(!testArrOne[i].is_completed && !testArrOne[i].is_cancel){
+                dealTaskList.push(testArrOne[i])
+            }
+        }
+        dealTaskList.push(...testArrOne)
+        dealTaskList = Array.from(new Set(dealTaskList))
     },
 
     goAddTask(){

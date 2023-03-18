@@ -1,8 +1,12 @@
 
-<view class=" mx-4">
+<nav-bar title="隐私作品" />
 
-    <view wx:for="{{ workList }}" wx:key="_id" wx:for-item="work" class="my-6 card overflow-hidden rounded-lg">
-        <Work work="{{ work }}" />
+<view class="mx-4" catchtouchmove="{{selectedWork?true:return}}">
+    <view wx:if="{{!loading && workList.length == 0}}" class="grey--text white rounded-lg mt-4 pa-4">暂时没有任何作品</view>
+    <view wx:for="{{ workList }}" data-skeleton-list wx:key="_id" wx:for-item="work"  class="my-6 card rounded-lg">
+        <Work work="{{ work }}" scrollHeight="{{scrollHeight}}" isEdit="{{ true }}" bind:selected="isSelectedWork" bind:refresh="getWork" />
     </view>
-
+    <view class="mt-4 card rounded pa-4 mb-4 font-desc">
+        没有更多数据了
+    </view>
 </view>

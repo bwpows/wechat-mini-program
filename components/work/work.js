@@ -85,16 +85,18 @@ Component({
                 selected: e.currentTarget.dataset.index == this.data.selected?0:e.currentTarget.dataset.index,
                 translateY:  -(e.currentTarget.offsetTop - this.data.scrollHeight)
             })
-
-            this.getTabBar().setData({
-                isShow: e.currentTarget.dataset.index !== this.data.selected
-            })
+            let pages = getCurrentPages()
+            let currentPage = pages[pages.length - 1].route
+            if(currentPage == 'pages/work/index/index'){
+                this.getTabBar().setData({
+                    isShow: e.currentTarget.dataset.index !== this.data.selected
+                })
+            }
             this.triggerEvent("selected", e.currentTarget.dataset.index == this.data.selected)
 
             if(e.currentTarget.dataset.index !== this.data.selected){
                 post(getViewWork, {user_id: this.data.userId, work_id: e.currentTarget.dataset.index})
             }
-
 
         },
 

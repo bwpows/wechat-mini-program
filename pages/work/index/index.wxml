@@ -1,15 +1,10 @@
 <import src="index.skeleton.wxml"/>
 <template is="skeleton" wx:if="{{loading}}" />
-<view
-    style="height: 44px; padding-top: {{safeArea.top}}px; position: fixed; top: 0; left: 0; width: 100%;"
-    class="white d-flex align-center justify-center"
->
-    作品
-</view>
-<view style="height: {{safeArea.top + 44}}px"></view>
+
+<nav-bar title="作品" isBack="{{ false }}" />
 
 <view class="container py-4" catchtouchmove="{{selectedWork?true:return}}">
-    <view wx:for="{{ workList }}" data-skeleton-list wx:key="_id" wx:for-item="work"  class="my-6 card rounded-lg">
+    <view wx:for="{{ workList }}" wx:key="_id" wx:for-item="work"  class="my-6 card rounded-lg">
         <Work work="{{ work }}" scrollHeight="{{scrollHeight}}" bind:selected="isSelectedWork" />
     </view>
     <view class="mt-4 card rounded pa-4 mb-4 font-desc">

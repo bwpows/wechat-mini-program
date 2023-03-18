@@ -1,5 +1,7 @@
 {
     "usingComponents": {
-        "Work": "/components/work/work"
-    }
+        "Work": "/components/work/work",
+        "nav-bar": "/components/nav-bar/index"
+    },
+    "navigationStyle": "custom"
 }

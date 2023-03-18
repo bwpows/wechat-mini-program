@@ -10,7 +10,9 @@ Page({
     data: {
         userId: null,
         workList: [],
-        loading: true
+        loading: true,
+        selectedWork: '',
+        scrollHeight: 22,
     },
 
     /**
@@ -41,8 +43,24 @@ Page({
     },
 
     async onPullDownRefresh(){
+        if(this.data.selectedWork){
+            wx.stopPullDownRefresh()
+            return;
+        };
         await this.getWork()
         wx.stopPullDownRefresh()
-    }
+    },
+
+    async isSelectedWork(e){
+        this.setData({
+          selectedWork: e.detail
+        })
+    },
+
+    onPageScroll(e){
+        this.setData({
+            scrollHeight: e.scrollTop + 22
+        })
+    },
 
 })
