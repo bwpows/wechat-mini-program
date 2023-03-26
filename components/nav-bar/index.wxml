@@ -3,9 +3,13 @@
     style="padding-top: {{safeArea.top}}px; opacity: {{opacity}}; color: {{color}}; z-index: {{ zIndex }}"
     class="white d-flex align-center justify-center nav-bar {{ bgColor }}"
 >
-    <view style="position: absolute; left: 0;" class="ml-4" bindtap="back" wx:if="{{isBack}}">
-        <image src="/images/icon/back.svg" mode="aspectFit" style="height: 34rpx; width: 34rpx" />
+    <view style="position: absolute; left: 0; bottom: 12rpx;" class="ml-4" bindtap="back" wx:if="{{isBack}}">
+        <image src="/images/icon/back.svg" mode="aspectFit" style="height: 36rpx; width: 34rpx" />
     </view>
-    {{title}}
+    <block wx:if="{{loading}}">
+        <image src="/images/icon/refresh.svg" mode="aspectFill" class="songimg mr-1" style="height: 36rpx; width: 36rpx;" />
+        刷新中...
+    </block>
+    <block wx:else="">{{title}}</block>
 </view>
 <view wx:if="{{isFillView}}" style="height: {{safeArea.top + 44}}px"></view>

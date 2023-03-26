@@ -1,4 +1,13 @@
 /* components/nav-bar/index.wxss */
 .nav-bar{
-    position: fixed; top: 0; left: 0; width: 100%; height: 44px;
+    position: fixed; top: 0; left: 0; width: 100%; height: 42px; font-weight: bold;
+}
+@keyframes icon-ani {
+    from {transform: rotate(0)}
+    to {transform: rotate(360deg)}
+  }
+.songimg{
+    border-radius:50%;
+    position: relative;
+    animation: icon-ani 1.5s  infinite linear;
 }

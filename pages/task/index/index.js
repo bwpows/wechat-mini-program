@@ -8,12 +8,12 @@ Page({
     data: {
         taskList:[],
         taskTimeType: ['今日任务', '明日任务', '本周任务', '本月任务', '今年任务'],
-        loading: true,
-        isLogin: null
+        initLoading: true,
+        isLogin: null,
+        loading: true
     },
 
     async onShow(){
-        
         this.getTabBar().setData({
             selected: 0
         })
@@ -22,7 +22,7 @@ Page({
         })
         if(this.data.isLogin) await this.getTask()
         this.setData({
-            loading: false
+            initLoading: false
         })
     },
 
@@ -39,9 +39,15 @@ Page({
     },
 
     async getTask(){
+        this.setData({
+            loading: true
+        })
         let userId = await wx.getStorageSync('userId')
         if(!userId) { return };
         let res = await get(getTaskListUrl(userId))
+        this.setData({
+            loading: false
+        })
         if(res.code == 200){
             let arr = []
             /*

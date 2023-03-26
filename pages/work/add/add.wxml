@@ -1,5 +1,5 @@
 <!--pages/publish/publish.wxml-->
-<view class="mx-4">
+<view class="mx-4" wx-if="{{!loading}}">
     <input type="text" class="white pa-4 my-4 rounded" placeholder="请输入标题（15字以内）" bindinput="inputChangeTitle" />
     <view class="white rounded">
         <textarea rows="6" class="px-3 py-4 mt-4" style="width: 100%;" placeholder="这一刻的想法......" bindinput="inputChangeContent"></textarea>

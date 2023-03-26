@@ -16,7 +16,8 @@ Page({
         url: [],
         is_public: true,
         token: wx.getStorageSync('token'),
-        uploadProgress: []
+        uploadProgress: [],
+        loading: true
     },
 
     /**
@@ -24,23 +25,29 @@ Page({
      */
     onLoad(options) {
         wx.setNavigationBarTitle({
-          title: '发布作品',
+          title: '加载中',
         })
     },
 
     async onShow(){
         let res = await this.getReviewStatus()
-        wx.stopPullDownRefresh()
         if(res) {
             wx.reLaunch({
-              url: '/pages/index/index',
+              url: '/pages/work/index/index',
+            })
+        }else{
+            this.setData({
+                loading: false
+            })
+            wx.setNavigationBarTitle({
+              title: '发布作品',
             })
         };
     },
 
     async getReviewStatus(){
         let res = await get(reviewUrl)
-        return res.data.status
+        return res.data
     },
 
     inputChangeTitle(e){

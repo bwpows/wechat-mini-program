@@ -4,7 +4,9 @@
 
 <LoginDialog wx:if="{{!isLogin}}" />
 
-<template is="skeleton" wx:if="{{loading}}" />
+<nav-bar isBack="{{false}}" title="首页" loading="{{loading}}" zIndex="100" />
+
+<template is="skeleton" wx:if="{{initLoading}}" />
 
 <view class="container subtitle {{ !isLogin?'filter-8':'' }}" wx:else >
     
@@ -18,5 +20,6 @@
     <view wx:for="{{taskTimeType}}" wx:key="index" wx:if="{{taskList.length != 0}}">
         <taskCard taskList="{{ taskList[index] }}" title="{{item}}" bindrefresh="getTask"></taskCard>
     </view>
+
 
 </view>

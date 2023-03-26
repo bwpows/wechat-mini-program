@@ -71,6 +71,13 @@
                     "query": "",
                     "launchMode": "default",
                     "scene": null
+                },
+                {
+                    "name": "发布作品",
+                    "pathName": "pages/work/add/add",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
                 }
             ]
         }

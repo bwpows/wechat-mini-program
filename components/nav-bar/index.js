@@ -44,6 +44,11 @@ Component({
         color: {
             type: String,
             value: "black"
+        },
+
+        loading: {
+            type: Boolean,
+            value: false
         }
 
     },
