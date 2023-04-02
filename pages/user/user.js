@@ -31,13 +31,6 @@ Page({
             ],
             [
                 {
-                    title: 'ChatGPT',
-                    icon: '../../images/icon/chat.svg',
-                    path: '/pages/chatgpt/chatgpt'
-                }
-            ],
-            [
-                {
                     title: '我的作品',
                     icon: '../../images/icon/works.svg',
                     path: '/pages/work/my/my'
@@ -121,7 +114,7 @@ Page({
         
         if(res.code == 200){
             listData[0][0]['desc'] = res.data.phone;
-            listData[2][2]['isShow'] = await wx.getStorageSync('isShow')  || false,
+            listData[1][2]['isShow'] = await wx.getStorageSync('isShow')  || false,
             this.setData({
                 userInfo: res.data,
                 loading: false,

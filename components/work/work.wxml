@@ -1,5 +1,5 @@
 <!--components/work/work.wxml-->
-<view class="card {{selected == work._id?'active':''}}" style="{{'height:'+ (work.url.length?'540rpx;':'240rpx;')}} {{ 'transform: translateY('+(selected == work._id?(translateY - 22):'')+'px) scale(calc(375/350))' }}" bindtap="onClickCard" data-index="{{work._id}}">
+<view class="card {{selected == work._id?'active':''}}" style="{{'height:'+ (work.url.length? (work.description.length / 16.5 + 0.5) * 20 + 500 + 'rpx;': (work.description.length / 16.5 + 0.5) * 20 + 200 + 'rpx;')}} {{ 'transform: translateY('+(selected == work._id?(translateY - 22):'')+'px) scale(calc(375/350))' }}" bindtap="onClickCard" data-index="{{work._id}}">
     <view wx:if="{{selected == work._id && work.url.length == 0}}"
         style="padding-top: {{safeArea.top}}px; width: 40rpx; height: 40rpx; border-radius: 50%; text-align: center; overflow: hidden; opacity: .8"
         class="white d-flex align-center mx-4"
@@ -11,7 +11,7 @@
         <image src="/images/icon/plus.svg" class="white close-icon"></image>
     </view>
     
-    <view wx:if="{{ work.url.length != 0 }}" class="overflow-hidden" catchtap="previewImage" data-url="{{work.url}}">
+    <view wx:if="{{ work.url.length != 0 }}" class="overflow-hidden" catchtap="previewImage" data-id="{{work._id}}" data-url="{{work.url}}">
         <image src="{{baseUrl+'/'+work.url[0]}}" class="rounded-lg-top-right rounded-lg-top-left overflow-hidden" show-menu-by-longpress="true" mode="aspectFill" style="width: 100%;"></image>
     </view>
     <view class="pa-4 white rounded-lg card-title">
@@ -19,7 +19,7 @@
             <view class="subtitle">{{ work.title }}</view>
             <view catchtap="deleteWork" data-item="{{work}}" class="font-xs error--text error-border px-2 rounded-xs" wx:if="{{isEdit && userId == work.user_id && selected !== work._id}}">删除</view>
         </view>
-        <view class="font-desc my-2"> {{ work.description }} </view>
+        <view class="font-desc my-2 {{ selected == work._id?'mr-2':'' }}"> {{ work.description }} </view>
         <view class="font-desc mt-4 d-flex align-center">
             <image src="../../images/icon/love.svg" mode="aspectFit" style="height: 30rpx; width: 30rpx;" class="mr-1"></image>
             <text class="mr-4">{{ work.likes.length }}</text>
@@ -31,4 +31,5 @@
     <view class="content-wrapper">
         
     </view>
+    
 </view>

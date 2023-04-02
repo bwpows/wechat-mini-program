@@ -43,6 +43,7 @@ Component({
      * 组件的方法列表
      */
     methods: {
+        // 预览图片
         previewImage(e){
             let imgUrls = e.currentTarget.dataset.url
             for (let i = 0; i < imgUrls.length; i++) {
@@ -52,8 +53,10 @@ Component({
                 current: imgUrls[0],
                 urls: imgUrls,
             })
+            this.viewWorkApi(e.currentTarget.dataset.id)
         },
 
+        // 删除作品弹窗
         async deleteWork(e){
             let item = e.currentTarget.dataset.item
             let that = this
@@ -72,6 +75,7 @@ Component({
             })
         },
 
+        // 删除作品API
         async deleteWorkApi(id){
             let res = await del(delWorkById(id))
             if(res.code == 200){
@@ -80,11 +84,27 @@ Component({
             }
         },
 
-        onClickCard(e){
+        // 浏览作品
+        async viewWorkApi(id){
+            if(this.data.userId){
+                return await post(getViewWork, {user_id: this.data.userId, work_id: id})
+            }else{
+                if(wx.getStorageSync('userId')){
+                    this.setData({
+                        userId: wx.getStorageSync('userId')
+                    })
+                }
+            }
+        },
+
+        async onClickCard(e){
+            // 让整个card处于全屏，设置偏移量
             this.setData({
                 selected: e.currentTarget.dataset.index == this.data.selected?0:e.currentTarget.dataset.index,
                 translateY:  -(e.currentTarget.offsetTop - this.data.scrollHeight)
             })
+
+            // 获取是不是tabbar页面，是否的话隐藏tabbar
             let pages = getCurrentPages()
             let currentPage = pages[pages.length - 1].route
             if(currentPage == 'pages/work/index/index'){
@@ -94,10 +114,10 @@ Component({
             }
             this.triggerEvent("selected", e.currentTarget.dataset.index == this.data.selected)
 
+            // 点击设置浏览器加1
             if(e.currentTarget.dataset.index !== this.data.selected){
-                post(getViewWork, {user_id: this.data.userId, work_id: e.currentTarget.dataset.index})
+                await this.viewWorkApi(e.currentTarget.dataset.index)
             }
-
         },
 
 
