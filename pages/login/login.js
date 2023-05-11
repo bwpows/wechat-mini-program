@@ -90,8 +90,8 @@ Page({
             await wx.setStorageSync('token', res.data.data.token)
             await this.getUserInfo()
             app.globalData.isLogin = true
-            wx.switchTab({
-                url: '/pages/index/index'
+            wx.reLaunch({
+                url: '/pages/work/index/index',
             })
         }
     },

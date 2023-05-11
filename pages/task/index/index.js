@@ -22,7 +22,8 @@ Page({
         })
         if(this.data.isLogin) await this.getTask()
         this.setData({
-            initLoading: false
+            initLoading: false,
+            loading: false
         })
     },
 
@@ -50,9 +51,6 @@ Page({
         })
         if(res.code == 200){
             let arr = []
-            /*
-            * test arrary
-            */
            this.dealArr(res.data)
             for (let i = 0; i < dealTaskList.length; i++) {
                 if(!arr[dealTaskList[i].taskDateType - 1]) arr[dealTaskList[i].taskDateType - 1] = []

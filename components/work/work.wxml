@@ -28,8 +28,8 @@
             <text class="ml-4" wx:if="work.users.username">{{ work.users.username }}</text>
         </view>
     </view>
-    <view class="content-wrapper">
-        
-    </view>
+    <scroll-view class="content-wrapper">
+        <view style="height: 1000px; overflow: scroll;">{{(work.comments[0].content)}}</view>
+    </scroll-view>
     
 </view>

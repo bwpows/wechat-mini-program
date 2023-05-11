@@ -8,7 +8,7 @@
 }
 
 .headImg{
-    height: 100rpx; width: 100rpx; border-radius: 60rpx;
+    height: 100rpx; width: 100rpx; border-radius: 30rpx;
 }
 
 .dirver_margin {
