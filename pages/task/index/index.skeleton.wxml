@@ -17,7 +17,6 @@
 -->
 <template name="skeleton">
   <view class="sk-container">
-    <page-meta page-style="true"></page-meta>
     <view is="components/nav-bar/index">
       <view class="white index--white d-flex index--d-flex align-center index--align-center justify-center index--justify-center nav-bar sk-text" style="padding-top: 44px; opacity: 1; color: black; z-index: 100">首页</view>
     </view>

@@ -31,3 +31,7 @@ page {
     font-size: 24rpx;
     color: #ffffffee;
 }
+
+.box-list .driver:nth-last-child(1) {
+    display: none;
+}
