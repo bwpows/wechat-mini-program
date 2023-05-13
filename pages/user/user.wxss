@@ -11,7 +11,7 @@ page {
 }
 
 .headImg{
-    height: 100rpx; width: 100rpx; border-radius: 30rpx;
+    height: 100rpx; width: 100rpx; border-radius: 20rpx;
 }
 
 .dirver_margin {

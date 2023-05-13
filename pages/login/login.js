@@ -189,6 +189,14 @@ Page({
         wx.reLaunch({
           url: '/pages/work/index/index',
         })
+    },
+
+    // 前往用户协议页面
+    bindAgreement(e){
+        console.log(e);
+        wx.navigateTo({
+          url: e.currentTarget.dataset.url,
+        })
     }
     
 

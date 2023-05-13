@@ -27,7 +27,9 @@
         "pages/task/todo/todo",
         "pages/task/completed/completed",
         "pages/task/cancel/cancel",
-        "pages/chatgpt/chatgpt"
+        "pages/chatgpt/chatgpt",
+        "pages/agreement/user-agreement/index",
+        "pages/agreement/privacy-policy/index"
     ],
     "window": {
         "backgroundTextStyle": "dark",
@@ -61,6 +63,5 @@
         ]
     },
     "style": "v2",
-    "sitemapLocation": "sitemap.json",
-    "lazyCodeLoading": "requiredComponents"
+    "sitemapLocation": "sitemap.json"
 }

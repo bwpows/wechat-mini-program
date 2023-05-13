@@ -12,12 +12,12 @@
                 <view aria-role="button" class="subtitle text-no-warp grey--text" wx:else="">{{ verificationCodeTime }}秒后获取</view>
             </view>
         </view>
-        <checkbox-group bindchange="checkboxChange" class="mb-12">
+        <checkbox-group bindchange="checkboxChange" class="mb-12 checkbox">
             <label class="d-flex align-center grey--text">
                 <checkbox value="{{checkValue}}" />
                 <view class="weui-agree__checkbox" aria-labelledby="js_agree_txt js_agree_link" aria-role="checkbox"></view>
                 <view class="weui-agree__text d-flex">
-                    <text aria-hidden="true" id="js_agree_txt">阅读并同意《相关条款》</text>
+                    <text aria-hidden="true">阅读并同意<text class="policy-text" catch:tap="bindAgreement" data-url="/pages/agreement/user-agreement/index">《用户协议》</text>和<text class="policy-text" catch:tap="bindAgreement" data-url="/pages/agreement/privacy-policy/index">《隐私政策》</text></text>
                 </view>
             </label>
         </checkbox-group>

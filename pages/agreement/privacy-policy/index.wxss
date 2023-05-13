@@ -1,0 +1,26 @@
+/* pages/agreement/user-agreement/index.wxss */
+page {
+    background-color: #fff;
+}
+
+.aggreement-title {
+    margin-top: 24rpx;
+    margin-bottom: 12rpx;
+    font-weight: 600;
+}
+
+.myOne{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.my-div{
+    margin: 24rpx;
+    font-size: 28rpx;
+    color: #333;
+}
+.yhxy{
+    color: black;
+    font-size: 40rpx;
+    font-weight: 600;
+}

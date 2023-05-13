@@ -4,3 +4,23 @@
     border: 1px solid #ec752e;
     padding: 12px;
 }
+
+.checkbox {
+    font-size: 26rpx;
+}
+
+.wx-checkbox-input {
+  width: 34rpx !important;
+  height: 34rpx !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wx-checkbox-input.wx-checkbox-input-checked{
+  color:#ec752e !important;
+}
+
+.policy-text {
+    color: #ec752e;
+}
