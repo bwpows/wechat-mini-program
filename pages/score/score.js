@@ -45,7 +45,7 @@ Page({
             }
             this.setData({
                 allScore: res.data || [],
-                avgScore: total/(res.data.length || 1)
+                avgScore: parseFloat(total/(res.data.length || 1)).toFixed(1)
             })
         }
         wx.hideLoading()
