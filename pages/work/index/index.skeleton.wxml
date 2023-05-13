@@ -1,98 +1,103 @@
 <!--
-此文件为开发者工具生成，生成时间: 2023/1/12下午10:35:33
+此文件为开发者工具生成，生成时间: 2023/5/12下午7:18:06
 使用方法：
-在 /Users/bwpow/Desktop/bwpow/bwpow-mini-program/pages/work/work.wxml 引入模板
+在 /Users/bwpow/Desktop/bwpow/bwpow-mini-program/pages/work/index/index.wxml 引入模板
 
 ```
-<import src="work.skeleton.wxml"/>
+<import src="index.skeleton.wxml"/>
 <template is="skeleton" wx:if="{{loading}}" />
 ```
 
-在 /Users/bwpow/Desktop/bwpow/bwpow-mini-program/pages/work/work.wxss 中引入样式
+在 /Users/bwpow/Desktop/bwpow/bwpow-mini-program/pages/work/index/index.wxss 中引入样式
 ```
-@import "./work.skeleton.wxss";
+@import "./index.skeleton.wxss";
 ```
 
 更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
 -->
 <template name="skeleton">
   <view class="sk-container">
+    <view is="components/nav-bar/index">
+      <view class="white index--white d-flex index--d-flex align-center index--align-center justify-center index--justify-center nav-bar index--nav-bar sk-transparent sk-text-7-8947-768 sk-text" style="padding-top: 44px; opacity: 1; color: black; z-index: 0">作品</view>
+      <view style="height: 88px"></view>
+    </view>
     <view class="container py-4">
-      <view class="my-6 card rounded-lg overflow-hidden">
+      <view class="my-6 card rounded-lg">
         <view is="components/work/work">
-          <view class="pa-4 work--pa-4">
-            <view class="d-flex work--d-flex justify-space-between work--justify-space-between align-center work--align-center">
-              <view class="subtitle work--subtitle sk-transparent sk-text-13-1579-51 sk-text">最后一天最后一天</view>
+          <view class="card work--card" data-index="645cbf33f63b1b6494f196c6" style="height:257.0px; transform: translateY(px) scale(calc(375/350))">
+            <view class="overflow-hidden work--overflow-hidden" data-id="645cbf33f63b1b6494f196c6" data-url="uploadFiles/2023-03-11/1683799841245.jpg,uploadFiles/2023-03-11/1683799841270.jpg">
+              <image class="rounded-lg-top-right work--rounded-lg-top-right rounded-lg-top-left work--rounded-lg-top-left overflow-hidden work--overflow-hidden" mode="aspectFill" show-menu-by-longpress="true" style="width: 100%;"></image>
             </view>
-            <view class="font-desc work--font-desc my-2 work--my-2 sk-transparent sk-text-15-7895-443 sk-text"> 最后一天最后一天最后一天最后一天最后一天最后一天最后一天最后一天最后一天最后一天 </view>
-            <view class="font-desc work--font-desc mt-4 work--mt-4 d-flex work--d-flex align-center work--align-center">
-              <image class="mr-1 work--mr-1 sk-image" mode="aspectFit" style="height: 15px; width: 15px;"></image>
-              <text class="mr-4 work--mr-4 sk-transparent sk-opacity">0</text>
-              <image class="mr-1 work--mr-1 sk-image" mode="aspectFit" style="height: 15px; width: 15px;"></image>
-              <text class="sk-transparent sk-opacity"> 0 </text>
-              <text class="ml-4 work--ml-4 sk-transparent sk-text-15-7895-467 sk-text">宝宝</text>
+            <view class="pa-4 work--pa-4 white work--white rounded-lg work--rounded-lg card-title work--card-title">
+              <view class="d-flex work--d-flex justify-space-between work--justify-space-between align-center work--align-center">
+                <view class="subtitle work--subtitle sk-transparent sk-text-13-1579-168 sk-text">我的家园</view>
+              </view>
+              <view class="font-desc work--font-desc my-2 work--my-2 sk-transparent sk-text-15-7895-510 sk-text"> 你种菜吗 </view>
+              <view class="font-desc work--font-desc mt-4 work--mt-4 d-flex work--d-flex align-center work--align-center">
+                <image class="mr-1 work--mr-1 sk-image" mode="aspectFit" style="height: 15px; width: 15px;"></image>
+                <text class="mr-4 work--mr-4 sk-transparent sk-opacity">0</text>
+                <image class="mr-1 work--mr-1 sk-image" mode="aspectFit" style="height: 15px; width: 15px;"></image>
+                <text class="sk-transparent sk-text-15-7895-738 sk-text"> 17 </text>
+                <text class="ml-4 work--ml-4"></text>
+              </view>
             </view>
+            <scroll-view class="content-wrapper work--content-wrapper">
+              <view style="height: 1000px; overflow: scroll;"></view>
+            </scroll-view>
           </view>
         </view>
       </view>
-      <view class="my-6 card rounded-lg overflow-hidden">
+      <view class="my-6 card rounded-lg">
         <view is="components/work/work">
-          <view class="pa-4 work--pa-4">
-            <view class="d-flex work--d-flex justify-space-between work--justify-space-between align-center work--align-center">
-              <view class="subtitle work--subtitle sk-transparent sk-text-13-1579-121 sk-text">还有两天</view>
+          <view class="card work--card" data-index="643e27daf63b1b6494f19443" style="height:107.0px; transform: translateY(px) scale(calc(375/350))">
+            <view class="pa-4 work--pa-4 white work--white rounded-lg work--rounded-lg card-title work--card-title">
+              <view class="d-flex work--d-flex justify-space-between work--justify-space-between align-center work--align-center">
+                <view class="subtitle work--subtitle sk-transparent sk-text-13-1579-425 sk-text">2023-04</view>
+              </view>
+              <view class="font-desc work--font-desc my-2 work--my-2 sk-transparent sk-text-15-7895-917 sk-text"> 1419 </view>
+              <view class="font-desc work--font-desc mt-4 work--mt-4 d-flex work--d-flex align-center work--align-center">
+                <image class="mr-1 work--mr-1 sk-image" mode="aspectFit" style="height: 15px; width: 15px;"></image>
+                <text class="mr-4 work--mr-4 sk-transparent sk-opacity">0</text>
+                <image class="mr-1 work--mr-1 sk-image" mode="aspectFit" style="height: 15px; width: 15px;"></image>
+                <text class="sk-transparent sk-opacity"> 2 </text>
+                <text class="ml-4 work--ml-4 sk-transparent sk-text-15-7895-593 sk-text">北彼</text>
+              </view>
             </view>
-            <view class="font-desc work--font-desc my-2 work--my-2 sk-transparent sk-text-15-7895-827 sk-text"> 回家了 </view>
-            <view class="font-desc work--font-desc mt-4 work--mt-4 d-flex work--d-flex align-center work--align-center">
-              <image class="mr-1 work--mr-1 sk-image" mode="aspectFit" style="height: 15px; width: 15px;"></image>
-              <text class="mr-4 work--mr-4 sk-transparent sk-opacity">0</text>
-              <image class="mr-1 work--mr-1 sk-image" mode="aspectFit" style="height: 15px; width: 15px;"></image>
-              <text class="sk-transparent sk-opacity"> 0 </text>
-              <text class="ml-4 work--ml-4 sk-transparent sk-text-15-7895-122 sk-text">宝宝</text>
-            </view>
+            <scroll-view class="content-wrapper work--content-wrapper">
+              <view style="height: 1000px; overflow: scroll;"></view>
+            </scroll-view>
           </view>
         </view>
       </view>
-      <view class="my-6 card rounded-lg overflow-hidden">
+      <view class="my-6 card rounded-lg">
         <view is="components/work/work">
-          <view class="pa-4 work--pa-4">
-            <view class="d-flex work--d-flex justify-space-between work--justify-space-between align-center work--align-center">
-              <view class="subtitle work--subtitle sk-transparent sk-text-13-1579-629 sk-text">嘿嘿</view>
+          <view class="card work--card" data-index="63eb2912c9ff690bcffae812" style="height:107.0px; transform: translateY(px) scale(calc(375/350))">
+            <view class="pa-4 work--pa-4 white work--white rounded-lg work--rounded-lg card-title work--card-title">
+              <view class="d-flex work--d-flex justify-space-between work--justify-space-between align-center work--align-center">
+                <view class="subtitle work--subtitle sk-transparent sk-text-13-1579-213 sk-text">2023-03</view>
+              </view>
+              <view class="font-desc work--font-desc my-2 work--my-2 sk-transparent sk-text-15-7895-342 sk-text"> 1419 </view>
+              <view class="font-desc work--font-desc mt-4 work--mt-4 d-flex work--d-flex align-center work--align-center">
+                <image class="mr-1 work--mr-1 sk-image" mode="aspectFit" style="height: 15px; width: 15px;"></image>
+                <text class="mr-4 work--mr-4 sk-transparent sk-opacity">1</text>
+                <image class="mr-1 work--mr-1 sk-image" mode="aspectFit" style="height: 15px; width: 15px;"></image>
+                <text class="sk-transparent sk-opacity"> 7 </text>
+                <text class="ml-4 work--ml-4 sk-transparent sk-text-15-7895-556 sk-text">北彼</text>
+              </view>
             </view>
-            <view class="font-desc work--font-desc my-2 work--my-2 sk-transparent sk-text-15-7895-486 sk-text"> 宝宝 </view>
-            <view class="font-desc work--font-desc mt-4 work--mt-4 d-flex work--d-flex align-center work--align-center">
-              <image class="mr-1 work--mr-1 sk-image" mode="aspectFit" style="height: 15px; width: 15px;"></image>
-              <text class="mr-4 work--mr-4 sk-transparent sk-opacity">0</text>
-              <image class="mr-1 work--mr-1 sk-image" mode="aspectFit" style="height: 15px; width: 15px;"></image>
-              <text class="sk-transparent sk-opacity"> 0 </text>
-              <text class="ml-4 work--ml-4 sk-transparent sk-text-15-7895-6 sk-text">宝宝</text>
-            </view>
+            <scroll-view class="content-wrapper work--content-wrapper">
+              <view style="height: 1000px; overflow: scroll;"></view>
+            </scroll-view>
           </view>
         </view>
       </view>
-      <view class="my-6 card rounded-lg overflow-hidden">
+      <view class="my-6 card rounded-lg">
         <view is="components/work/work">
-          <view class="pa-4 work--pa-4">
-            <view class="d-flex work--d-flex justify-space-between work--justify-space-between align-center work--align-center">
-              <view class="subtitle work--subtitle sk-transparent sk-text-13-1579-977 sk-text">还有三天</view>
+          <view class="card work--card" data-index="63e4fe05b1616c3f02ab4543" style="height:261.0px; transform: translateY(px) scale(calc(375/350))">
+            <view class="overflow-hidden work--overflow-hidden" data-id="63e4fe05b1616c3f02ab4543" data-url="uploadFiles/2023-02-07/1675951573895.jpg,uploadFiles/2023-02-07/1675951573922.jpg,uploadFiles/2023-02-07/1675951573879.jpg">
+              <image class="rounded-lg-top-right work--rounded-lg-top-right rounded-lg-top-left work--rounded-lg-top-left overflow-hidden work--overflow-hidden" mode="aspectFill" show-menu-by-longpress="true" style="width: 100%;"></image>
             </view>
-            <view class="font-desc work--font-desc my-2 work--my-2 sk-transparent sk-text-15-7895-883 sk-text"> 嘿嘿 </view>
-            <view class="font-desc work--font-desc mt-4 work--mt-4 d-flex work--d-flex align-center work--align-center">
-              <image class="mr-1 work--mr-1 sk-image" mode="aspectFit" style="height: 15px; width: 15px;"></image>
-              <text class="mr-4 work--mr-4 sk-transparent sk-opacity">0</text>
-              <image class="mr-1 work--mr-1 sk-image" mode="aspectFit" style="height: 15px; width: 15px;"></image>
-              <text class="sk-transparent sk-opacity"> 0 </text>
-              <text class="ml-4 work--ml-4 sk-transparent sk-text-15-7895-797 sk-text">宝宝</text>
-            </view>
-          </view>
-        </view>
-      </view>
-      <view class="my-6 card rounded-lg overflow-hidden">
-        <view is="components/work/work">
-          <view class="pa-4 work--pa-4">
-            <view class="d-flex work--d-flex justify-space-between work--justify-space-between align-center work--align-center">
-              <view class="subtitle work--subtitle sk-transparent sk-text-13-1579-854 sk-text">元旦快乐</view>
-            </view>
-            <view class="font-desc work--font-desc my-2 work--my-2 sk-transparent sk-text-15-7895-611 sk-text"> 嘿嘿 </view>
+            <view class="pa-4 work--pa-4 white work--white rounded-lg work--rounded-lg card-title work--card-title"></view>
           </view>
         </view>
       </view>

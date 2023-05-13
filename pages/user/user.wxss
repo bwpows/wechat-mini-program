@@ -1,3 +1,6 @@
+page {
+    min-height: 100%;
+}
 
 .arrowIcon{
     height: 40rpx; width: 40rpx;

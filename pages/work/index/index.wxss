@@ -1,5 +1,10 @@
 
 @import "./index.skeleton.wxss";
+
+page {
+    min-height: 100%;
+}
+
 .blogDirver{
     display: block; 
     width: 100%; 

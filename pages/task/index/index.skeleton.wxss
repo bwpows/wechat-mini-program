@@ -1,7 +1,7 @@
 /*
-此文件为开发者工具生成，生成时间: 2023/1/12下午10:50:32
+此文件为开发者工具生成，生成时间: 2023/5/12下午7:18:53
 
-在 /Users/bwpow/Desktop/bwpow/bwpow-mini-program/pages/index/index.wxss 中引入样式
+在 /Users/bwpow/Desktop/bwpow/bwpow-mini-program/pages/task/index/index.wxss 中引入样式
 ```
 @import "./index.skeleton.wxss";
 ```
@@ -11,10 +11,10 @@
 .sk-transparent {
     color: transparent !important;
   }
-.sk-text-13-1579-846 {
-    background-image: linear-gradient(transparent 13.1579%, #EEEEEE 0%, #EEEEEE 86.8421%, transparent 0%) !important;
+.sk-text-7-8947-102 {
+    background-image: linear-gradient(transparent 7.8947%, #EEEEEE 0%, #EEEEEE 92.1053%, transparent 0%) !important;
     background-size: 100% 38.0000rpx;
-    position: relative !important;
+    position: fixed !important;
   }
 .sk-text {
     background-origin: content-box !important;
@@ -23,42 +23,62 @@
     color: transparent !important;
     background-repeat: repeat-y !important;
   }
-.sk-text-13-1579-389 {
+.sk-text-13-1579-5 {
     background-image: linear-gradient(transparent 13.1579%, #EEEEEE 0%, #EEEEEE 86.8421%, transparent 0%) !important;
     background-size: 100% 38.0000rpx;
     position: relative !important;
   }
-.sk-text-13-1579-472 {
+.sk-text-13-1579-689 {
     background-image: linear-gradient(transparent 13.1579%, #EEEEEE 0%, #EEEEEE 86.8421%, transparent 0%) !important;
     background-size: 100% 38.0000rpx;
     position: relative !important;
   }
-.sk-text-13-1579-428 {
+.sk-text-13-1579-156 {
     background-image: linear-gradient(transparent 13.1579%, #EEEEEE 0%, #EEEEEE 86.8421%, transparent 0%) !important;
     background-size: 100% 38.0000rpx;
     position: relative !important;
   }
-.sk-text-13-1579-256 {
+.sk-text-13-1579-281 {
     background-image: linear-gradient(transparent 13.1579%, #EEEEEE 0%, #EEEEEE 86.8421%, transparent 0%) !important;
     background-size: 100% 38.0000rpx;
     position: relative !important;
   }
-.sk-text-13-1579-686 {
+.sk-text-13-1579-124 {
     background-image: linear-gradient(transparent 13.1579%, #EEEEEE 0%, #EEEEEE 86.8421%, transparent 0%) !important;
     background-size: 100% 38.0000rpx;
     position: relative !important;
   }
-.sk-text-13-1579-593 {
+.sk-text-13-1579-223 {
     background-image: linear-gradient(transparent 13.1579%, #EEEEEE 0%, #EEEEEE 86.8421%, transparent 0%) !important;
     background-size: 100% 38.0000rpx;
     position: relative !important;
   }
-.sk-text-13-1579-290 {
+.sk-text-13-1579-160 {
     background-image: linear-gradient(transparent 13.1579%, #EEEEEE 0%, #EEEEEE 86.8421%, transparent 0%) !important;
     background-size: 100% 38.0000rpx;
     position: relative !important;
   }
-.sk-text-13-1579-736 {
+.sk-text-13-1579-147 {
+    background-image: linear-gradient(transparent 13.1579%, #EEEEEE 0%, #EEEEEE 86.8421%, transparent 0%) !important;
+    background-size: 100% 38.0000rpx;
+    position: relative !important;
+  }
+.sk-text-13-1579-480 {
+    background-image: linear-gradient(transparent 13.1579%, #EEEEEE 0%, #EEEEEE 86.8421%, transparent 0%) !important;
+    background-size: 100% 38.0000rpx;
+    position: relative !important;
+  }
+.sk-text-13-1579-333 {
+    background-image: linear-gradient(transparent 13.1579%, #EEEEEE 0%, #EEEEEE 86.8421%, transparent 0%) !important;
+    background-size: 100% 38.0000rpx;
+    position: relative !important;
+  }
+.sk-text-13-1579-792 {
+    background-image: linear-gradient(transparent 13.1579%, #EEEEEE 0%, #EEEEEE 86.8421%, transparent 0%) !important;
+    background-size: 100% 38.0000rpx;
+    position: relative !important;
+  }
+.sk-text-13-1579-232 {
     background-image: linear-gradient(transparent 13.1579%, #EEEEEE 0%, #EEEEEE 86.8421%, transparent 0%) !important;
     background-size: 100% 38.0000rpx;
     position: relative !important;

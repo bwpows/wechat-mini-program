@@ -9,5 +9,5 @@
             </view>
         </view>
     </block>
-    <view wx:else="" class="pa-4 rounded card grey--text subtitle">暂时没有数据</view>
+    <view wx:else class="pa-4 rounded card grey--text subtitle">暂时没有数据</view>
 </view>

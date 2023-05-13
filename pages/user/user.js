@@ -132,8 +132,9 @@ Page({
             success: async function(res){
                 if(res.cancel){}else{
                     await wx.clearStorage()
+                    app.globalData.isLogin = false
                     wx.reLaunch({
-                        url: '/pages/login/login',
+                        url: '/pages/task/index/index',
                     })
                 }
             },

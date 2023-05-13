@@ -1,14 +1,14 @@
 <!--
-此文件为开发者工具生成，生成时间: 2023/1/12下午10:50:32
+此文件为开发者工具生成，生成时间: 2023/5/12下午7:18:53
 使用方法：
-在 /Users/bwpow/Desktop/bwpow/bwpow-mini-program/pages/index/index.wxml 引入模板
+在 /Users/bwpow/Desktop/bwpow/bwpow-mini-program/pages/task/index/index.wxml 引入模板
 
 ```
 <import src="index.skeleton.wxml"/>
 <template is="skeleton" wx:if="{{loading}}" />
 ```
 
-在 /Users/bwpow/Desktop/bwpow/bwpow-mini-program/pages/index/index.wxss 中引入样式
+在 /Users/bwpow/Desktop/bwpow/bwpow-mini-program/pages/task/index/index.wxss 中引入样式
 ```
 @import "./index.skeleton.wxss";
 ```
@@ -17,6 +17,10 @@
 -->
 <template name="skeleton">
   <view class="sk-container">
+    <page-meta page-style="true"></page-meta>
+    <view is="components/nav-bar/index">
+      <view class="white index--white d-flex index--d-flex align-center index--align-center justify-center index--justify-center nav-bar sk-text" style="padding-top: 44px; opacity: 1; color: black; z-index: 100">首页</view>
+    </view>
     <view class="container subtitle">
       <view class="py-2"></view>
       <view>
@@ -29,68 +33,107 @@
         <view is="components/index/card"></view>
       </view>
       <view>
-        <view is="components/index/card">
-          <view class="mb-5 card--mb-5">
-            <view class="grey--text card--grey--text mb-2 card--mb-2 sk-transparent sk-text-13-1579-846 sk-text">本月任务</view>
-            <view class="card card--card mb-3 card--mb-3 pa-4 card--pa-4 rounded card--rounded d-flex card--d-flex justify-space-between card--justify-space-between" data-taskid="63bb6c0a74d636b03b426afd" style="position: relative; height: 100%;">
-              <view class="sk-transparent sk-text-13-1579-389 sk-text"> 后台工单功能 </view>
-              <view class="d-flex card--d-flex rounded-bottom-right card--rounded-bottom-right rounded-top-left card--rounded-top-left overflow-hidden card--overflow-hidden no-selected card--no-selected task-position card--task-position">
-                <view class="success card--success d-flex card--d-flex align-center card--align-center px-3 card--px-3" data-taskid="63bb6c0a74d636b03b426afd">
-                  <image class="icon_width card--icon_width sk-image"></image>
-                </view>
-              </view>
-            </view>
-            <view class="card card--card mb-3 card--mb-3 pa-4 card--pa-4 rounded card--rounded d-flex card--d-flex justify-space-between card--justify-space-between" data-taskid="63bf998c94c1f27483d85c4b" style="position: relative; height: 100%;">
-              <view class="sk-transparent sk-text-13-1579-472 sk-text"> 管理后台统计图移动端适配问题 </view>
-              <view class="d-flex card--d-flex rounded-bottom-right card--rounded-bottom-right rounded-top-left card--rounded-top-left overflow-hidden card--overflow-hidden no-selected card--no-selected task-position card--task-position">
-                <view class="success card--success d-flex card--d-flex align-center card--align-center px-3 card--px-3" data-taskid="63bf998c94c1f27483d85c4b">
-                  <image class="icon_width card--icon_width sk-image"></image>
-                </view>
-              </view>
-            </view>
-            <view class="card card--card mb-3 card--mb-3 pa-4 card--pa-4 rounded card--rounded d-flex card--d-flex justify-space-between card--justify-space-between" data-taskid="63bfd94c94c1f27483d85cb7" style="position: relative; height: 100%;">
-              <view class="sk-transparent sk-text-13-1579-428 sk-text"> tab页面添加骨架屏 </view>
-              <view class="d-flex card--d-flex rounded-bottom-right card--rounded-bottom-right rounded-top-left card--rounded-top-left overflow-hidden card--overflow-hidden no-selected card--no-selected task-position card--task-position">
-                <view class="success card--success d-flex card--d-flex align-center card--align-center px-3 card--px-3" data-taskid="63bfd94c94c1f27483d85cb7">
-                  <image class="icon_width card--icon_width sk-image"></image>
-                </view>
-              </view>
-            </view>
-          </view>
-        </view>
+        <view is="components/index/card"></view>
       </view>
       <view>
         <view is="components/index/card">
           <view class="mb-5 card--mb-5">
-            <view class="grey--text card--grey--text mb-2 card--mb-2 sk-transparent sk-text-13-1579-256 sk-text">今年任务</view>
-            <view class="card card--card mb-3 card--mb-3 pa-4 card--pa-4 rounded card--rounded d-flex card--d-flex justify-space-between card--justify-space-between" data-taskid="63bb8fcf74d636b03b426b21" style="position: relative; height: 100%;">
-              <view class="sk-transparent sk-text-13-1579-686 sk-text"> 调整页面任务管理版式-下个版本 </view>
+            <view class="grey--text card--grey--text mb-2 card--mb-2 sk-transparent sk-text-13-1579-5 sk-text">今年任务</view>
+            <view class="card card--card mb-3 card--mb-3 pa-4 card--pa-4 rounded card--rounded d-flex card--d-flex justify-space-between card--justify-space-between primary_left_border card--primary_left_border" data-taskid="63d620ef94c1f27483d8662b"
+              style="position: relative; height: 100%;">
+              <view class="sk-transparent sk-text-13-1579-689 sk-text"> 订婚 </view>
+              <view class="d-flex card--d-flex rounded-bottom-right card--rounded-bottom-right rounded-top-left card--rounded-top-left overflow-hidden card--overflow-hidden no-selected card--no-selected task-position card--task-position">
+                <view class="success card--success d-flex card--d-flex align-center card--align-center px-3 card--px-3" data-taskid="63d620ef94c1f27483d8662b">
+                  <image class="icon_width card--icon_width sk-image"></image>
+                </view>
+              </view>
+            </view>
+            <view class="card card--card mb-3 card--mb-3 pa-4 card--pa-4 rounded card--rounded d-flex card--d-flex justify-space-between card--justify-space-between primary_left_border card--primary_left_border" data-taskid="63f638cdfcb8d403eee70a8e"
+              style="position: relative; height: 100%;">
+              <view class="sk-transparent sk-text-13-1579-156 sk-text"> 糖葫芦 </view>
+              <view class="d-flex card--d-flex rounded-bottom-right card--rounded-bottom-right rounded-top-left card--rounded-top-left overflow-hidden card--overflow-hidden no-selected card--no-selected task-position card--task-position">
+                <view class="success card--success d-flex card--d-flex align-center card--align-center px-3 card--px-3" data-taskid="63f638cdfcb8d403eee70a8e">
+                  <image class="icon_width card--icon_width sk-image"></image>
+                </view>
+              </view>
+            </view>
+            <view class="card card--card mb-3 card--mb-3 pa-4 card--pa-4 rounded card--rounded d-flex card--d-flex justify-space-between card--justify-space-between primary_left_border card--primary_left_border" data-taskid="64262af9f63b1b6494f18fc2"
+              style="position: relative; height: 100%;">
+              <view class="sk-transparent sk-text-13-1579-281 sk-text"> 买五金 </view>
+              <view class="d-flex card--d-flex rounded-bottom-right card--rounded-bottom-right rounded-top-left card--rounded-top-left overflow-hidden card--overflow-hidden no-selected card--no-selected task-position card--task-position">
+                <view class="success card--success d-flex card--d-flex align-center card--align-center px-3 card--px-3" data-taskid="64262af9f63b1b6494f18fc2">
+                  <image class="icon_width card--icon_width sk-image"></image>
+                </view>
+              </view>
+            </view>
+            <view class="card card--card mb-3 card--mb-3 pa-4 card--pa-4 rounded card--rounded d-flex card--d-flex justify-space-between card--justify-space-between primary_left_border card--primary_left_border" data-taskid="642d365df63b1b6494f19228"
+              style="position: relative; height: 100%;">
+              <view class="sk-transparent sk-text-13-1579-124 sk-text"> 招商限额 </view>
+              <view class="d-flex card--d-flex rounded-bottom-right card--rounded-bottom-right rounded-top-left card--rounded-top-left overflow-hidden card--overflow-hidden no-selected card--no-selected task-position card--task-position">
+                <view class="success card--success d-flex card--d-flex align-center card--align-center px-3 card--px-3" data-taskid="642d365df63b1b6494f19228">
+                  <image class="icon_width card--icon_width sk-image"></image>
+                </view>
+              </view>
+            </view>
+            <view class="card card--card mb-3 card--mb-3 pa-4 card--pa-4 rounded card--rounded d-flex card--d-flex justify-space-between card--justify-space-between primary_left_border card--primary_left_border" data-taskid="643b8190f63b1b6494f193fb"
+              style="position: relative; height: 100%;">
+              <view class="sk-transparent sk-text-13-1579-223 sk-text"> 摩托车 </view>
+              <view class="d-flex card--d-flex rounded-bottom-right card--rounded-bottom-right rounded-top-left card--rounded-top-left overflow-hidden card--overflow-hidden no-selected card--no-selected task-position card--task-position">
+                <view class="success card--success d-flex card--d-flex align-center card--align-center px-3 card--px-3" data-taskid="643b8190f63b1b6494f193fb">
+                  <image class="icon_width card--icon_width sk-image"></image>
+                </view>
+              </view>
+            </view>
+            <view class="card card--card mb-3 card--mb-3 pa-4 card--pa-4 rounded card--rounded d-flex card--d-flex justify-space-between card--justify-space-between primary_left_border card--primary_left_border" data-taskid="6441fe15f63b1b6494f19538"
+              style="position: relative; height: 100%;">
+              <view class="sk-transparent sk-text-13-1579-160 sk-text"> 取居住证 </view>
+              <view class="d-flex card--d-flex rounded-bottom-right card--rounded-bottom-right rounded-top-left card--rounded-top-left overflow-hidden card--overflow-hidden no-selected card--no-selected task-position card--task-position">
+                <view class="success card--success d-flex card--d-flex align-center card--align-center px-3 card--px-3" data-taskid="6441fe15f63b1b6494f19538">
+                  <image class="icon_width card--icon_width sk-image"></image>
+                </view>
+              </view>
+            </view>
+            <view class="card card--card mb-3 card--mb-3 pa-4 card--pa-4 rounded card--rounded d-flex card--d-flex justify-space-between card--justify-space-between primary_left_border card--primary_left_border" data-taskid="64584630f63b1b6494f19633"
+              style="position: relative; height: 100%;">
+              <view class="sk-transparent sk-text-13-1579-147 sk-text"> 还想去海边玩 </view>
+              <view class="d-flex card--d-flex rounded-bottom-right card--rounded-bottom-right rounded-top-left card--rounded-top-left overflow-hidden card--overflow-hidden no-selected card--no-selected task-position card--task-position">
+                <view class="success card--success d-flex card--d-flex align-center card--align-center px-3 card--px-3" data-taskid="64584630f63b1b6494f19633">
+                  <image class="icon_width card--icon_width sk-image"></image>
+                </view>
+              </view>
+            </view>
+            <view class="card card--card mb-3 card--mb-3 pa-4 card--pa-4 rounded card--rounded d-flex card--d-flex justify-space-between card--justify-space-between primary_left_border card--primary_left_border" data-taskid="645de447f63b1b6494f198fa"
+              style="position: relative; height: 100%;">
+              <view class="sk-transparent sk-text-13-1579-480 sk-text"> 骨架屏错乱 </view>
+              <view class="d-flex card--d-flex rounded-bottom-right card--rounded-bottom-right rounded-top-left card--rounded-top-left overflow-hidden card--overflow-hidden no-selected card--no-selected task-position card--task-position">
+                <view class="success card--success d-flex card--d-flex align-center card--align-center px-3 card--px-3" data-taskid="645de447f63b1b6494f198fa">
+                  <image class="icon_width card--icon_width sk-image"></image>
+                </view>
+              </view>
+            </view>
+            <view class="card card--card mb-3 card--mb-3 pa-4 card--pa-4 rounded card--rounded d-flex card--d-flex justify-space-between card--justify-space-between primary_left_border card--primary_left_border" data-taskid="645de49ef63b1b6494f19917"
+              style="position: relative; height: 100%;">
+              <view class="sk-transparent sk-text-13-1579-333 sk-text"> 退出登录不需要跳转到注册 </view>
+              <view class="d-flex card--d-flex rounded-bottom-right card--rounded-bottom-right rounded-top-left card--rounded-top-left overflow-hidden card--overflow-hidden no-selected card--no-selected task-position card--task-position">
+                <view class="success card--success d-flex card--d-flex align-center card--align-center px-3 card--px-3" data-taskid="645de49ef63b1b6494f19917">
+                  <image class="icon_width card--icon_width sk-image"></image>
+                </view>
+              </view>
+            </view>
+            <view class="card card--card mb-3 card--mb-3 pa-4 card--pa-4 rounded card--rounded d-flex card--d-flex justify-space-between card--justify-space-between primary_left_border card--primary_left_border cancel_left_border card--cancel_left_border"
+              data-taskid="63bb8fcf74d636b03b426b21" style="position: relative; height: 100%;">
+              <view class="text_line_through card--text_line_through grey--text card--grey--text sk-transparent sk-text-13-1579-792 sk-text" style="text-decoration-color: transparent;"> 调整页面任务管理版式-下个版本 </view>
               <view class="d-flex card--d-flex rounded-bottom-right card--rounded-bottom-right rounded-top-left card--rounded-top-left overflow-hidden card--overflow-hidden no-selected card--no-selected task-position card--task-position">
                 <view class="success card--success d-flex card--d-flex align-center card--align-center px-3 card--px-3" data-taskid="63bb8fcf74d636b03b426b21">
                   <image class="icon_width card--icon_width sk-image"></image>
                 </view>
               </view>
             </view>
-            <view class="card card--card mb-3 card--mb-3 pa-4 card--pa-4 rounded card--rounded d-flex card--d-flex justify-space-between card--justify-space-between" data-taskid="63bbbdeb74d636b03b426b6e" style="position: relative; height: 100%;">
-              <view class="sk-transparent sk-text-13-1579-593 sk-text"> 新加一个添资料页面，用户注册的时候填写 </view>
+            <view class="card card--card mb-3 card--mb-3 pa-4 card--pa-4 rounded card--rounded d-flex card--d-flex justify-space-between card--justify-space-between primary_left_border card--primary_left_border cancel_left_border card--cancel_left_border"
+              data-taskid="63bbbdeb74d636b03b426b6e" style="position: relative; height: 100%;">
+              <view class="text_line_through card--text_line_through grey--text card--grey--text sk-transparent sk-text-13-1579-232 sk-text" style="text-decoration-color: transparent;"> 新加一个添资料页面，用户注册的时候填写 </view>
               <view class="d-flex card--d-flex rounded-bottom-right card--rounded-bottom-right rounded-top-left card--rounded-top-left overflow-hidden card--overflow-hidden no-selected card--no-selected task-position card--task-position">
                 <view class="success card--success d-flex card--d-flex align-center card--align-center px-3 card--px-3" data-taskid="63bbbdeb74d636b03b426b6e">
-                  <image class="icon_width card--icon_width sk-image"></image>
-                </view>
-              </view>
-            </view>
-            <view class="card card--card mb-3 card--mb-3 pa-4 card--pa-4 rounded card--rounded d-flex card--d-flex justify-space-between card--justify-space-between" data-taskid="63bbc59674d636b03b426b85" style="position: relative; height: 100%;">
-              <view class="sk-transparent sk-text-13-1579-290 sk-text"> 新增连接Wi-Fi入口 </view>
-              <view class="d-flex card--d-flex rounded-bottom-right card--rounded-bottom-right rounded-top-left card--rounded-top-left overflow-hidden card--overflow-hidden no-selected card--no-selected task-position card--task-position">
-                <view class="success card--success d-flex card--d-flex align-center card--align-center px-3 card--px-3" data-taskid="63bbc59674d636b03b426b85">
-                  <image class="icon_width card--icon_width sk-image"></image>
-                </view>
-              </view>
-            </view>
-            <view class="card card--card mb-3 card--mb-3 pa-4 card--pa-4 rounded card--rounded d-flex card--d-flex justify-space-between card--justify-space-between" data-taskid="63bf99d294c1f27483d85c55" style="position: relative; height: 100%;">
-              <view class="sk-transparent sk-text-13-1579-736 sk-text"> 新增查看作品弹窗功能 </view>
-              <view class="d-flex card--d-flex rounded-bottom-right card--rounded-bottom-right rounded-top-left card--rounded-top-left overflow-hidden card--overflow-hidden no-selected card--no-selected task-position card--task-position">
-                <view class="success card--success d-flex card--d-flex align-center card--align-center px-3 card--px-3" data-taskid="63bf99d294c1f27483d85c55">
                   <image class="icon_width card--icon_width sk-image"></image>
                 </view>
               </view>
