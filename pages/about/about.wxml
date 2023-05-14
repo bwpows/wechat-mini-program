@@ -4,7 +4,7 @@
     <image src='../../images/bottomBar/workSelected.png' mode="aspectFit" style="width: 100rpx; height: 100rpx;"></image>
 
     <view class="title mt-4">诺三</view>
-    <view class="subtitle mt-2">Version 1.0.2</view>
+    <view class="subtitle mt-2">Version 1.2.3</view>
 </view>
 
 <view class="mt-6 mx-4 px-4 rounded-lg white">

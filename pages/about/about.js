@@ -14,10 +14,6 @@ Page({
                 title: '我的工单',
                 path: '/pages/workOrder/myOrder/myOrder'
             },
-            // {
-            //     title: '我的工单',
-            //     path: '/pages/workOrder/addOrder/addOrder'
-            // }
         ]
     },
 
