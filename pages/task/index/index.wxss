@@ -31,3 +31,16 @@ page {
     height: 40rpx;
     border-radius: 10rpx;
 }
+
+.tab-list {
+    width: 33.3%;
+    line-height: 74rpx;
+    z-index: 10;
+}
+
+.slider-box {
+    width: calc((100% ) / 3 - 16rpx);
+    position: absolute;
+    transition: all .5s;
+    top: 0; 
+}

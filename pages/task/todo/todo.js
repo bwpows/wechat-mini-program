@@ -24,12 +24,12 @@ Page({
     },
 
    async getTask(){
-       let res = await get(todoTaskUrl)
-       if(res.code == 200){
-        this.setData({
-            taskList: res.data
-        })
-    }
+        let res = await get(todoTaskUrl)
+        if(res.code == 200){
+            this.setData({
+                taskList: res.data
+            })
+        }
    },
 
     /**

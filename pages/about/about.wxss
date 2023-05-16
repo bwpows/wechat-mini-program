@@ -1,5 +1,11 @@
 /* pages/about/about.wxss */
 
 .arrowIcon {
-    height: 40rpx; width: 40rpx;
+    height: 40rpx;
+    width: 40rpx;
+}
+
+.logo-icon {
+    width: 100rpx;
+    height: 100rpx;
 }

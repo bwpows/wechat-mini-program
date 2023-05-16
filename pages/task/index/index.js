@@ -1,6 +1,6 @@
 //index.js
 import { get } from '../../../api/http'
-import { getTaskListUrl } from '../../../api/task'
+import { todoTaskUrl, completedTaskUrl, cancelTaskUrl } from '../../../api/task'
 const app = getApp()
 
 let dealTaskList = []
@@ -10,7 +10,8 @@ Page({
         taskTimeType: ['今日任务', '明日任务', '本周任务', '本月任务', '今年任务'],
         initLoading: true,
         isLogin: null,
-        loading: true
+        loading: true,
+        selectTab: 1
     },
 
     async onShow(){
@@ -20,7 +21,7 @@ Page({
         this.setData({
             isLogin: app.globalData.isLogin
         })
-        if(this.data.isLogin) await this.getTask()
+        await this.getTask()
         this.setData({
             initLoading: false,
             loading: false
@@ -39,30 +40,6 @@ Page({
         this.goAddTask()
     },
 
-    async getTask(){
-        this.setData({
-            loading: true
-        })
-        let userId = await wx.getStorageSync('userId')
-        if(!userId) { return };
-        let res = await get(getTaskListUrl(userId))
-        this.setData({
-            loading: false
-        })
-        if(res.code == 200){
-            let arr = []
-           this.dealArr(res.data)
-            for (let i = 0; i < dealTaskList.length; i++) {
-                if(!arr[dealTaskList[i].taskDateType - 1]) arr[dealTaskList[i].taskDateType - 1] = []
-                arr[dealTaskList[i].taskDateType - 1].push(dealTaskList[i])
-            }
-
-            this.setData({
-                taskList: arr
-            })
-        }
-    },
-
     dealArr(arr) {
         dealTaskList = []
         let testArrOne = JSON.parse(JSON.stringify(arr))
@@ -79,6 +56,40 @@ Page({
         wx.navigateTo({
           url: '/pages/task/add/add',
         })
+    },
+
+
+    async changeTab(e) {
+        const {index} = e.currentTarget.dataset
+        this.setData({
+            selectTab: index
+        })
+        this.getTask()
+    },
+
+    async getTask(){
+        if(!this.data.isLogin) return;
+        this.setData({
+            loading: true
+        })
+        wx.showLoading({
+          title: '加载中',
+        })
+        let res;
+        if(this.data.selectTab == 1){
+            res = await get(todoTaskUrl)
+        } else if(this.data.selectTab == 2) {
+            res = await get(completedTaskUrl)
+        } else if(this.data.selectTab == 3) {
+            res = await get(cancelTaskUrl)
+        }
+        wx.hideLoading()
+        if(res.code == 200){
+            this.setData({
+                taskList: res.data,
+                loading: false
+            })
+        }
     }
 
 })

@@ -18,6 +18,10 @@
     background-color: var(--primaryColor);
 }
 
+.bg-primary {
+    background-color: var(--primaryBgColor);
+}
+
 .primary--text {
     color: var(--primaryColor);
 }
