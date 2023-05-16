@@ -15,8 +15,17 @@ Page({
     },
 
     async onShow(){
+        this.setData({
+            isLogin: app.globalData.isLogin
+        })
         this.getTabBar().setData({
             selected: 0
+        })
+    },
+
+    async onLoad(){
+        wx.setNavigationBarTitle({
+          title: '首页',
         })
         this.setData({
             isLogin: app.globalData.isLogin
@@ -25,12 +34,6 @@ Page({
         this.setData({
             initLoading: false,
             loading: false
-        })
-    },
-
-    async onLoad(){
-        wx.setNavigationBarTitle({
-          title: '首页',
         })
     },
 
