@@ -34,9 +34,4 @@
         </view>
     </view>
 
-
-    <view class="card rounded-lg mt-8 mx-4">
-        <button class="weui-btn rounded-lg py-3" style="color: rgb(248, 62, 62); background: #fff; width: 100%;" bindtap="exit">退出登录</button>
-    </view>
-
 </view>
