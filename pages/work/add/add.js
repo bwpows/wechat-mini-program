@@ -126,17 +126,19 @@ Page({
         if(this.data.selectedImages.length == 0) return;
         let that = this;
         let url = []
+
         for (let i = 0; i < that.data.selectedImages.length; i++) {
             const upload_task = wx.uploadFile({
               filePath: that.data.selectedImages[i].tempFilePath,
               name: 'file',
               url: baseUrl + uploadSingleFileUrl,
               header: {
-                 Authorization: 'Bearer ' + that.data.token
+                 Authorization: 'Bearer ' + that.data.token,
+                 'Content-Disposition': 'inline'
               },
               success: function(res){
                   res.data = JSON.parse(res.data)
-                  url.push(res.data.data)
+                  url.push(res.data.data.url)
                   that.setData({
                       url: url
                   })
@@ -149,6 +151,30 @@ Page({
                 })
             })
         }
+        
+        // for (let i = 0; i < that.data.selectedImages.length; i++) {
+        //     const upload_task = wx.uploadFile({
+        //       filePath: that.data.selectedImages[i].tempFilePath,
+        //       name: 'file',
+        //       url: baseUrl + uploadSingleFileUrl,
+        //       header: {
+        //          Authorization: 'Bearer ' + that.data.token
+        //       },
+        //       success: function(res){
+        //           res.data = JSON.parse(res.data)
+        //           url.push(res.data.data)
+        //           that.setData({
+        //               url: url
+        //           })
+        //       }
+        //     })
+        //     upload_task.onProgressUpdate((res) => {
+        //         let editData = 'uploadProgress['+ i +']'
+        //         this.setData({
+        //             [editData]: res.progress
+        //         })
+        //     })
+        // }
     },
 
     switchChange(e) {

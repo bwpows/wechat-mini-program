@@ -98,7 +98,8 @@ Page({
               },
               success: function(res){
                   res.data = JSON.parse(res.data)
-                  url.push(res.data.data)
+                  console.log(res.data);
+                  url.push(res.data.data.url)
                   that.setData({
                       url,
                   })

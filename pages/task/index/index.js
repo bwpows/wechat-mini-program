@@ -11,29 +11,28 @@ Page({
         initLoading: true,
         isLogin: null,
         loading: true,
-        selectTab: 1
+        selectTab: 1,
+        isOnShow: true
     },
 
     async onShow(){
         this.setData({
-            isLogin: app.globalData.isLogin
+            isLogin: app.globalData.isLogin,
+            isOnShow: true
         })
         this.getTabBar().setData({
             selected: 0
+        })
+        await this.getTask()
+        this.setData({
+            initLoading: false,
+            loading: false
         })
     },
 
     async onLoad(){
         wx.setNavigationBarTitle({
           title: '首页',
-        })
-        this.setData({
-            isLogin: app.globalData.isLogin
-        })
-        await this.getTask()
-        this.setData({
-            initLoading: false,
-            loading: false
         })
     },
 
@@ -72,12 +71,11 @@ Page({
 
     async getTask(){
         if(!this.data.isLogin) return;
-        this.setData({
-            loading: true
-        })
-        wx.showLoading({
-          title: '加载中',
-        })
+        if(!this.data.isOnShow) {
+            wx.showLoading({
+                title: '加载中',
+            })
+        }
         let res;
         if(this.data.selectTab == 1){
             res = await get(todoTaskUrl)
@@ -90,7 +88,8 @@ Page({
         if(res.code == 200){
             this.setData({
                 taskList: res.data,
-                loading: false
+                loading: false,
+                isOnShow: false
             })
         }
     }

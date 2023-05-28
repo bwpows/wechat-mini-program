@@ -24,7 +24,7 @@
 }
 
 .tab-bar-item cover-image {
-  width: 27px;
-  height: 27px;
+  width: 54rpx;
+  height: 54rpx;
 }
 

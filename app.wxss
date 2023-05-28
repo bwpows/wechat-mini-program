@@ -15,6 +15,7 @@ page {
     --errorColor: #ff5252;
     background-color: #f1f1f2;
     padding-bottom: 180rpx;
+    font-size: 30rpx;
 }
 
 view {

@@ -5,7 +5,7 @@
 <view class="mx-4" catchtouchmove="{{selectedWork?true:return}}">
     <view wx:if="{{!loading && workList.length == 0}}" class="grey--text white rounded-lg mt-4 pa-4">暂时没有任何作品</view>
     <view wx:for="{{ workList }}" data-skeleton-list wx:key="_id" wx:for-item="work"  class="my-6 card rounded-lg">
-        <Work work="{{ work }}" scrollHeight="{{scrollHeight}}" isEdit="{{ true }}" bind:selected="isSelectedWork" />
+        <Work work="{{ work }}" scrollHeight="{{scrollHeight}}" isEdit="{{ true }}" bind:selected="isSelectedWork" bind:refresh="getWork" />
     </view>
     <view class="mt-4 rounded pa-4 mb-4 font-desc text-center">
         ------ 没有更多数据了 ------

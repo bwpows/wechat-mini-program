@@ -15,10 +15,11 @@ Page({
         current_page: 1,
         page_count: 10,
         noMoreData: false,
-        loading: true,
+        initLoading: true,
         safeArea: app.globalData.safeArea,
         scrollHeight: 22,
-        selectedWork: false
+        selectedWork: false,
+        loading: true
     },
 
     async onLoad(){
@@ -28,9 +29,17 @@ Page({
         this.getTabBar().setData({
             selected: 1
         })
+    },
+
+    async onShow(){
+        if (wx.pageScrollTo) {
+            wx.pageScrollTo({
+                scrollTop: 0
+            })
+        }
         await this.getWork(true)
         this.setData({
-            loading: false
+            initLoading: false
         })
     },
 
@@ -87,13 +96,19 @@ Page({
   },
 
   async getWork(param){
+    if(param) {
+        this.setData({
+            current_page:  1
+        })
+    }
     let obj = {
         keywords: "",
         current_page: this.data.current_page,
         page_count: this.data.page_count
     }
-
-    let res = await post(postWorkListUrl, obj )
+    this.setData({loading: true})
+    let res = await post(postWorkListUrl, obj)
+    this.setData({loading: false})
     if(res.code == 200){
         if((res.data || []).length < this.data.page_count){
             this.setData({

@@ -36,7 +36,8 @@ Component({
         userId: wx.getStorageSync('userId'),
         safeArea: app.globalData.safeArea,
         selected: 0,
-        translateY: ''
+        translateY: '',
+        url: ''
     },
 
     /**
@@ -47,7 +48,7 @@ Component({
         previewImage(e){
             let imgUrls = e.currentTarget.dataset.url
             for (let i = 0; i < imgUrls.length; i++) {
-                imgUrls[i] = baseUrl + "/" + imgUrls[i]
+                imgUrls[i] = this.formatImageUrl(imgUrls[i])
             }
             wx.previewImage({
                 current: imgUrls[0],
@@ -120,7 +121,14 @@ Component({
             }
         },
 
-
+        // 格式化图片 Url
+        formatImageUrl(url) {
+            if(url.indexOf('http') !== -1) {
+                return url;
+            } else {
+                return baseUrl + '/' + url;
+            }
+        }
 
     }
 })

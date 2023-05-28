@@ -1,0 +1,6 @@
+// 格式化图片 Url
+var formatImageUrl = function(baseUrl, url) {
+    var reg = getRegExp('http')
+    return reg.test(url) ? url : baseUrl + '/' + url
+}
+module.exports.formatImageUrl = formatImageUrl;

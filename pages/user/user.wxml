@@ -1,6 +1,7 @@
 
 <page-meta page-style="{{!isLogin? 'overflow: hidden': ''}}" ></page-meta>
 <wxs module="phone" src="../../util/phone.wxs"></wxs>
+<wxs src="/util/tools.wxs" module="tools" />
 
 <LoginDialog wx:if="{{!isLogin}}" />
 
@@ -9,7 +10,7 @@
 <view class="{{ !isLogin?'filter-8':'' }}">
     <view class="info-box d-flex justify-space-between px-4"  bindtap="goRouter" data-path="/pages/profile/profile" style="{{ 'padding-top:' + (safeArea.top + 30) * 2 + 'rpx' }}">
         <view class="d-flex">
-            <image src="{{ userInfo.pictrue?(baseUrl+'/'+userInfo.pictrue):'/images/bottomBar/workSelected.png' }}" class="headImg" mode="aspectFill"></image>
+            <image src="{{ tools.formatImageUrl(baseUrl, userInfo.pictrue) || '/images/bottomBar/workSelected.png' }}" class="headImg" mode="aspectFill"></image>
             <view class="ml-4">
                 <view class="white--text title">Hi, {{userInfo.username || '微信用户'}}</view>
                 <view class="info-desc mt-3">点击修改昵称和头像</view>

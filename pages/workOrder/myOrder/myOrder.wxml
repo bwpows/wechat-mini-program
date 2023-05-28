@@ -1,5 +1,6 @@
 <!--pages/workOrder/myOrder/myOrder.wxml-->
 <wxs src="/util/formatTime.wxs" module="formatTime"></wxs>
+<wxs src="/util/tools.wxs" module="tools" />
 <view class="primary d-flex align-center justify-center white--text plus-box" bindtap="goAddWorkOrder">
     <view style="height: 50rpx;">+</view>
 </view>
@@ -10,7 +11,16 @@
             {{item.content}}
         </view>
         <view class="mt-4">
-            <image bindtap="previewImage" data-url="{{image}}" wx:for-item="image" data-urls="{{item.images}}" style="width: 180rpx; height: 180rpx;" class="rounded mr-4" wx:for="{{item.images}}" src="{{baseUrl + '/' + image}}" mode="aspectFill" />
+            <image bindtap="previewImage"
+                data-url="{{image}}"
+                wx:for-item="image"
+                data-urls="{{item.images}}"
+                style="width: 180rpx; height: 180rpx;"
+                class="rounded mr-4"
+                wx:for="{{item.images}}"
+                src="{{tools.formatImageUrl(baseUrl, image)}}"
+                mode="aspectFill"
+            />
         </view>
         <view class="d-flex justify-space-between mt-4">
             <view class=" subtitle grey--text">

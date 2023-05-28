@@ -1,4 +1,5 @@
 <!--components/work/work.wxml-->
+<wxs src="/util/tools.wxs" module="tools" />
 <view class="card {{selected == work._id?'active':''}}" style="{{'height:'+ (work.url.length? (work.description.length / 16.5 + 0.5) * 20 + 500 + 'rpx;': (work.description.length / 16.5 + 0.5) * 20 + 200 + 'rpx;')}} {{ 'transform: translateY('+(selected == work._id?(translateY - 22):'')+'px) scale(calc(375/350))' }}" bindtap="onClickCard" data-index="{{work._id}}">
     <view wx:if="{{selected == work._id && work.url.length == 0}}"
         style="padding-top: {{safeArea.top}}px; width: 40rpx; height: 40rpx; border-radius: 50%; text-align: center; overflow: hidden; opacity: .8"
@@ -10,9 +11,10 @@
     <view wx:elif="{{selected == work._id && work.url.length != 0}}" class="d-flex align-center justify-center white" style="position: fixed; top: {{safeArea.top }}px; left: 12px; width: 50rpx; height: 50rpx; border-radius: 50%; text-align: center; overflow: hidden; opacity: .8">
         <image src="/images/icon/plus.svg" class="white close-icon"></image>
     </view>
+
     
     <view wx:if="{{ work.url.length != 0 }}" class="overflow-hidden" catchtap="previewImage" data-id="{{work._id}}" data-url="{{work.url}}">
-        <image src="{{baseUrl+'/'+work.url[0]}}" class="rounded-lg-top-right rounded-lg-top-left overflow-hidden" show-menu-by-longpress="true" mode="aspectFill" style="width: 100%;"></image>
+        <image src="{{tools.formatImageUrl(baseUrl, work.url[0])}}" class="rounded-lg-top-right rounded-lg-top-left overflow-hidden" show-menu-by-longpress="true" mode="aspectFill" style="width: 100%;"></image>
     </view>
     <view class="pa-4 white rounded-lg card-title">
         <view class="d-flex justify-space-between align-center">

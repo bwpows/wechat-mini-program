@@ -68,12 +68,20 @@ Page({
         let imgUrls = e.currentTarget.dataset.urls
         let imgUrl = e.currentTarget.dataset.url
         for (let i = 0; i < imgUrls.length; i++) {
-            imgUrls[i] = baseUrl + "/" + imgUrls[i]
+            imgUrls[i] = this.formatImageUrl(imgUrls[i])
         }
         wx.previewImage({
             current: this.data.baseUrl + "/" + imgUrl,
             urls: imgUrls,
         })
     },
+
+    formatImageUrl(url) {
+        if(url.indexOf('http') !== -1) {
+            return url;
+        } else {
+            return baseUrl + '/' + url;
+        }
+    }
 
 })

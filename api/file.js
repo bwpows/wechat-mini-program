@@ -1,3 +1,3 @@
-export const uploadSingleFileUrl = '/upload/single'
+export const uploadSingleFileUrl = '/oss/single'
 
 export const uploadHeaderImg = "/upload/headimg"

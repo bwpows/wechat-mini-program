@@ -1,10 +1,10 @@
+<wxs src="/util/tools.wxs" module="tools" />
 <!--pages/myProfile/myProfile.wxml-->
 <view class="mx-4 mt-4 pb-2 white rounded-lg">
     <view class="d-flex justify-space-between rounded pa-4 align-center" bindtap="openImageDialog">
         <view>我的头像</view>
         <view  class="d-flex align-center">
-            <image src="{{ user.pictrue?(baseUrl+'/'+user.pictrue):'/images/icon/plus.svg' }}" class="headImg" mode="aspectFill"></image>
-            <!-- <image src="../../images/icon/leftArrow.svg" class="arrowIcon ml-1"></image> -->
+            <image src="{{ tools.formatImageUrl(baseUrl, userInfo.pictrue) || '/images/bottomBar/workSelected.png' }}" class="headImg" mode="aspectFill"></image>
         </view>
     </view>
     <view class="driver mx-4"></view>

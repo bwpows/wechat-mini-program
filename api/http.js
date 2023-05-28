@@ -1,4 +1,5 @@
 const baseUrl = 'https://app.bwpow.com:3000';  //后续可以改为你自己的域名接口地址
+// const baseUrl = 'https://localhost:3000';  //后续可以改为你自己的域名接口地址
 
 
 const request = (url, options) => {
