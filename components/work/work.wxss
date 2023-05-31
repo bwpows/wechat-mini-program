@@ -1,5 +1,4 @@
 /* components/work/work.wxss */
-/* pages/test/test.wxss */
 page {
     --body-width: 480px;
     --card-width: 350px;

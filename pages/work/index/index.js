@@ -19,7 +19,8 @@ Page({
         safeArea: app.globalData.safeArea,
         scrollHeight: 22,
         selectedWork: false,
-        loading: true
+        loading: true,
+        previewing: false,          // 监听是不是预览图片，因为预览图片，返回会触发onshow方法
     },
 
     async onLoad(){
@@ -32,15 +33,18 @@ Page({
     },
 
     async onShow(){
-        if (wx.pageScrollTo) {
-            wx.pageScrollTo({
-                scrollTop: 0
+        console.log(this.data.previewing);
+        if(!this.data.previewing) {
+            if (wx.pageScrollTo) {
+                wx.pageScrollTo({
+                    scrollTop: 0
+                })
+            }
+            await this.getWork(true)
+            this.setData({
+                initLoading: false
             })
         }
-        await this.getWork(true)
-        this.setData({
-            initLoading: false
-        })
     },
 
     onPageScroll(e){
@@ -131,6 +135,12 @@ Page({
   async isSelectedWork(e){
       this.setData({
         selectedWork: e.detail
+      })
+  },
+
+  previewing(){
+      this.setData({
+        previewing: true
       })
   }
 

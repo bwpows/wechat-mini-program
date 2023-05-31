@@ -46,6 +46,7 @@ Component({
     methods: {
         // 预览图片
         previewImage(e){
+            this.triggerEvent('previewing')
             let imgUrls = e.currentTarget.dataset.url
             for (let i = 0; i < imgUrls.length; i++) {
                 imgUrls[i] = this.formatImageUrl(imgUrls[i])

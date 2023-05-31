@@ -5,7 +5,10 @@
 
 <view class="container py-4" catchtouchmove="{{selectedWork?true:return}}">
     <view wx:for="{{ workList }}" wx:key="_id" wx:for-item="work"  class="my-6 card rounded-lg">
-        <Work work="{{ work }}" scrollHeight="{{scrollHeight}}" bind:selected="isSelectedWork" />
+        <Work work="{{ work }}"
+            scrollHeight="{{scrollHeight}}"
+            bind:selected="isSelectedWork"
+            bind:previewing="previewing" />
     </view>
     <view class="mt-4 rounded pa-4 mb-4 font-desc text-center">
         ------ {{loading?'正在获取中...':'没有更多数据了'}} ------
