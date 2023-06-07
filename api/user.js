@@ -5,7 +5,7 @@ export const postSmsLoginUrl = '/auth/sms/code'
 export const getProfileUrl = '/auth/profile'
 
 export function getUserInfo(userid) {
-    return `/user/${userid}`
+    return `/user/`
 }
 
 export function editNameUrl(userid){

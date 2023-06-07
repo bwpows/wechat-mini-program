@@ -1,0 +1,11 @@
+<!--components/line-chart/line.wxml-->
+<view class="rounded d-flex justify-space-between align-end" style="height: 300rpx;">
+    <view wx:for="{{data}}" wx:key="title" style="height: 100%; position: relative;" class="d-flex flex-column justify-end">
+        <view class="line" style="height: {{item.value / maxValue * 100 + '%'}};  position: relative;" bind:tap="selected" data-index="{{index}}">
+            <view wx:if="{{selectedIndex === index}}" style="z-index: 10; box-shadow: 0 0 5rpx #ccc; position: absolute; top: -44rpx; color: #666; font-size: 24rpx;" class="white px-1 text-center rounded-xs">{{item.value}}</view>
+        </view>
+        <view class="mt-1" style="color: #666; font-size: 24rpx;">
+            {{item.title}}
+        </view>
+    </view>
+</view>

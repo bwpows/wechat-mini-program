@@ -1,6 +1,6 @@
 // pages/user/user.js
-
 const { baseUrl, get } = require("../../api/http")
+const { myInfoUrl } = require("../../api/my")
 const { getUserInfo } = require("../../api/user")
 
 const app = getApp()
@@ -15,66 +15,11 @@ Page({
         baseUrl: baseUrl,
         userInfo: {},
         loading: true,
-        listData: [
-            [
-                {
-                    title: '手机号',
-                    desc: 'xxx',
-                    icon: '../../images/icon/phone.svg',
-                    path: '/pages/phone/phone'
-                },
-                {
-                    title: '通用设置',
-                    icon: '../../images/icon/setting.svg',
-                    path: '/pages/setting/setting'
-                }
-            ],
-            [
-                {
-                    title: '我的作品',
-                    icon: '../../images/icon/works.svg',
-                    path: '/pages/work/my/my'
-                },
-                {
-                    title: '我的点赞',
-                    icon: '../../images/icon/like.svg',
-                    path: '/pages/work/like/like'
-                },
-                {
-                    title: '隐私作品',
-                    icon: '../../images/icon/privacy.svg',
-                    path: '/pages/work/hide/hide',
-                    isShow: false
-                }
-            ],
-            [
-                {
-                    title: '我的待办',
-                    icon: '../../images/icon/task_todo.svg',
-                    path: '/pages/task/todo/todo',
-                },
-                {
-                    title: '已完成任务',
-                    icon: '../../images/icon/task_complete.svg',
-                    path: '/pages/task/completed/completed',
-                },
-                {
-                    title: '已取消任务',
-                    icon: '../../images/icon/task_cancel.svg',
-                    path: '/pages/task/cancel/cancel',
-                },
-            ],
-            [
-                {
-                    title: '关于我们',
-                    icon: '../../images/icon/about.svg',
-                    path: '/pages/about/about'
-                }
-            ]
-        ],
         isLogin: null,
         safeArea: {},
         scrollTop: 0,
+        lineData: [],
+        myInfo: {}
     },
 
     /**
@@ -97,6 +42,7 @@ Page({
             safeArea: app.globalData.safeArea
         })
         if(app.globalData.isLogin) await this.getUserInfo()
+        if(app.globalData.isLogin) await this.getMyInfo()
     },
 
     onPageScroll(e){
@@ -105,20 +51,45 @@ Page({
         })
     },
 
+    async getMyInfo(){
+        const res = await get(myInfoUrl)
+        console.log(res);
+        
+        if(res.code === 200) {
+            const { yearViewList } = res.data;
+            // const lineData = yearViewList.map(item => {
+            //     return {value: item.count, title: item._id.month > 10? item._id.month: '0' + item._id.month, year: item._id.year}
+            // })
+            // lineData.sort((a, b) => {
+            //     if (a.year !== b.year) {
+            //       return a.year - b.year;
+            //     } else {
+            //       // 如果年份相同，则比较月份
+            //       return a.title - b.title;
+            //     }
+            //   });
+            // console.log(lineData);
+            this.setData({
+                myInfo: res.data,
+                // lineData: lineData
+            })
+        }
+    },
+
     async getUserInfo(){
         this.setData({
             loading: true
         })
         let res = await get(getUserInfo(this.data.userId))
-        let listData = this.data.listData
+        // let listData = this.data.listData
         
         if(res.code == 200){
-            listData[0][0]['desc'] = res.data.phone;
-            listData[1][2]['isShow'] = await wx.getStorageSync('isShow')  || false,
+            // listData[0][0]['desc'] = res.data.phone;
+            // listData[1][2]['isShow'] = await wx.getStorageSync('isShow')  || false,
             this.setData({
                 userInfo: res.data,
                 loading: false,
-                listData,
+                // listData,
             })
             wx.setStorageSync('user', res.data)
         }

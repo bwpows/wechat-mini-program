@@ -9,6 +9,7 @@
             </view>
             <view class="white pa-2 rounded"  style="display: inline-block; max-width: 85%;">
                 {{item.receive_message}}
+                <!-- <rich-text nodes="{{item.receive_message}}"></rich-text> -->
             </view>
         </view>
 

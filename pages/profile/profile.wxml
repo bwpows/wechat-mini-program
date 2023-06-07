@@ -1,14 +1,14 @@
 <wxs src="/util/tools.wxs" module="tools" />
 <!--pages/myProfile/myProfile.wxml-->
-<view class="mx-4 mt-4 pb-2 white rounded-lg">
+<view class="mx-4 mt-4 white rounded-lg">
     <view class="d-flex justify-space-between rounded pa-4 align-center" bindtap="openImageDialog">
         <view>我的头像</view>
         <view  class="d-flex align-center">
             <image src="{{ tools.formatImageUrl(baseUrl, userInfo.pictrue) || '/images/bottomBar/workSelected.png' }}" class="headImg" mode="aspectFill"></image>
         </view>
     </view>
-    <view class="driver mx-4"></view>
-    <view class="d-flex justify-space-between rounded pa-4 mt-2 align-center" bindtap="editUserName">
+    <!-- <view class="driver mx-4"></view> -->
+    <!-- <view class="d-flex justify-space-between rounded pa-4 mt-2 align-center" bindtap="editUserName">
         <view>我的昵称</view>
         <view class="d-flex align-center">
             <view class="mr-1 mb-1 grey--text">
@@ -18,7 +18,7 @@
                 <image src="../../images/icon/leftArrow.svg" class="arrowIcon"></image>
             </view>
         </view>
-    </view>
+    </view> -->
     <!-- <view class="driver mx-4"></view>
     <view class="d-flex justify-space-between rounded pa-4 align-center">
         <view>性别</view>
@@ -26,4 +26,20 @@
             <switch checked="{{switch1Checked}}" bindchange="switch1Change"/>
         </view>
     </view> --> 
+
+</view>
+<view class="card rounded-lg my-6 mx-4 box-list" wx:for="{{listData}}" wx:for-item="list" wx:key="index">
+    <block wx:for="{{list}}" wx:key="icon">
+        <view class="d-flex align-center pa-4 justify-space-between" bindtap="goRouter" data-path="{{ item.path }}" wx:if="{{item.isShow !== false}}">
+            <view class="d-flex align-center">
+                <image src="{{item.icon}}" class="iconImg"></image>
+                <view class="ml-4">{{item.title}}</view>
+            </view>
+            <view class="d-flex align-center">
+                <text class="mr-2 font-desc" wx:if="{{item.desc}}">{{ item.desc }}</text>
+                <image src="../../images/icon/leftArrow.svg" class="arrowIcon"></image>
+            </view>
+        </view>
+        <view class="driver dirver_margin"  wx:if="{{item.isShow !== false}}"></view>
+    </block>
 </view>

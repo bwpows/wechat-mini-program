@@ -5,19 +5,68 @@
 
 <LoginDialog wx:if="{{!isLogin}}" />
 
-<nav-bar isBack="{{false}}" isFillView="{{ false }}" title="个人中心" opacity="{{ scrollTop / 100 }}" zIndex="{{ scrollTop - 50 }}" bgColor="primary" color="white" />
+<nav-bar isBack="{{false}}" isFillView="{{ false }}" title="个人中心" opacity="{{ scrollTop / 100 }}" zIndex="{{ scrollTop - 50 }}" />
 
 <view class="{{ !isLogin?'filter-8':'' }}">
+
     <view class="info-box d-flex justify-space-between px-4"  bindtap="goRouter" data-path="/pages/profile/profile" style="{{ 'padding-top:' + (safeArea.top + 30) * 2 + 'rpx' }}">
         <view class="d-flex">
-            <image src="{{ tools.formatImageUrl(baseUrl, userInfo.pictrue) || '/images/bottomBar/workSelected.png' }}" class="headImg" mode="aspectFill"></image>
+            <view style="border: 4rpx solid var(--primaryColor); border-radius: 86rpx;" class="d-flex justify-center align-center">
+                <image src="{{ tools.formatImageUrl(baseUrl, userInfo.pictrue) || '/images/bottomBar/workSelected.png' }}" class="headImg" mode="aspectFill"></image>
+            </view>
             <view class="ml-4">
-                <view class="white--text title">Hi, {{userInfo.username || '微信用户'}}</view>
-                <view class="info-desc mt-3">点击修改昵称和头像</view>
+                <view class="title" style="font-size: 44rpx; margin-top: 20rpx; color: #000000c2">{{userInfo.username || '微信用户'}}</view>
+                <view class="info-desc mt-4">累计发布过{{myInfo.worksNum}}篇文章、 {{myInfo.tasksNum}}个任务</view>
+                <view class="info-desc mt-1">任务达成率高达{{myInfo.taskCompletionRate}}%</view>
             </view>
         </view>
     </view>
-    <view style="margin-top: -166rpx;">
+
+    <view class="mx-4 mt-6 pa-4 rounded" style="background-color: #4ea0f31a;">
+        <view style="color: #4b98e6; font-weight: 500; font-size: 32rpx;">太棒了, 完成率提升了</view>
+        <view class="mt-4" style="color: #666; font-size: 28rpx;">2023-05 ~ 2023-06</view>
+    </view>
+
+    <view class="d-flex mx-4 mt-4">
+        <view class="card pa-4 rounded" style="display: inline-block; background-color: #86fc903a; width: 50%; color: #3aa824">
+            <view class="d-flex align-center font-bold justify-center">
+                <image src="/images/icon/task_todo_one.svg" mode="" class="mr-2 icon-list" />
+                <view style="font-size: 50rpx;">{{myInfo.monthPublishTaskNum}}</view>
+            </view>
+            <view class="text-center mt-2" style="color: #666; font-size: 26rpx;">月任务量</view>
+        </view>
+        <view class="ml-4 card pa-4 rounded" style="display: inline-block; background-color: #f86e381a; color: #f86e38; width: 50%;">
+            <view class="d-flex align-center font-bold justify-center">
+                <image src="/images/icon/publish.svg" mode="" class="mr-2 icon-list" />
+                <view style="font-size: 50rpx;">{{myInfo.monthPublishWorkNum}}</view>
+            </view>
+            <view class="text-center mt-2" style="color: #666; font-size: 26rpx;">月发布量</view>
+        </view>
+    </view>
+    <view class="d-flex mx-4 mt-4">
+        <view class="card pa-4 rounded" style="display: inline-block; background-color: #9b38f81a; color: #9b38f8; width: 50%;">
+            <view class="d-flex align-center font-bold justify-center">
+                <image src="/images/icon/view_one.svg" mode="" class="mr-2 icon-list" />
+                <view style="font-size: 50rpx;">{{myInfo.monthViewNum}}</view>
+            </view>
+            <view class="text-center mt-2" style="color: #666; font-size: 26rpx;">月访问量</view>
+        </view>
+        <view bind:tap="goRouter" data-path="/pages/chatgpt/chatgpt" class="ml-4 card pa-4 rounded" style="display: inline-block; background-color: #f8bb381a; color: #f8bb38; width: 50%;">
+            <view class="d-flex align-center font-bold justify-center">
+                <image src="/images/icon/chat2.svg" mode="" class="mr-2 icon-list" />
+                <view style="font-size: 50rpx;">{{myInfo.gptChatNum}}</view>
+            </view>
+            <view class="text-center mt-2" style="color: #666; font-size: 26rpx;">客服对话</view>
+        </view>
+    </view>
+<!-- 
+    <view class="pa-4 mt-2">
+        <view class="mb-3" style="color: #666; font-size: 28rpx;">年度浏览量</view>
+        <bar-chart data="{{lineData}}" />
+    </view> -->
+
+
+    <!-- <view style="margin-top: -166rpx;">
         <view class="card rounded-lg my-6 mx-4 box-list" wx:for="{{listData}}" wx:for-item="list" wx:key="index">
             <block wx:for="{{list}}" wx:key="icon">
                 <view class="d-flex align-center pa-4 justify-space-between" bindtap="goRouter" data-path="{{ item.path }}" wx:if="{{item.isShow !== false}}">
@@ -33,6 +82,6 @@
                 <view class="driver dirver_margin"  wx:if="{{item.isShow !== false}}"></view>
             </block>
         </view>
-    </view>
+    </view> -->
 
 </view>
