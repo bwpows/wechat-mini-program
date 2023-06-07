@@ -47,7 +47,7 @@ Page({
             this.autoScroll()
             let res = await post(sendMessageUrl, {send_message: e.detail.value})
             if(res.code == 200){
-                messageList[messageList.length - 1].receive_message = res.data
+                messageList[messageList.length - 1].receive_message = res.data.text
             }
             this.setData({
                 messageList
@@ -66,7 +66,6 @@ Page({
     autoScroll(){
         let that = this;
         wx.createSelectorQuery().select('#communication').boundingClientRect(function (rect) {
-            console.log(rect);
           wx.pageScrollTo({
             scrollTop: rect.height,
             duration: 100 // 滑动速度

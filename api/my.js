@@ -1,0 +1,1 @@
+export const myInfoUrl = '/common/mini/my-info'

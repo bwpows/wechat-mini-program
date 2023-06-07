@@ -1,4 +1,4 @@
 <!--pages/editUsername/editUsername.wxml-->
 <view class="white pa-4 ma-4 rounded">
-    <input type="text" placeholder="请输入昵称" maxlength="10" focus="{{true}}" value="{{ userInfo.username }}" bindinput="changeUsername" />
+    <input type="text" placeholder="请输入昵称" maxlength="8" focus="{{true}}" value="{{ userInfo.username }}" bindinput="changeUsername" />
 </view>

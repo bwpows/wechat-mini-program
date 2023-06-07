@@ -1,5 +1,6 @@
 page {
-    min-height: 100%;
+    /* min-height: 100%; */
+    background-color: #fff;
 }
 
 .arrowIcon{
@@ -11,7 +12,7 @@ page {
 }
 
 .headImg{
-    height: 100rpx; width: 100rpx; border-radius: 20rpx;
+    height: 160rpx; width: 160rpx; border-radius: 90rpx; margin: 6rpx;
 }
 
 .dirver_margin {
@@ -20,18 +21,22 @@ page {
 }
 
 .info-box {
-    height: 280rpx;
     padding-top: constant(safe-area-inset-top);
     padding-top: env(safe-area-inset-top);
     transition: all .5s;
-    background-image: linear-gradient(var(--primaryColor) 60%,  #f1f1f1);
+    /* background-image: linear-gradient(var(--primaryColor) 60%,  #f1f1f1); */
 }
 
 .info-desc {
     font-size: 24rpx;
-    color: #ffffffee;
+    color: #666666;
 }
 
 .box-list .driver:nth-last-child(1) {
     display: none;
 }
+
+.icon-list {
+    width: 50rpx; height: 50rpx;
+}
+

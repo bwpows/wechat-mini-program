@@ -1,8 +1,8 @@
 {
   "navigationStyle": "custom",
-  "navigationBarTextStyle": "white",
   "usingComponents": {
       "LoginDialog": "/components/loginDialog/loginDialog",
-      "nav-bar": "/components/nav-bar/index"
+      "nav-bar": "/components/nav-bar/index",
+      "bar-chart": "/components/bar-chart/bar"
   }
 }

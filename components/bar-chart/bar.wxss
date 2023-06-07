@@ -1,0 +1,8 @@
+/* components/line-chart/line.wxss */
+
+.line{
+    border-radius: 8rpx;
+    width: 30rpx;
+    height: 180rpx;
+    background-color: #f86e38;
+}

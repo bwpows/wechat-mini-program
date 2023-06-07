@@ -43,7 +43,8 @@
         "useStaticServer": true,
         "useCompilerPlugins": false,
         "localPlugins": false,
-        "condition": false
+        "condition": false,
+        "skylineRenderEnable": false
     },
     "compileType": "miniprogram",
     "libVersion": "2.13.2",
