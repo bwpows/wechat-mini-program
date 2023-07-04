@@ -3,29 +3,10 @@
 <view class="mx-4 mt-4 white rounded-lg">
     <view class="d-flex justify-space-between rounded pa-4 align-center" bindtap="openImageDialog">
         <view>我的头像</view>
-        <view  class="d-flex align-center">
+        <view class="d-flex align-center" wx:if="{{userInfo.pictrue}}">
             <image src="{{ tools.formatImageUrl(baseUrl, userInfo.pictrue) || '/images/bottomBar/workSelected.png' }}" class="headImg" mode="aspectFill"></image>
         </view>
     </view>
-    <!-- <view class="driver mx-4"></view> -->
-    <!-- <view class="d-flex justify-space-between rounded pa-4 mt-2 align-center" bindtap="editUserName">
-        <view>我的昵称</view>
-        <view class="d-flex align-center">
-            <view class="mr-1 mb-1 grey--text">
-                {{ user.username }}
-            </view>
-            <view>
-                <image src="../../images/icon/leftArrow.svg" class="arrowIcon"></image>
-            </view>
-        </view>
-    </view> -->
-    <!-- <view class="driver mx-4"></view>
-    <view class="d-flex justify-space-between rounded pa-4 align-center">
-        <view>性别</view>
-        <view>
-            <switch checked="{{switch1Checked}}" bindchange="switch1Change"/>
-        </view>
-    </view> --> 
 
 </view>
 <view class="card rounded-lg my-6 mx-4 box-list" wx:for="{{listData}}" wx:for-item="list" wx:key="index">
@@ -42,4 +23,9 @@
         </view>
         <view class="driver dirver_margin"  wx:if="{{item.isShow !== false}}"></view>
     </block>
+</view>
+
+
+<view class="rounded-lg mt-8 mx-4">
+    <button class="rounded-lg py-3 white" style="color: #f83e3e; width: 100%;" bindtap="exit">退出登录</button>
 </view>

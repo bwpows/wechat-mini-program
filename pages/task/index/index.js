@@ -18,7 +18,8 @@ Page({
     async onShow(){
         this.setData({
             isLogin: app.globalData.isLogin,
-            isOnShow: true
+            isOnShow: true,
+            safeArea: app.globalData.safeArea
         })
         this.getTabBar().setData({
             selected: 0
@@ -39,6 +40,7 @@ Page({
     async onPullDownRefresh(){
         wx.stopPullDownRefresh()
         if(!this.data.isLogin) return;
+        wx.vibrateShort();
         this.goAddTask()
     },
 

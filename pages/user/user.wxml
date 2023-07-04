@@ -28,14 +28,14 @@
     </view>
 
     <view class="d-flex mx-4 mt-4">
-        <view class="card pa-4 rounded" style="display: inline-block; background-color: #86fc903a; width: 50%; color: #3aa824">
+        <view class="card pa-4 rounded" bind:tap="goRouter" data-path="/pages/task/todo/todo" style="display: inline-block; background-color: #86fc903a; width: 50%; color: #3aa824">
             <view class="d-flex align-center font-bold justify-center">
                 <image src="/images/icon/task_todo_one.svg" mode="" class="mr-2 icon-list" />
                 <view style="font-size: 50rpx;">{{myInfo.monthPublishTaskNum}}</view>
             </view>
             <view class="text-center mt-2" style="color: #666; font-size: 26rpx;">月任务量</view>
         </view>
-        <view class="ml-4 card pa-4 rounded" style="display: inline-block; background-color: #f86e381a; color: #f86e38; width: 50%;">
+        <view class="ml-4 card pa-4 rounded" bind:tap="goRouter" data-path="/pages/work/my/my" style="display: inline-block; background-color: #f86e381a; color: #f86e38; width: 50%;">
             <view class="d-flex align-center font-bold justify-center">
                 <image src="/images/icon/publish.svg" mode="" class="mr-2 icon-list" />
                 <view style="font-size: 50rpx;">{{myInfo.monthPublishWorkNum}}</view>

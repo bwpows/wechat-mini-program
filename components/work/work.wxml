@@ -1,7 +1,9 @@
 <!--components/work/work.wxml-->
 <wxs src="/util/tools.wxs" module="tools" />
 <view class="card {{selected == work._id?'active':''}}"
-    style="{{'height:'+ (work.url.length? (work.description.length / 23) * 38 + 300 + 64 + 40 + 32 + 70 + 'rpx;': (work.description.length / 23 + 1) * 20 + 64 + 40 + 32 + 70  + 'rpx;')}} {{ 'transform: translateY('+(selected == work._id?(translateY - 22):'')+'px) scale(calc(375/350))' }}" bindtap="onClickCard" data-index="{{work._id}}">
+    style="{{ 'height:'+ (tools.computedFontNumHeight(work.description) + (work.url.length ? 300: 0) + 64 + 40 + 32 + 70 + 'rpx;')}} {{ 'transform: translateY('+(selected == work._id?(translateY - 22):'')+'px) scale(calc(375/350))' }}"
+    bindtap="onClickCard" data-index="{{work._id}}"
+>
     <view wx:if="{{selected == work._id && work.url.length == 0}}"
         style="padding-top: {{safeArea.top}}px; width: 40rpx; height: 40rpx; border-radius: 50%; text-align: center; overflow: hidden; opacity: .8"
         class="white d-flex align-center mx-4"
@@ -22,17 +24,16 @@
             <view class="subtitle">{{ work.title }}</view>
             <view catchtap="deleteWork" data-item="{{work}}" class="font-xs error--text error-border px-2 rounded-xs" wx:if="{{isEdit && userId == work.user_id && selected !== work._id}}">删除</view>
         </view>
-        <view class="font-desc my-2 {{ selected == work._id?'mr-2':'' }}"> {{ work.description }} </view>
+        <view class="font-desc my-2 {{ selected == work._id?'mr-6':'' }}" style="max-height: {{selected == work._id ?'auto': '221rpx'}}; overflow: hidden; text-align: justify;"> {{ work.description }} </view>
         <view class="font-desc mt-4 d-flex align-center">
-            <image src="../../images/icon/love.svg" mode="aspectFit" style="height: 30rpx; width: 30rpx;" class="mr-1"></image>
+            <image src="../../images/icon/love.svg" mode="aspectFit" class="mr-1 icon-30"></image>
             <text class="mr-4">{{ work.likes.length }}</text>
-            <image src="../../images/icon/view.svg" mode="aspectFit" style="height: 30rpx; width: 30rpx;" class="mr-1"></image>
-            <text class=""> {{ work.views.length }} </text>
+            <image src="../../images/icon/view.svg" mode="aspectFit" class="mr-1 icon-30"></image>
+            <text> {{ work.views.length }} </text>
             <text class="ml-4" wx:if="work.users.username">{{ work.users.username }}</text>
         </view>
     </view>
     <scroll-view class="content-wrapper">
         <view style="height: 1000rpx; overflow: scroll;">{{(work.comments[0].content)}}</view>
     </scroll-view>
-    
 </view>

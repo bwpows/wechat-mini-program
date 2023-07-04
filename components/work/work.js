@@ -129,7 +129,9 @@ Component({
             } else {
                 return baseUrl + '/' + url;
             }
-        }
+        },
+
+        // 计算高度
 
     }
 })

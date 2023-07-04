@@ -24,6 +24,16 @@ view {
     line-height: 38rpx;
 }
 
+.icon-30 {
+    width: 30rpx;
+    height: 30rpx !important;
+}
+
+.icon-40 {
+    width: 40rpx;
+    height: 40rpx;
+}
+
 
 
 

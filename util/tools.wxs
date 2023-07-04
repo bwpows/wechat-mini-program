@@ -3,4 +3,13 @@ var formatImageUrl = function(baseUrl, url) {
     var reg = getRegExp('http')
     return reg.test(url) ? url : baseUrl + '/' + url
 }
+
+var computedFontNumHeight = function(str) {
+    if(!str) return 0;
+    var height = str.length / 23 > 5 ? 5: str.length / 23;
+    return height * 38;
+}
+
+
 module.exports.formatImageUrl = formatImageUrl;
+module.exports.computedFontNumHeight = computedFontNumHeight;

@@ -30,21 +30,24 @@ Page({
         this.getTabBar().setData({
             selected: 1
         })
+        await this.getWork(true)
+        this.setData({
+            initLoading: false
+        })
     },
 
     async onShow(){
-        console.log(this.data.previewing);
-        if(!this.data.previewing) {
-            if (wx.pageScrollTo) {
-                wx.pageScrollTo({
-                    scrollTop: 0
-                })
-            }
-            await this.getWork(true)
-            this.setData({
-                initLoading: false
-            })
-        }
+        // if(!this.data.previewing) {
+        //     if (wx.pageScrollTo) {
+        //         wx.pageScrollTo({
+        //             scrollTop: 0
+        //         })
+        //     }
+        //     await this.getWork(true)
+        //     this.setData({
+        //         initLoading: false
+        //     })
+        // }
     },
 
     onPageScroll(e){
@@ -81,6 +84,7 @@ Page({
     let res = await this.getReviewStatus()
     wx.stopPullDownRefresh()
     if(res) return;
+    wx.vibrateShort();
     wx.navigateTo({
         url: '/pages/work/add/add',
     })

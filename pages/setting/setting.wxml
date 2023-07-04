@@ -6,8 +6,4 @@
             <switch checked="{{isShow}}" bindchange="switch1Change"/>
         </view>
     </view>
-
-    <view class="card rounded mt-8">
-        <button class="rounded py-3 white" style="color: #f83e3e; width: 100%;" bindtap="exit">退出登录</button>
-    </view>
 </view>
