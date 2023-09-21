@@ -59,7 +59,7 @@ Page({
     },
 
     async getUserInfo(){
-        let res = await get(getUserInfo(this.data.userInfo._id))
+        let res = await get(getUserInfo())
         if(res.code == 200){
             await wx.setStorageSync('user', res.data)
         }

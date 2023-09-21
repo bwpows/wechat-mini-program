@@ -1,6 +1,7 @@
 //index.js
 import { get } from '../../../api/http'
 import { todoTaskUrl, completedTaskUrl, cancelTaskUrl } from '../../../api/task'
+import { agreePrivacy } from '../../../util/wechat'
 const app = getApp()
 
 let dealTaskList = []
@@ -16,13 +17,14 @@ Page({
     },
 
     async onShow(){
+        this.getTabBar().setData({
+            selected: 0
+        })
+        this.checkLogin()
         this.setData({
             isLogin: app.globalData.isLogin,
             isOnShow: true,
             safeArea: app.globalData.safeArea
-        })
-        this.getTabBar().setData({
-            selected: 0
         })
         await this.getTask()
         this.setData({
@@ -35,6 +37,13 @@ Page({
         wx.setNavigationBarTitle({
           title: '首页',
         })
+        agreePrivacy(this)
+    },
+
+
+    async checkLogin() {
+        const token = await wx.getStorageSync('token')
+        if(!token) app.globalData.isLogin = false;
     },
 
     async onPullDownRefresh(){

@@ -12,7 +12,11 @@ page {
 }
 
 .headImg{
-    height: 160rpx; width: 160rpx; border-radius: 90rpx; margin: 6rpx;
+    height: 160rpx; width: 160rpx; border-radius: 80rpx;
+}
+
+.head-img{
+    height: 100rpx; width: 100rpx; border-radius: 50rpx;
 }
 
 .dirver_margin {

@@ -3,6 +3,7 @@
   "usingComponents": {
       "LoginDialog": "/components/loginDialog/loginDialog",
       "nav-bar": "/components/nav-bar/index",
-      "bar-chart": "/components/bar-chart/bar"
+      "bar-chart": "/components/bar-chart/bar",
+      "privacy-popup": "/components/privacyPopup/privacyPopup"
   }
 }

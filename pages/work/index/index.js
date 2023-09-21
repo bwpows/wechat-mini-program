@@ -3,6 +3,7 @@
 import { post, baseUrl, get } from '../../../api/http'
 import { reviewUrl } from '../../../api/review'
 import { postWorkListUrl } from '../../../api/work'
+import { agreePrivacy } from '../../../util/wechat'
 
 //获取应用实例
 const app = getApp()
@@ -30,24 +31,11 @@ Page({
         this.getTabBar().setData({
             selected: 1
         })
+        agreePrivacy(this)
         await this.getWork(true)
         this.setData({
             initLoading: false
         })
-    },
-
-    async onShow(){
-        // if(!this.data.previewing) {
-        //     if (wx.pageScrollTo) {
-        //         wx.pageScrollTo({
-        //             scrollTop: 0
-        //         })
-        //     }
-        //     await this.getWork(true)
-        //     this.setData({
-        //         initLoading: false
-        //     })
-        // }
     },
 
     onPageScroll(e){

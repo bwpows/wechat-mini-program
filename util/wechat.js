@@ -11,3 +11,20 @@ export function loginWX(){
         })
     })
 }
+
+export function agreePrivacy(that) {
+    console.log(that);
+    wx.getPrivacySetting({
+        success: res => {
+            if (res.needAuthorization) {
+                // 需要弹出隐私协议
+                that.selectComponent('#privacy-popup-index').tabBarPageShow()
+                that.getTabBar().setData({
+                    isShow: false
+                })
+            }
+        },
+        fail: () => {},
+        complete: () => {}
+    })
+}

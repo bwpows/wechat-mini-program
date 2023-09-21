@@ -10,7 +10,7 @@
 
 <view class="mx-4 subtitle {{ !isLogin?'filter-8':'' }}" wx:else>
 
-    <view class="pt-4" style="position: fixed; width: 100%; z-index: 100; background-color: #f1f1f2; top: {{safeArea.top + 42 + 'px'}}; left: 0;">
+    <view class="pt-4" style="position: fixed; width: 100%; z-index: 10; background-color: #f1f1f2; top: {{safeArea.top + 42 + 'px'}}; left: 0;">
         <view class="white pa-2 mb-4 rounded d-flex justify-space-between mx-4" style="position: relative">
             <view class="d-flex py-2 slider-box" style="left: calc(33.3% * {{selectTab - 1}}); padding-right: {{selectTab==3?'16rpx':''}}; padding-left: {{selectTab==1?'16rpx':''}};">
                 <view class="bg-primary primary--text rounded-xs" style="width: 100%; height: 74rpx;"></view>
@@ -23,10 +23,11 @@
 
     <view style="height: 160rpx;"></view>
 
-    <view class="mt-8 rounded" wx:if="{{taskList.length == 0}}">
-        <view role="button" aria-disabled="false" class="primary--text white rounded py-3 text-center" bindtap="goAddTask">添加任务</view>
+    <view class="rounded" wx:if="{{taskList.length == 0}}">
+        <view role="button" aria-disabled="false" class="primary--text white rounded py-4 text-center" bindtap="goAddTask">添加任务</view>
     </view>
 
     <taskCard taskList="{{ taskList }}" title="{{item}}" bindrefresh="getTask"></taskCard>
 
 </view>
+<privacy-popup id="privacy-popup-index"></privacy-popup>

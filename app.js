@@ -1,7 +1,7 @@
 //app.js
-import { get } from "./api/http"
+import { get, post } from "./api/http"
 import { getProfileUrl } from "./api/user"
-import { getTokenByCodeUrl } from "./api/wechat"
+import { postWechatLogin } from "./api/wechat"
 import { loginWX } from "./util/wechat"
 
 App({
@@ -11,33 +11,32 @@ App({
 
     async onShow(sence){
         if(sence.path !== 'pages/autoLogin/autoLogin') this.globalData.preRouteUrl = sence.path
-        // await this.getTokenByCode()
         await this.checkToken()
     },
 
-    async getTokenByCode(){
-        try{
-            let code = await loginWX()
-            let data = await get(getTokenByCodeUrl(code))
-            if(data.code == 200){
-                await wx.setStorageSync('token', data.data.token)
-                await this.getUserInfo()
-            }
-        } catch (err) {
-            wx.showToast({
-              title: '获取code失败',
-              icon: 'error'
-            })
-        }
-    },
+    // async getTokenByCode(){
+    //     try{
+    //         let code = await loginWX()
+    //         let data = await post(postWechatLogin, { code })
+    //         if(data.code == 200){
+    //             await wx.setStorageSync('token', data.data.token)
+    //             await this.getUserInfo()
+    //         }
+    //     } catch (err) {
+    //         wx.showToast({
+    //           title: '获取code失败',
+    //           icon: 'error'
+    //         })
+    //     }
+    // },
 
     // 检查本地的token
-    checkToken(){
+    async checkToken(){
         //   获取本地的token
         try {
-            var value = wx.getStorageSync('token')
+            let value = wx.getStorageSync('token')
             if (!value) {
-                this.globalData.isLogin = false
+                this.autoLogin()
             }else{
                 this.globalData.isLogin = true
                 wx.reLaunch({
@@ -46,6 +45,40 @@ App({
                 this.globalData.preRouteUrl = ''
             }
         } catch (e) {
+        }
+    },
+ 
+    async autoLogin () {
+        try{
+            wx.showLoading({
+              title: '加载中....',
+            })
+            let code = await loginWX()
+            let data = await post(postWechatLogin, { code })
+            if(data.code == 200){
+                await wx.setStorageSync('token', data.data.token)
+                await this.getUserInfo()
+                this.globalData.isLogin = true
+                let pages = getCurrentPages();
+                let currPage = ''
+                if (pages.length) {
+                    // 获取当前页面的对象（上边所获得的数组中最后一项就是当前页面的对象）
+                    currPage = pages[pages.length - 1];
+                }
+                wx.reLaunch({
+                    url: '/'+currPage.route,
+                })
+            }else{
+                wx.reLaunch({
+                  url: '/pages/login/login',
+                })
+            }
+        }catch(err){
+            wx.reLaunch({
+                url: '/pages/login/login',
+              })
+        }finally{
+            wx.hideLoading()
         }
     },
 

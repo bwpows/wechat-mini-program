@@ -16,6 +16,5 @@
     height: 100vh;
     width: 100vw;
     z-index: 80;
-    /* background-color: rgb(54, 54, 54); */
     opacity: .2;
 }

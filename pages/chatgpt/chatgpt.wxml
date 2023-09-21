@@ -2,19 +2,18 @@
     <view id="communication">
         <view style="position: fixed; top: 0; left: 0; right: 0; opacity: .95;" class="white pa-2 subtitle">只能一问一答，不支持连问</view>
         <view wx:for="{{messageList}}" class="my-4 mx-4" style="font-size: 26rpx; overflow: hidden; word-break:break-all;" wx:key="id">
-            <view class="d-flex justify-end">
-                <view class="primary white--text pa-2 rounded mb-4" style="display: inline-block; max-width: 85%;">
+            <view class="d-flex justify-end mb-4">
+                <view class="primary white--text pa-2 rounded" style="display: inline-block; max-width: 85%;" bind:tap="copy"  data-text="{{item.send_message}}">
                     {{item.send_message}}
                 </view>
             </view>
-            <view class="white pa-2 rounded"  style="display: inline-block; max-width: 85%;">
+            <view class="white pa-2 rounded"  style="display: inline-block; max-width: 85%;" bind:tap="copy" data-text="{{item.receive_message}}">
                 {{item.receive_message}}
-                <!-- <rich-text nodes="{{item.receive_message}}"></rich-text> -->
             </view>
         </view>
 
         <view class="white mb-6" style="position: fixed; bottom: -48rpx; left: 0; width: 100%; font-size: 30rpx;">
-            <input value="{{inputText}}" class="pa-4" cursor-spacing="15" placeholder="{{inputDisabled?'等待回答中......':'输入您的问题'}}" confirm-type="send" disabled="{{inputDisabled}}" always-embed bindconfirm="sendMessage" />
+            <input maxlength="{{10000}}"  value="{{inputText}}" class="pa-4" cursor-spacing="15" placeholder="{{inputDisabled?'等待回答中......':'输入您的问题'}}" confirm-type="send" disabled="{{inputDisabled}}" always-embed bindconfirm="sendMessage" />
             <view style="height: 50rpx"></view>
         </view>
     </view>

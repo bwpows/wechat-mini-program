@@ -2,6 +2,7 @@
 const { baseUrl, get } = require("../../api/http")
 const { myInfoUrl } = require("../../api/my")
 const { getUserInfo } = require("../../api/user")
+const { agreePrivacy } = require("../../util/wechat")
 
 const app = getApp()
 Page({
@@ -29,20 +30,30 @@ Page({
         wx.setNavigationBarTitle({
           title: '个人中心',
         })
+
+        agreePrivacy(this)
     },
 
     async onShow(){
         this.getTabBar().setData({
             selected: 2,
         })
+        this.checkLogin()
         this.setData({
             isShow: await wx.getStorageSync('isShow')  || false,
             userId: await wx.getStorageSync('userId'),
             isLogin: app.globalData.isLogin,
             safeArea: app.globalData.safeArea
         })
-        if(app.globalData.isLogin) await this.getUserInfo()
-        if(app.globalData.isLogin) await this.getMyInfo()
+        if(app.globalData.isLogin) {
+            await this.getUserInfo()
+            await this.getMyInfo()
+        }
+    },
+
+    async checkLogin() {
+        const token = await wx.getStorageSync('token')
+        if(!token) app.globalData.isLogin = false;
     },
 
     onPageScroll(e){
@@ -53,25 +64,10 @@ Page({
 
     async getMyInfo(){
         const res = await get(myInfoUrl)
-        console.log(res);
         
         if(res.code === 200) {
-            const { yearViewList } = res.data;
-            // const lineData = yearViewList.map(item => {
-            //     return {value: item.count, title: item._id.month > 10? item._id.month: '0' + item._id.month, year: item._id.year}
-            // })
-            // lineData.sort((a, b) => {
-            //     if (a.year !== b.year) {
-            //       return a.year - b.year;
-            //     } else {
-            //       // 如果年份相同，则比较月份
-            //       return a.title - b.title;
-            //     }
-            //   });
-            // console.log(lineData);
             this.setData({
                 myInfo: res.data,
-                // lineData: lineData
             })
         }
     },
@@ -80,18 +76,20 @@ Page({
         this.setData({
             loading: true
         })
-        let res = await get(getUserInfo(this.data.userId))
-        // let listData = this.data.listData
+        let res = await get(getUserInfo())
         
         if(res.code == 200){
-            // listData[0][0]['desc'] = res.data.phone;
-            // listData[1][2]['isShow'] = await wx.getStorageSync('isShow')  || false,
             this.setData({
                 userInfo: res.data,
                 loading: false,
-                // listData,
             })
             wx.setStorageSync('user', res.data)
+        } else {
+            app.globalData.isLogin = false
+            this.setData({
+                loading: false,
+            })
+
         }
     },
 

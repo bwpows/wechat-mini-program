@@ -11,6 +11,7 @@
   margin-right: 36rpx;
   border-radius: 20rpx;
   transition: all .3s;
+  box-shadow: 0rpx 0rpx 28rpx 0rpx #f86e382b;
 }
 
 
@@ -22,7 +23,7 @@
   flex-direction: column;
 }
 
-.tab-bar-item cover-image {
+.tab-bar-item image {
   width: 54rpx;
   height: 54rpx;
 }

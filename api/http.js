@@ -1,7 +1,6 @@
 const baseUrl = 'https://app.bwpow.com:3000';  //后续可以改为你自己的域名接口地址
 // const baseUrl = 'https://localhost:3000';  //后续可以改为你自己的域名接口地址
 
-
 const request = (url, options) => {
     let token = null;
     if(wx.getStorageSync('token')){
@@ -20,15 +19,9 @@ const request = (url, options) => {
                 if (request.statusCode === 200 || request.statusCode === 201) {
                     resolve(request.data)
                 } else {
-                    if (request.statusCode === 401) {
-                        wx.showToast({
-                          title: '先登录',
-                          icon: 'error'
-                        })
-                        await wx.removeStorageSync('token')//如果返回401，可以做一些操作
-                        wx.navigateBack({
-                          delta: 0,
-                        })
+                    if (request.statusCode === 401 || request.statusCode === 405) {
+                        wx.removeStorageSync('token')//如果返回401，可以做一些操作
+                        wx.switchTab({ url: '/pages/task/index/index' })
                     }else if(request.data.code === 403){
                         wx.showToast({
                           title: '权限不足',
@@ -40,10 +33,11 @@ const request = (url, options) => {
                           icon: 'error'
                         })
                     }
-                    reject(request.data)
+                    resolve({})
                 }
             },
             fail(error) { //返回失败也同样传入reject()方法
+                console.log('来了');
                 reject(error.data)
             }
         })

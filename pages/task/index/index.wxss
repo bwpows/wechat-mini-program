@@ -40,3 +40,11 @@
     transition: all .5s;
     top: 0; 
 }
+
+.add-task {
+    position: fixed;
+    width: 686rpx;
+    bottom: 500rpx;
+    font-weight: bold;
+    font-size: 28rpx;
+}

@@ -14,3 +14,5 @@
         ------ {{loading?'正在获取中':'没有更多数据了'}} ------
     </view>
 </view>
+
+<privacy-popup id="privacy-popup-index"></privacy-popup>

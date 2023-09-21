@@ -11,8 +11,9 @@
 
     <view class="info-box d-flex justify-space-between px-4"  bindtap="goRouter" data-path="/pages/profile/profile" style="{{ 'padding-top:' + (safeArea.top + 30) * 2 + 'rpx' }}">
         <view class="d-flex">
-            <view style="border: 4rpx solid var(--primaryColor); border-radius: 86rpx;" class="d-flex justify-center align-center">
-                <image src="{{ tools.formatImageUrl(baseUrl, userInfo.pictrue) || '/images/bottomBar/workSelected.png' }}" class="headImg" mode="aspectFill"></image>
+            <view style="border: 4rpx solid var(--primaryColor); border-radius: 80rpx; width: 160rpx; height: 160rpx;" class="d-flex justify-center align-center">
+                <image wx:if="{{ userInfo.pictrue }}" src="{{ tools.formatImageUrl(baseUrl, userInfo.pictrue) }}" class="headImg" mode="aspectFill"></image>
+                <image wx:else src="/images/bottomBar/workSelected.png" class="head-img" mode="scaleToFill"></image>
             </view>
             <view class="ml-4">
                 <view class="title" style="font-size: 44rpx; margin-top: 20rpx; color: #000000c2">{{userInfo.username || '微信用户'}}</view>
@@ -85,3 +86,5 @@
     </view> -->
 
 </view>
+
+<privacy-popup id="privacy-popup-index"></privacy-popup>

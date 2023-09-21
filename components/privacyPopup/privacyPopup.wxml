@@ -1,0 +1,20 @@
+<view wx:if="{{innerShow}}" class="layout d-flex justify-center align-center">
+    <view class="weui-half-screen-dialog" style="position: fixed; top: 50%; margin: 0 30rpx; width: 586rpx; transform: translateY(-50%); background-color: white; padding: 36rpx; border-radius: 24rpx;" >
+        <view class="mb-4" style="font-size: 32rpx;">{{title}}</view>
+        <view class="font-desc">
+            <text>{{desc1}}</text>
+            <text class="primary--text" bindtap="openPrivacyContract">{{urlTitle}}</text>
+            <view class="weui-half-screen-dialog__tips">{{desc2}}</view>
+        </view>
+        <view class="d-flex mt-6">
+            <button class="mr-3 font-md primary--text" bindtap="handleDisagree">不同意</button>
+            <view style="width: 30px"></view>
+            <button class="primary white--text ml-3 font-md" open-type="agreePrivacyAuthorization" bindagreeprivacyauthorization="disPopUp">同意并继续</button>
+        </view>
+    </view>
+
+</view>
+
+<view wx:if="{{innerShow}}" class="mask" bind:touchmove="test">
+    
+</view>

@@ -1,6 +1,6 @@
-const { get } = require("../../api/http");
+const { get, post } = require("../../api/http");
 const { getProfileUrl } = require("../../api/user");
-const { getTokenByCodeUrl } = require("../../api/wechat");
+const { postWechatLogin } = require("../../api/wechat");
 const { loginWX } = require("../../util/wechat")
 
 let app = getApp()
@@ -28,7 +28,10 @@ Component({
                   title: '加载中....',
                 })
                 let code = await loginWX()
-                let data = await get(getTokenByCodeUrl(code))
+                console.log(code);
+                let data = await post(postWechatLogin, { code })
+                console.log("========");
+                console.log(data);
                 if(data.code == 200){
                     await wx.setStorageSync('token', data.data.token)
                     await this.getUserInfo()
@@ -48,6 +51,7 @@ Component({
                     })
                 }
             }catch(err){
+                console.log(err);
                 wx.reLaunch({
                     url: '/pages/login/login',
                   })

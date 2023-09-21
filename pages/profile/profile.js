@@ -145,7 +145,7 @@ Page({
     },
 
     async getUserInfo(){
-        let res = await get(getUserInfo(this.data.userId))
+        let res = await get(getUserInfo())
         if(res.code == 200){
             this.setData({
                 userInfo: res.data,

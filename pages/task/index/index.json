@@ -2,7 +2,8 @@
     "usingComponents": {
         "taskCard": "/components/index/card",
         "LoginDialog": "/components/loginDialog/loginDialog",
-        "nav-bar": "/components/nav-bar/index"
+        "nav-bar": "/components/nav-bar/index",
+        "privacy-popup": "/components/privacyPopup/privacyPopup"
     },
     "enablePullDownRefresh": true,
     "navigationStyle": "custom"

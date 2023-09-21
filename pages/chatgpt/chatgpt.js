@@ -74,6 +74,13 @@ Page({
             scrollTop: rect.height - that.data.scrollTop
           });
         }).exec();
+    },
+
+    copy(e){
+        console.log(e.target.dataset.text);
+        wx.setClipboardData({
+            data: e.target.dataset.text,
+        })
     }
 
 

@@ -15,7 +15,7 @@
         <image src="/images/icon/plus.svg" class="white close-icon"></image>
     </view>
     
-    <view wx:if="{{ work.url.length != 0 }}" class="overflow-hidden" catchtap="previewImage" data-id="{{work._id}}" data-url="{{work.url}}">
+    <view wx:if="{{ work.url.length != 0 }}" class="overflow-hidden white rounded-lg-top-right rounded-lg-top-left " catchtap="previewImage" data-id="{{work._id}}" data-url="{{work.url}}">
         <image src="{{tools.formatImageUrl(baseUrl, work.url[0])}}" class="rounded-lg-top-right rounded-lg-top-left overflow-hidden" show-menu-by-longpress="true" mode="aspectFill" style="width: 100%;"></image>
     </view>
     

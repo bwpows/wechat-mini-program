@@ -21,7 +21,7 @@ Component({
             "iconPath": "/images/bottomBar/user.png",
             "pagePath": "/pages/user/user"
         }
-    ]
+    ],
   },
   attached() {
     this.setData({

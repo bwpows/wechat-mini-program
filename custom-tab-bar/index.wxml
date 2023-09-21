@@ -1,7 +1,7 @@
 <!--miniprogram/custom-tab-bar/index.wxml-->
-<cover-view class="tab-bar" style="bottom: {{isBangs? 0:'20rpx'}}; display: {{isShow? 'flex':'none'}};" wx:if="{{isShow}}">
-  <cover-view wx:for="{{list}}" wx:key="index" class="tab-bar-item" data-path="{{item.pagePath}}" data-index="{{index}}" bindtap="switchTab">
-    <cover-image src="{{selected === index ? item.selectedIconPath : item.iconPath}}"></cover-image>
+<view class="tab-bar" style="bottom: {{!isShow?'-200rpx':isBangs? 0:'20rpx'}}; display: flex;">
+  <view wx:for="{{list}}" wx:key="index" class="tab-bar-item" data-path="{{item.pagePath}}" data-index="{{index}}" bindtap="switchTab">
+    <image src="{{selected === index ? item.selectedIconPath : item.iconPath}}" />
     <cover-view style="color: {{selected === index ? selectedColor : color}}">{{item.text}}</cover-view>
-  </cover-view>
-</cover-view>
+  </view>
+</view>
